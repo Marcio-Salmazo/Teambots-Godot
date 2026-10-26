@@ -1,6 +1,6 @@
 # Projeto TCC - *Serious Games* para conscientização sobre de distúrbios psicológicos:
 
-Este repositório contém o meu projeto de conclusão de curso da graduação, um serious game desenvolvido para a 
+Este repositório contém o projeto de um serious game desenvolvido para a 
 conscientização social sobre transtornos psicológicos, especialmente aqueles associados à interações e experiencias 
 traumáticas como o cyberbullying, violência verbal, sobrecarga emocional e exposição prolongada a hostilidade 
 no meio digital.
@@ -45,43 +45,6 @@ desenvolvimento geraram um resultado pouco inspirado, que acaba criando uma narr
 o uso de técnicas que de fato ampliam a imersão, com isso, O repositório busca trazer uma revisão do projeto, 
 reconstruindo-o do zero e garantindo uma experiência mais alinhada com as expectativas originais.
 
-## 📂 Estrutura de diretórios do projeto
-
-O repositório está organizado por pastas de forma temática/projeto, por exemplo:
-
-    ├── Main Project/
-    ├    ├── Projeto Godot/
-    ├    ├── Tiled Test Projects/
-    ├    └── Documentacao do projeto.docx
-    ├
-    ├── Old Project/
-    ├     ├── Referencias/
-    ├     ├── Antiga escrita do Artigo.docx
-    ├     ├── Apresentacao do projeto.pptx
-    ├     └── Running_The _Gauntlet.mfa
-    ├    
-    ├── Projeto TEX/
-    ├     ├── Referencias da Monografia/
-    ├     ├── Remake_do_TCC.pdf
-    ├     └── Remake_do_TCC.zip
-    ├
-    └── README
-
-* **Main Project:** Contém os arquivos de desenvolvimento e documentação do projeto atual.
-  * **Projeto Godot** - Contém os arquivos de desenvolvimento do projeto na Godot e os Assets utilizados;
-  * **Tiled Test Projects** - Layout teste de fases desenvolvidos na plataforma 'Tiled';
-  * **Documentacao do projeto.docx** - Arquivo de documentação do projeto, definindo escopo e ideias chaves.
-
-
-* **Old Project:** Contém os arquivos de desenvolvimento e documentação do projeto original.
-  * **Referencias** - contém os artigos utilizados para a produção da escrita do antigo projeto;
-  * **Antiga escrita do Artigo.docx** - Artigo escrito do antigo projeto, antes da reformulação;
-  * **Apresentacao do projeto.pptx** - Apresentação em slides do antigo projeto;
-  * **Running_The _Gauntlet.mfa** - Arquivo do projeto do jogo desenvolvido utilizando a Clickteam Fusion + Sonic Worlds.
-
-
-* **Projeto TEX:** Contém o artigo compilado do projeto, bem como o projeto LaTeX compactado.
-  * O diretório *'Referencias da Monografia'* contém os artigos utilizados como referencia bibliográfica para a produção da escrita do projeto.
 
 ## 🧠 Fundamentação Teórica
 
@@ -124,23 +87,6 @@ conscientização e compreensão social;
 pode atuar como espaço de reflexão simbólica e autoexploração.
 
 ⚠️ **Importante:** ⚠️ O jogo não substitui acompanhamento psicológico ou psiquiátrico, nem realiza diagnóstico ou intervenção clínica. Seu papel é exclusivamente educativo e reflexivo.
-
----
-
-## ⚖️ Considerações Éticas
-
-* O projeto evita representações explícitas, sensacionalistas ou potencialmente traumáticas;
-* A experiência é interpretativa, permitindo diferentes níveis de envolvimento;
-* A participação em avaliações futuras será voluntária;
-* O bem-estar emocional do usuário é priorizado em todas as decisões de design.
-
-## 🔮 Trabalhos Futuros
-
-* Finalização e refinamento do jogo (remake completo);
-* Aplicação de estudos com grupos experimentais e grupos de controle;
-* Coleta e análise sistemática de dados qualitativos;
-* Expansão para contextos educacionais e institucionais;
-* Adaptação para outras plataformas e públicos.
 
 ---
 
