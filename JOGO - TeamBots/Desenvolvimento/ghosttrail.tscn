@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ba4ku0yhhhfbk"]
+
+[ext_resource type="Script" uid="uid://c7yib7wds6ckc" path="res://prefabs/ghosttrail.gd" id="1_5qlcp"]
+
+[node name="ghosttrail" type="Node2D" unique_id=1464035614]
+script = ExtResource("1_5qlcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1741377102]
+z_index = 10

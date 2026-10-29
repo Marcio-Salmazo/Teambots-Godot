@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://bls2nwi65cm7k"]
+
+[ext_resource type="Script" uid="uid://u6mm1boc7wl4" path="res://Protagonista/character_body_2d.gd" id="1_0e48y"]
+[ext_resource type="SpriteFrames" path="res://Protagonista/Feiticeira/Feiticeira.tres" id="2_67a8k"]
+[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://Protagonista/icon.svg" id="2_epypp"]
+[ext_resource type="Script" uid="uid://dkww78vox3wkw" path="res://Protagonista/character_body_2d_2.gd" id="3_epypp"]
+[ext_resource type="SpriteFrames" path="res://Protagonista/Garota/Garota.tres" id="4_tr6oi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wwl0x"]
+radius = 29.0
+height = 171.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s34jk"]
+size = Vector2(364, 282)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0hol4"]
+radius = 25.0
+height = 124.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tajiq"]
+size = Vector2(4950, 127)
+
+[node name="Node2D" type="Node2D" unique_id=468184715]
+
+[node name="NPC1" type="CharacterBody2D" parent="." unique_id=140079411 node_paths=PackedStringArray("menu_dialogo", "label_texto")]
+position = Vector2(1905, 960)
+collision_layer = 4
+script = ExtResource("3_epypp")
+menu_dialogo = NodePath("../MenuDialogo")
+label_texto = NodePath("../MenuDialogo/Panel/Label")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1" unique_id=1236498413]
+position = Vector2(-1736, -499)
+shape = SubResource("CapsuleShape2D_wwl0x")
+
+[node name="Area2D" type="Area2D" parent="NPC1" unique_id=1852417381]
+position = Vector2(-1742, -474)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1/Area2D" unique_id=2123958101]
+position = Vector2(19, -75)
+shape = SubResource("RectangleShape2D_s34jk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC1" unique_id=1315773073]
+position = Vector2(-1728, -554)
+scale = Vector2(2.0455732, 2.0455732)
+sprite_frames = ExtResource("2_67a8k")
+animation = &"parado"
+speed_scale = 0.0
+offset = Vector2(0, 4.8)
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1039361962]
+position = Vector2(580, 0)
+collision_layer = 2
+script = ExtResource("1_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2031308022]
+position = Vector2(9, 462)
+shape = SubResource("CapsuleShape2D_0hol4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1623953096]
+position = Vector2(12, 466)
+scale = Vector2(1.6164552, 1.734375)
+sprite_frames = ExtResource("4_tr6oi")
+animation = &"parado"
+offset = Vector2(0, -28)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1513842114]
+position = Vector2(6, 468.5)
+
+[node name="chao" type="StaticBody2D" parent="." unique_id=1099619085]
+
+[node name="Sprite2D" type="Sprite2D" parent="chao" unique_id=788916356]
+position = Vector2(324.00012, 606)
+scale = Vector2(38.5625, 1)
+texture = ExtResource("2_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao" unique_id=1541819960]
+position = Vector2(325, 607)
+shape = SubResource("RectangleShape2D_tajiq")
+debug_color = Color(0, 0.5652561, 0.27486748, 0.41960785)
+
+[node name="MenuDialogo" type="CanvasLayer" parent="." unique_id=1751502199]
+visible = false
+
+[node name="Panel" type="Panel" parent="MenuDialogo" unique_id=377228891]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -184.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MenuDialogo/Panel" unique_id=1828746053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
