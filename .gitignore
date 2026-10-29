@@ -1,0 +1,11 @@
+# Godot 4+
+.godot/
+/android/
+# Arquivos temporários do Godot e de editores
+*.tmp
+*.swp
+*~
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
