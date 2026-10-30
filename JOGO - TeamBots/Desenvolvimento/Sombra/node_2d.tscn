@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://blh07ni6w2pb6"]
+
+[ext_resource type="Script" uid="uid://cgie0ua80tqkh" path="res://Sombra/character_body_2d.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://jbyecmm73ytb" path="res://Sombra/icon.svg" id="2_epypp"]
+[ext_resource type="PackedScene" uid="uid://bmbeogk71s1qr" path="res://prefabs/ghosttrail.tscn" id="2_gpwx1"]
+[ext_resource type="SpriteFrames" path="res://Sombra/Espadachim/Espadachim.tres" id="3_gpwx1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0hol4"]
+radius = 48.0
+height = 192.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tajiq"]
+size = Vector2(4950, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pnui"]
+size = Vector2(20, 6)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oeehe"]
+load_path = "res://.godot/imported/icon.svg-fdd493268b04490c89bcb37b92a9a0d2.ctex"
+
+[node name="Node2D" type="Node2D" unique_id=468184715]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1039361962]
+position = Vector2(-1994, -11)
+script = ExtResource("1_0e48y")
+ghost_scene = ExtResource("2_gpwx1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2031308022]
+position = Vector2(3, 473)
+shape = SubResource("CapsuleShape2D_0hol4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1623953096]
+position = Vector2(11.000061, 474)
+scale = Vector2(2.6328135, 2.6015625)
+sprite_frames = ExtResource("3_gpwx1")
+animation = &"parado"
+offset = Vector2(0, -28)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1513842114]
+position = Vector2(6, 468.5)
+
+[node name="chao" type="StaticBody2D" parent="." unique_id=1099619085]
+
+[node name="Sprite2D" type="Sprite2D" parent="chao" unique_id=788916356]
+position = Vector2(324.00012, 606)
+scale = Vector2(38.5625, 1)
+texture = ExtResource("2_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao" unique_id=1541819960]
+position = Vector2(325, 605.5)
+shape = SubResource("RectangleShape2D_tajiq")
+debug_color = Color(0, 0.5652561, 0.27486748, 0.41960785)
+
+[node name="MenuDialogo" type="CanvasLayer" parent="." unique_id=1751502199]
+visible = false
+
+[node name="Panel" type="Panel" parent="MenuDialogo" unique_id=377228891]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -184.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MenuDialogo/Panel" unique_id=1828746053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1954422718]
+position = Vector2(-1522, 410)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=234770485]
+position = Vector2(0, 52.5)
+scale = Vector2(15, 7.5)
+shape = SubResource("RectangleShape2D_6pnui")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1145085882]
+position = Vector2(0, 55.749996)
+scale = Vector2(2.4062502, 0.46484345)
+texture = SubResource("CompressedTexture2D_oeehe")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=110425825]
+position = Vector2(-1118, 355)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=373663538]
+position = Vector2(0, 52.5)
+scale = Vector2(15, 7.5)
+shape = SubResource("RectangleShape2D_6pnui")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1424922821]
+position = Vector2(0, 55.749996)
+scale = Vector2(2.4062502, 0.46484345)
+texture = SubResource("CompressedTexture2D_oeehe")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2000305259]
+position = Vector2(-709, 277)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=614199065]
+position = Vector2(0, 52.5)
+scale = Vector2(15, 7.5)
+shape = SubResource("RectangleShape2D_6pnui")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=1825319262]
+position = Vector2(0, 55.749996)
+scale = Vector2(2.4062502, 0.46484345)
+texture = SubResource("CompressedTexture2D_oeehe")
