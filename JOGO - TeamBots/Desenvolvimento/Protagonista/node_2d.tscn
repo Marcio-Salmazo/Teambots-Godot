@@ -60,7 +60,7 @@ position = Vector2(9, 462)
 shape = SubResource("CapsuleShape2D_0hol4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1623953096]
-position = Vector2(12, 466)
+position = Vector2(14, 459)
 scale = Vector2(1.6164552, 1.734375)
 sprite_frames = ExtResource("4_tr6oi")
 animation = &"parado"
