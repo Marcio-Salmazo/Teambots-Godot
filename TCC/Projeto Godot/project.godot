@@ -22,6 +22,10 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+
 [input]
 
 attack={
