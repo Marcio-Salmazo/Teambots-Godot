@@ -5,7 +5,7 @@ const ACAO_INTERAGIR := &"interagir"
 @export var menu_dialogo: CanvasLayer
 @export var label_texto: Label
 
-@export var nome_personagem: String = "Retsu Unohana"
+@export var nome_personagem: String = "NPC1"
 @export var falas: Array[String] = [
 	"Nunca ninguém chegou ao meu peito.
 Nem punho de homem, nem fio de aço.
