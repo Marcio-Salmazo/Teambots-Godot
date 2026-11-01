@@ -1,0 +1,414 @@
+[gd_scene format=4 uid="uid://igp0met4r1pl"]
+
+[ext_resource type="TileSet" uid="uid://3whdgl2uh6vg" path="res://Assets/Tiles/House Tiles/house Backgrounds.tres" id="1_tw8cj"]
+[ext_resource type="Texture2D" uid="uid://67dfqsc1xaqp" path="res://Assets/Raw Sprites/House/Sprite-0043.png" id="2_tw8cj"]
+[ext_resource type="Texture2D" uid="uid://bmvvaaj2sww2r" path="res://Assets/Raw Sprites/House/Sprite-0021.png" id="3_vbv7s"]
+[ext_resource type="Texture2D" uid="uid://cfoe815w7ywyr" path="res://Assets/Raw Sprites/House/Sprite-0017.png" id="4_2n8qu"]
+[ext_resource type="Texture2D" uid="uid://cb2isnpa80vdg" path="res://Assets/Raw Sprites/House/Sprite-0015.png" id="5_44fq3"]
+[ext_resource type="Texture2D" uid="uid://crxesq3dw20do" path="res://Assets/Raw Sprites/House/Sprite-0008.png" id="6_joswn"]
+[ext_resource type="Texture2D" uid="uid://dlfpgd53sdi5h" path="res://Assets/Raw Sprites/House/Sprite-0005.png" id="7_opsea"]
+[ext_resource type="Script" uid="uid://cguvaxuvy3n5d" path="res://Assets/Scenes/static_body_2d.gd" id="8_joswn"]
+[ext_resource type="Texture2D" uid="uid://cxoqbg5jxrk3m" path="res://Assets/Raw Sprites/House/Sprite-0019.png" id="8_v3cpa"]
+[ext_resource type="Texture2D" uid="uid://cbdqfnnb7p01t" path="res://Assets/Raw Sprites/House/Sprite-46.png" id="9_258im"]
+[ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Scripts/PlayerController.gd" id="10_6wcw1"]
+[ext_resource type="Texture2D" uid="uid://biorni2e8at7b" path="res://Assets/Raw Sprites/Characters/player.png" id="11_fgajp"]
+[ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="12_0itf1"]
+[ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="13_7ramn"]
+[ext_resource type="Script" uid="uid://behrfxf8yt5ci" path="res://state_machine.gd" id="14_sm4ch"]
+[ext_resource type="Script" uid="uid://k1q00tdvgb7f" path="res://estado_normal.gd" id="15_en0rm"]
+[ext_resource type="Script" uid="uid://carr2ie2so3ol" path="res://estado_dialogo.gd" id="16_ed1al"]
+[ext_resource type="Script" uid="uid://dkww78vox3wkw" path="res://character_body_2d_2.gd" id="17_npcdl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw8cj"]
+size = Vector2(71, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npc02"]
+size = Vector2(119, 143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kj56o"]
+size = Vector2(19.333328, 20.333334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joswn"]
+size = Vector2(42, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwwjv"]
+size = Vector2(69.230835, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vt8wg"]
+size = Vector2(14.129, 7.7758617)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkxbn"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ucvm"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18pvr"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4spju"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op8ue"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3djg"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avjm5"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umdud"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcjch"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l78na"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(96, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j16ru"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkcqm"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn3kh"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s3mg"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2psj"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(0, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdkmc"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(32, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10cu5"]
+atlas = ExtResource("11_fgajp")
+region = Rect2(64, 320, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dlglw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkxbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ucvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkxbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ucvm")
+}],
+"loop": 1,
+"name": &"Player Fall",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18pvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4spju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op8ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3djg")
+}],
+"loop": 1,
+"name": &"Player Idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avjm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umdud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcjch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l78na")
+}],
+"loop": 1,
+"name": &"Player Jump",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j16ru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkcqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn3kh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s3mg")
+}],
+"loop": 1,
+"name": &"Player Walk",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2psj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdkmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10cu5")
+}],
+"loop": 1,
+"name": &"Player WallJump",
+"speed": 3.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_x645v"]
+script/source = "# Define que o Script opere com o objeto do tipo Node (Genérico)
+extends Node
+
+# @export faz a variável aparecer no Inspector da Godot.
+# Em resumo, podemos mudar o valor direto na interface do editor, sem mexer no código.
+# OBS: o operador := significa declaração com tipagem automática (type inference)
+@export var ansiedade := 0.0
+@export var taxa_crescimento := 0.5
+@export var ansiedade_max := 100.0
+
+# Função chamada a cada frame, de acordo com a taxa de quadros do jogo. 
+# É usada para tudo que depende de tempo contínuo, como animações, efeitos visuais, ou contadores.
+# O parâmetro delta representa o tempo decorrido desde o último frame.
+#func _process(delta):
+"
+
+[node name="House Scene" type="Node2D" unique_id=572524228]
+
+[node name="Tiles and Sprites" type="Node" parent="." unique_id=1691291896]
+
+[node name="Backgrounds" type="TileMapLayer" parent="Tiles and Sprites" unique_id=966114282]
+texture_filter = 3
+tile_map_data = PackedByteArray("AAAAAPv/LgAAAAAAAAAAAPz/LgAAAAEAAAAAAP3/LgAAAAIAAAAAAP7/LgAAAAMAAAAAAP//LgAAAAQAAAABAPv/LgABAAAAAAABAPz/LgABAAEAAAABAP3/LgABAAIAAAABAP7/LgABAAMAAAABAP//LgABAAQAAAACAPv/LgACAAAAAAACAPz/LgACAAEAAAACAP3/LgACAAIAAAACAP7/LgACAAMAAAACAP//LgACAAQAAAADAPv/LgADAAAAAAADAPz/LgADAAEAAAADAP3/LgADAAIAAAADAP7/LgADAAMAAAAEAPv/LgAEAAAAAAAEAPz/LgAEAAEAAAAEAP3/LgAEAAIAAAAEAP7/LgAEAAMAAAAEAP//LgAEAAQAAAAFAPv/LgAFAAAAAAAFAPz/LgAFAAEAAAAFAP3/LgAFAAIAAAAFAP7/LgAFAAMAAAAFAP//LgAFAAQAAAAGAPv/LgAGAAAAAAAGAPz/LgAGAAEAAAAGAP3/LgAGAAIAAAAGAP7/LgAGAAMAAAAGAP//LgAGAAQAAAAHAPv/LgAHAAAAAAAHAPz/LgAHAAEAAAAHAP3/LgAHAAIAAAAHAP7/LgAHAAMAAAAHAP//LgAHAAQAAAAIAPv/LgAIAAAAAAAIAPz/LgAIAAEAAAAIAP3/LgAIAAIAAAAIAP7/LgAIAAMAAAAIAP//LgAIAAQAAAAJAPv/LgAJAAAAAAAJAPz/LgAJAAEAAAAJAP3/LgAJAAIAAAAJAP7/LgAJAAMAAAAJAP//LgAJAAQAAAAKAPv/LgAKAAAAAAAKAPz/LgAKAAEAAAAKAP3/LgAKAAIAAAAKAP7/LgAKAAMAAAAKAP//LgAKAAQAAAALAPv/LgALAAAAAAALAPz/LgALAAEAAAALAP3/LgALAAIAAAALAP7/LgALAAMAAAALAP//LgALAAQAAAAMAPv/LgAAAAAAAAAMAPz/LgAAAAEAAAAMAP3/LgAAAAIAAAAMAP7/LgAAAAMAAAAMAP//LgAAAAQAAAANAPv/LgABAAAAAAANAPz/LgABAAEAAAANAP3/LgABAAIAAAANAP7/LgABAAMAAAANAP//LgABAAQAAAAOAPv/LgACAAAAAAAOAPz/LgACAAEAAAAOAP3/LgACAAIAAAAOAP7/LgACAAMAAAAOAP//LgACAAQAAAAPAPv/LgADAAAAAAAPAPz/LgADAAEAAAAPAP3/LgADAAIAAAAPAP7/LgADAAMAAAAPAP//LgADAAQAAAAQAPv/LgAEAAAAAAAQAPz/LgAEAAEAAAAQAP3/LgAEAAIAAAAQAP7/LgAEAAMAAAAQAP//LgAEAAQAAAARAPv/LgAFAAAAAAARAPz/LgAFAAEAAAARAP3/LgAFAAIAAAARAP7/LgAFAAMAAAARAP//LgAFAAQAAAASAPv/LgAGAAAAAAASAPz/LgAGAAEAAAASAP3/LgAGAAIAAAASAP7/LgAGAAMAAAASAP//LgAGAAQAAAATAPv/LgAHAAAAAAATAPz/LgAHAAEAAAATAP3/LgAHAAIAAAATAP7/LgAHAAMAAAATAP//LgAHAAQAAAAUAPv/LgAIAAAAAAAUAPz/LgAIAAEAAAAUAP3/LgAIAAIAAAAUAP7/LgAIAAMAAAAUAP//LgAIAAQAAAAVAPv/LgAJAAAAAAAVAPz/LgAJAAEAAAAVAP3/LgAJAAIAAAAVAP7/LgAJAAMAAAAVAP//LgAJAAQAAAAWAPv/LgAKAAAAAAAWAPz/LgAKAAEAAAAWAP3/LgAKAAIAAAAWAP7/LgAKAAMAAAAWAP//LgAKAAQAAAAXAPv/LgALAAAAAAAXAPz/LgALAAEAAAAXAP3/LgALAAIAAAAXAP7/LgALAAMAAAAXAP//LgALAAQAAAAYAPv/LgAAAAAAAAAYAPz/LgAAAAEAAAAYAP3/LgAAAAIAAAAYAP7/LgAAAAMAAAAYAP//LgAAAAQAAAAZAPv/LgABAAAAAAAZAPz/LgABAAEAAAAZAP3/LgABAAIAAAAZAP7/LgABAAMAAAAZAP//LgABAAQAAAAaAPv/LgACAAAAAAAaAPz/LgACAAEAAAAaAP3/LgACAAIAAAAaAP7/LgACAAMAAAAaAP//LgACAAQAAAADAAAAMAADAAQAACAEAAAAMAAEAAQAACAFAAAAMAAFAAQAACAGAAAAMAAGAAQAACAHAAAAMAAHAAQAACAIAAAAMAAIAAQAACAJAAAAMAAJAAQAACAKAAAAMAAAAAQAACALAAAAMAABAAQAACAMAAAAMAACAAQAACANAAAAMAADAAQAACAOAAAAMAAEAAQAACAPAAAAMAAFAAQAACAQAAAAMAAGAAQAACARAAAAMAAHAAQAACASAAAAMAAIAAQAACATAAAAMAAJAAQAACAUAAAAMAAAAAQAACAVAAAAMAABAAQAACAWAAAAMAACAAQAACAXAAAAMAADAAQAACAYAAAAMAAEAAQAACAZAAAAMAAFAAQAACAaAAAAMAAGAAQAACAAAAAAMAAAAAQAACABAAAAMAABAAQAACACAAAAMAACAAQAACADAP//LgADAAQAAAA=")
+tile_set = ExtResource("1_tw8cj")
+
+[node name="Semi-Open Door" type="Sprite2D" parent="Tiles and Sprites" unique_id=1949449762]
+texture_filter = 3
+position = Vector2(174, -79)
+texture = ExtResource("2_tw8cj")
+
+[node name="Closed Door" type="Sprite2D" parent="Tiles and Sprites" unique_id=1556899819]
+texture_filter = 3
+position = Vector2(403, -79)
+texture = ExtResource("3_vbv7s")
+
+[node name="Closed Door2" type="Sprite2D" parent="Tiles and Sprites" unique_id=816732938]
+texture_filter = 3
+position = Vector2(703, -79)
+texture = ExtResource("3_vbv7s")
+
+[node name="Handrail" type="Sprite2D" parent="Tiles and Sprites" unique_id=1922004068]
+z_index = 4
+texture_filter = 3
+position = Vector2(818, -24)
+texture = ExtResource("4_2n8qu")
+
+[node name="Bookcase" type="Sprite2D" parent="Tiles and Sprites" unique_id=950010498]
+texture_filter = 3
+position = Vector2(555, -60)
+texture = ExtResource("5_44fq3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tiles and Sprites/Bookcase" unique_id=536284343 node_paths=PackedStringArray("menu_dialogo", "label_texto", "area_interacao")]
+collision_layer = 2
+script = ExtResource("17_npcdl")
+menu_dialogo = NodePath("../../../Dialogo UI")
+label_texto = NodePath("../../../Dialogo UI/Painel/Margem/Texto")
+area_interacao = NodePath("CollisionShape2D/Area2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles and Sprites/Bookcase/StaticBody2D" unique_id=183434421]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_tw8cj")
+
+[node name="Area2D" type="Area2D" parent="Tiles and Sprites/Bookcase/StaticBody2D/CollisionShape2D" unique_id=1730120005]
+position = Vector2(-104.5, 15.5)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles and Sprites/Bookcase/StaticBody2D/CollisionShape2D/Area2D" unique_id=1730120006]
+position = Vector2(104.5, -17.5)
+shape = SubResource("RectangleShape2D_npc02")
+
+[node name="Plant pot" type="Sprite2D" parent="Tiles and Sprites" unique_id=438907742]
+texture_filter = 3
+position = Vector2(292, -49)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_joswn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tiles and Sprites/Plant pot" unique_id=1827550021 node_paths=PackedStringArray("menu_dialogo", "label_texto", "area_interacao")]
+position = Vector2(0, 7)
+collision_layer = 2
+script = ExtResource("8_joswn")
+menu_dialogo = NodePath("../../../Dialogo UI")
+label_texto = NodePath("../../../Dialogo UI/Painel/Margem/Texto")
+area_interacao = NodePath("CollisionShape2D2/Area2D")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles and Sprites/Plant pot/StaticBody2D" unique_id=297429267]
+position = Vector2(-0.33332825, 0.16666794)
+shape = SubResource("RectangleShape2D_kj56o")
+
+[node name="Area2D" type="Area2D" parent="Tiles and Sprites/Plant pot/StaticBody2D/CollisionShape2D2" unique_id=902725513]
+position = Vector2(-104.5, 15.5)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles and Sprites/Plant pot/StaticBody2D/CollisionShape2D2/Area2D" unique_id=1201114032]
+position = Vector2(104.166664, -13.166668)
+shape = SubResource("RectangleShape2D_joswn")
+
+[node name="Window" type="Sprite2D" parent="Tiles and Sprites" unique_id=210680557]
+texture_filter = 3
+position = Vector2(18, -97)
+texture = ExtResource("7_opsea")
+flip_h = true
+
+[node name="Window2" type="Sprite2D" parent="Tiles and Sprites" unique_id=1781381878]
+texture_filter = 3
+position = Vector2(846, -97)
+texture = ExtResource("7_opsea")
+
+[node name="Photo" type="Sprite2D" parent="Tiles and Sprites" unique_id=998594923]
+texture_filter = 3
+position = Vector2(94, -90)
+texture = ExtResource("8_v3cpa")
+flip_h = true
+
+[node name="Stairs" type="Sprite2D" parent="Tiles and Sprites" unique_id=44834385]
+texture_filter = 3
+position = Vector2(819.00006, 14)
+scale = Vector2(1.3, 1.375)
+texture = ExtResource("9_258im")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tiles and Sprites/Stairs" unique_id=357472361]
+position = Vector2(0, 7)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles and Sprites/Stairs/StaticBody2D" unique_id=546740111]
+position = Vector2(-6.1035156e-05, -6.636362)
+shape = SubResource("RectangleShape2D_cwwjv")
+
+[node name="Player" type="Node" parent="." unique_id=401184732]
+
+[node name="Player CharacterBody2D" type="CharacterBody2D" parent="Player" unique_id=1874634004 node_paths=PackedStringArray("state_machine")]
+physics_interpolation_mode = 1
+position = Vector2(107, -60)
+scale = Vector2(2.5, 2.5)
+collision_mask = 2
+floor_constant_speed = true
+floor_snap_length = 5.0
+script = ExtResource("10_6wcw1")
+animation_controller_path = NodePath("../Controllers/Animations Controller")
+state_machine = NodePath("State Machine")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Player CharacterBody2D" unique_id=2145121332]
+position = Vector2(0.5, 7.905998)
+scale = Vector2(0.637, 0.696)
+shape = SubResource("RectangleShape2D_vt8wg")
+
+[node name="Player Visuals" type="Node2D" parent="Player/Player CharacterBody2D" unique_id=2106375638]
+
+[node name="Player Pivot" type="Node2D" parent="Player/Player CharacterBody2D/Player Visuals" unique_id=2138533738]
+
+[node name="Player Sprite" type="Node2D" parent="Player/Player CharacterBody2D/Player Visuals" unique_id=515879326]
+
+[node name="AnimatedSprite2D (player)" type="AnimatedSprite2D" parent="Player/Player CharacterBody2D/Player Visuals/Player Sprite" unique_id=619125518]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_dlglw")
+animation = &"Player WallJump"
+speed_scale = 3.0
+
+[node name="State Machine" type="Node" parent="Player/Player CharacterBody2D" unique_id=1730110001 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("14_sm4ch")
+initial_state = NodePath("EstadoNormal")
+
+[node name="EstadoNormal" type="Node" parent="Player/Player CharacterBody2D/State Machine" unique_id=1730110002 node_paths=PackedStringArray("actor")]
+script = ExtResource("15_en0rm")
+actor = NodePath("../..")
+
+[node name="EstadoDialogo" type="Node" parent="Player/Player CharacterBody2D/State Machine" unique_id=1730110003 node_paths=PackedStringArray("actor")]
+script = ExtResource("16_ed1al")
+actor = NodePath("../..")
+
+[node name="Controllers" type="Node" parent="Player" unique_id=1039228365]
+
+[node name="Events Controller" type="Node" parent="Player/Controllers" unique_id=731126768]
+script = SubResource("GDScript_x645v")
+
+[node name="Animations Controller" type="Node" parent="Player/Controllers" unique_id=1514507279]
+script = ExtResource("12_0itf1")
+player_sprite_path = NodePath("../../Player CharacterBody2D/Player Visuals/Player Sprite/AnimatedSprite2D (player)")
+
+[node name="Hitboxes" type="Node" parent="Player" unique_id=366497991]
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=406955535 node_paths=PackedStringArray("player")]
+physics_interpolation_mode = 1
+position = Vector2(107, -60)
+scale = Vector2(2.5, 2.5)
+offset = Vector2(0, -4)
+zoom = Vector2(3.705, 3.705)
+process_callback = 0
+position_smoothing_enabled = true
+script = ExtResource("13_7ramn")
+player = NodePath("../Player CharacterBody2D")
+fixed_y = -60.0
+
+[node name="Dialogo UI" type="CanvasLayer" parent="." unique_id=1730130001]
+layer = 10
+visible = false
+
+[node name="Painel" type="PanelContainer" parent="Dialogo UI" unique_id=1730130002]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -240.0
+offset_right = -40.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Margem" type="MarginContainer" parent="Dialogo UI/Painel" unique_id=1730130003]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="Texto" type="Label" parent="Dialogo UI/Painel/Margem" unique_id=1730130004]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 3
