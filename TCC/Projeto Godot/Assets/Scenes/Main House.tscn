@@ -6,20 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://cfoe815w7ywyr" path="res://Assets/Raw Sprites/House/Sprite-0017.png" id="4_2n8qu"]
 [ext_resource type="Texture2D" uid="uid://cb2isnpa80vdg" path="res://Assets/Raw Sprites/House/Sprite-0015.png" id="5_44fq3"]
 [ext_resource type="Texture2D" uid="uid://crxesq3dw20do" path="res://Assets/Raw Sprites/House/Sprite-0008.png" id="6_joswn"]
+[ext_resource type="Script" uid="uid://diphekvk8ayyk" path="res://Assets/Dialog/InteractableDialog.gd" id="7_38qfh"]
 [ext_resource type="Texture2D" uid="uid://dlfpgd53sdi5h" path="res://Assets/Raw Sprites/House/Sprite-0005.png" id="7_opsea"]
+[ext_resource type="Resource" uid="uid://djot4pqs4vjgm" path="res://Assets/Dialog/DialoguesResource/dialogue_plant.tres" id="8_t1bdh"]
 [ext_resource type="Texture2D" uid="uid://cxoqbg5jxrk3m" path="res://Assets/Raw Sprites/House/Sprite-0019.png" id="8_v3cpa"]
 [ext_resource type="Texture2D" uid="uid://cbdqfnnb7p01t" path="res://Assets/Raw Sprites/House/Sprite-46.png" id="9_258im"]
-[ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Scripts/PlayerController.gd" id="10_6wcw1"]
+[ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Global Scripts/PlayerController.gd" id="10_6wcw1"]
 [ext_resource type="Texture2D" uid="uid://b1sdvoo6kwhs5" path="res://Assets/Raw Sprites/Characters/player/Player Idle.png" id="11_o6k55"]
-[ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="12_0itf1"]
+[ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Global Scripts/AnimationsController.gd" id="12_0itf1"]
 [ext_resource type="Texture2D" uid="uid://b8mc8lj4lurty" path="res://Assets/Raw Sprites/Characters/player/Player Idle 2.png" id="12_38qfh"]
-[ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Scripts/StateMachine.gd" id="12_ur34d"]
-[ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="13_7ramn"]
-[ext_resource type="Script" uid="uid://cguvaxuvy3n5d" path="res://Assets/Scripts/static_body_2d.gd" id="8_joswn"]
-[ext_resource type="Script" uid="uid://behrfxf8yt5ci" path="res://Assets/Scripts/state_machine.gd" id="14_sm4ch"]
-[ext_resource type="Script" uid="uid://k1q00tdvgb7f" path="res://Assets/Scripts/estado_normal.gd" id="15_en0rm"]
-[ext_resource type="Script" uid="uid://carr2ie2so3ol" path="res://Assets/Scripts/estado_dialogo.gd" id="16_ed1al"]
-[ext_resource type="Script" uid="uid://dkww78vox3wkw" path="res://Assets/Scripts/character_body_2d_2.gd" id="17_npcdl"]
+[ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Global Scripts/StateMachine.gd" id="12_ur34d"]
+[ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Global Scripts/Camera2D.gd" id="13_7ramn"]
 [ext_resource type="Texture2D" uid="uid://d4kdbkadcfxh" path="res://Assets/Raw Sprites/Characters/player/Player Walk.png" id="13_t1bdh"]
 [ext_resource type="Texture2D" uid="uid://bagi1nsa1dym5" path="res://Assets/Raw Sprites/Characters/player/Player Walk 3.png" id="14_eptvl"]
 [ext_resource type="Texture2D" uid="uid://cydsxub8ph6sd" path="res://Assets/Raw Sprites/House/Sprite-0025.png" id="14_k6xp4"]
@@ -65,8 +62,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw8cj"]
 size = Vector2(71, 95)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npc02"]
+size = Vector2(119, 143)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwwjv"]
 size = Vector2(18.66668, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joswn"]
+size = Vector2(42, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6xp4"]
 size = Vector2(68.46155, 24.727272)
@@ -174,12 +177,6 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_npc02"]
-size = Vector2(119, 143)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_joswn"]
-size = Vector2(42, 25)
-
 [node name="House Scene" type="Node2D" unique_id=572524228]
 
 [node name="Corridor" type="Node" parent="." unique_id=1691291896]
@@ -215,12 +212,8 @@ texture_filter = 3
 position = Vector2(555, -60)
 texture = ExtResource("5_44fq3")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Corridor/Bookcase" unique_id=536284343 node_paths=PackedStringArray("menu_dialogo", "label_texto", "area_interacao")]
+[node name="StaticBody2D" type="StaticBody2D" parent="Corridor/Bookcase" unique_id=536284343]
 collision_layer = 2
-script = ExtResource("17_npcdl")
-menu_dialogo = NodePath("../../../Dialogo UI")
-label_texto = NodePath("../../../Dialogo UI/Painel/Margem/Texto")
-area_interacao = NodePath("CollisionShape2D/Area2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Bookcase/StaticBody2D" unique_id=183434421]
 position = Vector2(-0.5, -0.5)
@@ -234,19 +227,18 @@ collision_layer = 0
 position = Vector2(104.5, -17.5)
 shape = SubResource("RectangleShape2D_npc02")
 
-[node name="Plant pot" type="Sprite2D" parent="Corridor" unique_id=438907742]
+[node name="Plant pot" type="Sprite2D" parent="Corridor" unique_id=438907742 node_paths=PackedStringArray("interaction_area")]
 texture_filter = 3
 position = Vector2(292, -49)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_joswn")
+script = ExtResource("7_38qfh")
+dialogue_data = ExtResource("8_t1bdh")
+interaction_area = NodePath("StaticBody2D/CollisionShape2D/Area2D")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Corridor/Plant pot" unique_id=1827550021 node_paths=PackedStringArray("menu_dialogo", "label_texto", "area_interacao")]
+[node name="StaticBody2D" type="StaticBody2D" parent="Corridor/Plant pot" unique_id=1827550021]
 position = Vector2(0, 7)
 collision_layer = 2
-script = ExtResource("8_joswn")
-menu_dialogo = NodePath("../../../Dialogo UI")
-label_texto = NodePath("../../../Dialogo UI/Painel/Margem/Texto")
-area_interacao = NodePath("CollisionShape2D/Area2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Plant pot/StaticBody2D" unique_id=686449067]
 position = Vector2(0.66667175, 0)
@@ -254,7 +246,7 @@ shape = SubResource("RectangleShape2D_cwwjv")
 
 [node name="Area2D" type="Area2D" parent="Corridor/Plant pot/StaticBody2D/CollisionShape2D" unique_id=902725513]
 position = Vector2(-104.5, 15.5)
-collision_layer = 0
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Plant pot/StaticBody2D/CollisionShape2D/Area2D" unique_id=1201114032]
 position = Vector2(104.166664, -13.166668)
@@ -292,10 +284,10 @@ shape = SubResource("RectangleShape2D_k6xp4")
 
 [node name="Player" type="Node" parent="." unique_id=401184732]
 
-[node name="Player" type="CharacterBody2D" parent="Player" unique_id=1874634004 node_paths=PackedStringArray("fsm_dialogo")]
+[node name="Player" type="CharacterBody2D" parent="Player" unique_id=1874634004]
 physics_interpolation_mode = 1
 z_index = 2
-position = Vector2(92.00001, 634.99994)
+position = Vector2(151, -37)
 scale = Vector2(2.5, 2.5)
 collision_mask = 2
 floor_constant_speed = true
@@ -303,7 +295,6 @@ floor_snap_length = 5.0
 script = ExtResource("10_6wcw1")
 animation_controller_path = NodePath("Animations Controller")
 state_machine_path = NodePath("StateMachine")
-fsm_dialogo = NodePath("FSM Dialogo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Player" unique_id=2145121332]
 position = Vector2(0.5, 7.306015)
@@ -325,25 +316,13 @@ speed_scale = 3.0
 [node name="StateMachine" type="Node" parent="Player/Player" unique_id=731126768]
 script = ExtResource("12_ur34d")
 
-[node name="FSM Dialogo" type="Node" parent="Player/Player" unique_id=1730110001 node_paths=PackedStringArray("initial_state")]
-script = ExtResource("14_sm4ch")
-initial_state = NodePath("EstadoNormal")
-
-[node name="EstadoNormal" type="Node" parent="Player/Player/FSM Dialogo" unique_id=1730110002 node_paths=PackedStringArray("actor")]
-script = ExtResource("15_en0rm")
-actor = NodePath("../..")
-
-[node name="EstadoDialogo" type="Node" parent="Player/Player/FSM Dialogo" unique_id=1730110003 node_paths=PackedStringArray("actor")]
-script = ExtResource("16_ed1al")
-actor = NodePath("../..")
-
 [node name="Animations Controller" type="Node" parent="Player/Player" unique_id=1514507279]
 script = ExtResource("12_0itf1")
 player_sprite_path = NodePath("../Player Visuals/Player Sprite/AnimatedSprite2D (player)")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=406955535 node_paths=PackedStringArray("player")]
 physics_interpolation_mode = 1
-position = Vector2(92.00001, 633)
+position = Vector2(151, -38.99994)
 scale = Vector2(2.5, 2.5)
 offset = Vector2(0, -26)
 zoom = Vector2(3.78, 3.78)
@@ -689,31 +668,3 @@ sprite_frames = SubResource("SpriteFrames_ok48b")
 autoplay = "default"
 frame_progress = 0.24914083
 flip_h = true
-
-[node name="Dialogo UI" type="CanvasLayer" parent="." unique_id=1730130001]
-layer = 10
-visible = false
-
-[node name="Painel" type="PanelContainer" parent="Dialogo UI" unique_id=1730130002]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = -240.0
-offset_right = -40.0
-offset_bottom = -30.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Margem" type="MarginContainer" parent="Dialogo UI/Painel" unique_id=1730130003]
-layout_mode = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 16
-
-[node name="Texto" type="Label" parent="Dialogo UI/Painel/Margem" unique_id=1730130004]
-layout_mode = 2
-theme_override_font_sizes/font_size = 22
-autowrap_mode = 3
