@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl2smgsqn5bpq"
-path="res://.godot/imported/dust-friction.png-d7636a7c792a98dc87e26ea72f8a77e2.ctex"
+uid="uid://bf2am0x0u81b4"
+path="res://.godot/imported/4.png-c44aae470ff31bf8de84edd1a4b59396.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Raw Sprites/Characters/dust-friction.png"
-dest_files=["res://.godot/imported/dust-friction.png-d7636a7c792a98dc87e26ea72f8a77e2.ctex"]
+source_file="res://Assets/Raw Sprites/Characters/npc1/4.png"
+dest_files=["res://.godot/imported/4.png-c44aae470ff31bf8de84edd1a4b59396.ctex"]
 
 [params]
 
