@@ -1,46 +1,43 @@
-# ==============================================================================
-# SCRIPT DESENVOLVIDO PARA LIDAR ESPECIFICAMENTE COM ANIMAÇÕES DO PLAYER
-# ==============================================================================
 extends Node
 
-# ------------------------------------------------------------------------------
-# Referências externas para os Sprites do jogador e do ataque
+
+# REFERÊNCIAS EXTERNAS AO SPRITE DO PLAYER
 @export var player_sprite_path: NodePath
-@onready var player_sprite = get_node(player_sprite_path)
+@onready var player_sprite: AnimatedSprite2D = get_node_or_null(
+	player_sprite_path
+)
 
 # ------------------------------------------------------------------------------
-# Lista de estados possíveis voltados para a implementação do FSM
-enum PlayerState {
-	IDLE,
-	WALK,
-	JUMP,
-	FALL,
-	WALL_SLIDE,
-	ATTACK
-}
-	
-# ==============================================================================
-# FUNÇÃO AUXILIAR PARA EVITAR QUE UMA MESMA ANIMAÇÃO SEJA REINICIADA
-# ==============================================================================
+# VERIFICAÇÃO INICIAL SE O SPRITE DO PLAYER FOI ENCONTRADO
+func _ready():
+
+	if player_sprite == null:
+		push_error("AnimationController: Player Sprite não encontrado.")
+
+# ------------------------------------------------------------------------------
+# FUNÇÃO DE REPRODUÇÃO DAS ANIMAÇÕES
 func _play(anim_name: String):
-	
+
+	if player_sprite == null:
+		return
+
+	# Verifica se a animação existe.
+	if not player_sprite.sprite_frames.has_animation(anim_name):
+		push_warning("Animação não encontrada: " + anim_name)
+		return
+
+	# Evita reiniciar uma animação que já está sendo executada.
 	if player_sprite.animation != anim_name:
 		player_sprite.play(anim_name)
 
-# ==============================================================================
-# FUNÇÃO QUE GERENCIA AS ANIMAÇÕES ESPECÍFICAS DO SPRITE DO JOGADOR
-# ==============================================================================
-func update_player_animation(state):
+# ------------------------------------------------------------------------------
+# GERENCIAMENTO DAS ANIMAÇÕES DO JOGADOR
+func update_player_animation(state: int):
 
 	match state:
 
-		PlayerState.WALL_SLIDE:
-			_play("Player WallJump")
-		PlayerState.JUMP:
-			_play("Player Jump")
-		PlayerState.FALL:
-			_play("Player Fall")
-		PlayerState.WALK:
-			_play("Player Walk")
-		PlayerState.IDLE:
+		PlayerStateMachine.PlayerState.IDLE:
 			_play("Player Idle")
+
+		PlayerStateMachine.PlayerState.WALK:
+			_play("Player Walk")
