@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://burfvtveym111"]
+
+[ext_resource type="Script" uid="uid://dvgjw7wdo20gv" path="res://Assets/Dialog/DialogManager.gd" id="1_nuy14"]
+
+[node name="DialogManager" type="CanvasLayer" unique_id=1671979640]
+script = ExtResource("1_nuy14")
+
+[node name="DialogPanel" type="PanelContainer" parent="." unique_id=1134248018]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -240.0
+offset_right = -40.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBox Container" type="Node" parent="DialogPanel" unique_id=1806473671]
+
+[node name="Speaker Label" type="Label" parent="DialogPanel/VBox Container" unique_id=1879524680]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Dialog Text" type="Label" parent="DialogPanel/VBox Container" unique_id=2054094219]
+offset_right = 40.0
+offset_bottom = 23.0

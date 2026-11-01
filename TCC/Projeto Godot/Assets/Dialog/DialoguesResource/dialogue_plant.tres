@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://djot4pqs4vjgm"]
+
+[ext_resource type="Script" uid="uid://cy34ykfuwqx4f" path="res://Assets/Dialog/DialogData.gd" id="1_480lq"]
+
+[resource]
+script = ExtResource("1_480lq")
+speaker = "Vaso de Planta"
+lines = Array[String](["Eu só pedia água. Uma vez por semana... e nem isso.", "Olha pra mim, murchando na janela, e você nem percebe.", "Se nem de uma plantinha você consegue cuidar, como vai cuidar do resto?"])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"

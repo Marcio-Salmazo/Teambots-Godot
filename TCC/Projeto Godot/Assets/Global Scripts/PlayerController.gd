@@ -14,11 +14,7 @@ extends CharacterBody2D
 @onready var animation_controller = get_node_or_null(animation_controller_path)
 
 @export var state_machine_path: NodePath
-@onready var state_machine = get_node_or_null(state_machine_path)
-
-# FSM de diálogo (EstadoNormal / EstadoDialogo): decide se o jogador anda ou fica parado
-# conversando. Se não for atribuída, o jogador se move livremente, como antes.
-@export var fsm_dialogo: StateMachine
+@onready var state_machine: PlayerStateMachine = $StateMachine
 
 # ==============================================================================
 # REFERÊNCIAS INTERNAS
@@ -37,35 +33,40 @@ var facing_direction: int = -1
 
 # ------------------------------------------------------------------------------
 # INICIALIZAÇÃO
-func _ready():
-
-	# MOTION_MODE_FLOATING = modo top-down: sem chão/teto/parede. No modo padrão (GROUNDED) a Godot
-	# classifica colisões como chão/parede e aplica snap e slide de plataforma, o que "gruda" o
-	# personagem ao andar rente aos objetos.
+func _ready() -> void:
+	
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
-
-	# Conecta o sinal da FSM ao controlador do jogador.
+	
+	# Conecta a máquina de estados às animações.
+	if state_machine == null:
+		push_error("PlayerController: StateMachine não encontrada.")
+		return
+		
 	state_machine.state_changed.connect(_on_state_changed)
-
-	# Inicializa a apresentação do estado atual.
-	_on_state_changed(
-		state_machine.current_state,
-		state_machine.previous_state
-	)
-
+		
+	# Inicializa a animação Idle.
+	_on_state_changed(state_machine.current_state,
+					state_machine.previous_state)
 
 # ------------------------------------------------------------------------------
 # LOOP PRINCIPAL DE FÍSICA
-func _physics_process(delta):
-
-	# Processa a movimentação (delegada ao estado atual, quando há FSM de diálogo).
-	if fsm_dialogo:
-		fsm_dialogo.physics_update(delta)
-	else:
+func _physics_process(delta: float) -> void:
+	if state_machine == null:
+		return
+	
+	# Verifica se o jogador pode se movimentar.
+	if state_machine.can_move():
+	
+		# Processa os comandos de movimentação.
 		processar_movimento(delta)
+	
+	else:
+		 # Durante o diálogo, desacelera até parar.
+		velocity = velocity.move_toward(Vector2.ZERO,FRICTION * delta)
+	
 	# Executa o movimento considerando as colisões.
 	move_and_slide()
-	# Solicita à FSM que avalie uma possível transição.
+	# Atualiza a máquina de estados.
 	state_machine.update_state()
 	# Atualiza a orientação dos elementos visuais.
 	_update_facing_direction()
@@ -114,22 +115,22 @@ func _on_state_changed(current_state: int, _previous_state: int):
 		animation_controller.update_player_animation(current_state)
 
 # ------------------------------------------------------------------------------
-# INTEGRAÇÃO COM DIÁLOGO (usada pelo NPC/objetos e pelos estados)
-const ESTADO_NORMAL := "EstadoNormal"
-const ESTADO_DIALOGO := "EstadoDialogo"
-
-# Chamado pelo EstadoDialogo: sem input, apenas freia até parar.
-func frear(delta: float) -> void:
-	velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-
-# O NPC só inicia uma conversa se o jogador estiver no estado normal.
+# Verifica se o jogador pode conversar.
 func pode_dialogar() -> bool:
-	return fsm_dialogo != null and fsm_dialogo.is_in_state(ESTADO_NORMAL)
+	
+	if state_machine == null:
+		return false
+		
+	return (
+		state_machine.is_in_state(PlayerStateMachine.PlayerState.IDLE)
+		or state_machine.is_in_state(PlayerStateMachine.PlayerState.WALK))
 
+# Inicia o diálogo.
 func iniciar_dialogo() -> void:
-	if fsm_dialogo:
-		fsm_dialogo.transition_to(ESTADO_DIALOGO)
+	if state_machine != null:
+		state_machine.start_dialogue()
 
+# Encerra o diálogo.
 func encerrar_dialogo() -> void:
-	if fsm_dialogo:
-		fsm_dialogo.transition_to(ESTADO_NORMAL)
+	if state_machine != null:
+		state_machine.end_dialogue()
