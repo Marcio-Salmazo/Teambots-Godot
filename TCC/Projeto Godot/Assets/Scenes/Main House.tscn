@@ -59,6 +59,9 @@
 [ext_resource type="Texture2D" uid="uid://yv4uywsxqvhm" path="res://Assets/Raw Sprites/Characters/npc2/2.png" id="49_hyr21"]
 [ext_resource type="Texture2D" uid="uid://cr1oolm34jvfu" path="res://Assets/Raw Sprites/Characters/npc3/1.png" id="50_4ci64"]
 [ext_resource type="Texture2D" uid="uid://dqi4py7bgoru5" path="res://Assets/Raw Sprites/Characters/npc3/4.png" id="51_hyr21"]
+[ext_resource type="Texture2D" uid="uid://6lemcmrg05q3" path="res://Assets/Fantasma/ghost_sheet.png" id="52_ghost"]
+[ext_resource type="Script" uid="uid://pf0bhmpr7hya" path="res://Assets/Fantasma/fantasma.gd" id="53_fantasma"]
+[ext_resource type="Script" uid="uid://bw13pxi8bveid" path="res://Assets/Fantasma/area_fantasma.gd" id="55_area2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw8cj"]
 size = Vector2(71, 95)
@@ -114,6 +117,56 @@ animations = [{
 "name": &"Player Walk",
 "speed": 4.0
 }]
+
+[sub_resource type="Animation" id="Animation_ghreset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ghmov"]
+resource_name = "mov_ghost"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghost"]
+_data = {
+&"RESET": SubResource("Animation_ghreset"),
+&"mov_ghost": SubResource("Animation_ghmov")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghcontato"]
+size = Vector2(44, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghperto"]
+size = Vector2(154, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghmedio"]
+size = Vector2(308, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghlonge"]
+size = Vector2(600, 560)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ur34d"]
 size = Vector2(62, 92)
@@ -336,6 +389,65 @@ limit_right = 865
 position_smoothing_enabled = true
 script = ExtResource("13_7ramn")
 player = NodePath("../Player")
+
+[node name="Ghost" type="Sprite2D" parent="." unique_id=1743920561 node_paths=PackedStringArray("alvo")]
+visible = false
+z_index = 3
+texture_filter = 1
+position = Vector2(-413, -53)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("52_ghost")
+hframes = 4
+script = ExtResource("53_fantasma")
+alvo = NodePath("../Player/Player")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ghost" unique_id=1743920601]
+libraries/ = SubResource("AnimationLibrary_ghost")
+autoplay = &"mov_ghost"
+
+[node name="Area Contato" type="Area2D" parent="Ghost" unique_id=1743920602 node_paths=PackedStringArray("alvo")]
+scale = Vector2(0.6666667, 0.6666667)
+script = ExtResource("55_area2d")
+alvo = NodePath("..")
+deslocamento = Vector2(0, 18)
+causa_contato = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area Contato" unique_id=1743920603]
+shape = SubResource("RectangleShape2D_ghcontato")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Ghost/Area Contato" unique_id=1743920604]
+
+[node name="Area Audio Perto" type="Area2D" parent="Ghost" unique_id=1743920605 node_paths=PackedStringArray("alvo")]
+scale = Vector2(0.6666667, 0.6666667)
+script = ExtResource("55_area2d")
+alvo = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area Audio Perto" unique_id=1743920606]
+shape = SubResource("RectangleShape2D_ghperto")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Ghost/Area Audio Perto" unique_id=1743920607]
+
+[node name="Area Audio Medio" type="Area2D" parent="Ghost" unique_id=1743920608 node_paths=PackedStringArray("alvo")]
+scale = Vector2(0.6666667, 0.6666667)
+script = ExtResource("55_area2d")
+alvo = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area Audio Medio" unique_id=1743920609]
+shape = SubResource("RectangleShape2D_ghmedio")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Ghost/Area Audio Medio" unique_id=1743920610]
+volume_db = -6.02
+
+[node name="Area Audio Longe" type="Area2D" parent="Ghost" unique_id=1743920611 node_paths=PackedStringArray("alvo")]
+scale = Vector2(0.6666667, 0.6666667)
+script = ExtResource("55_area2d")
+alvo = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area Audio Longe" unique_id=1743920612]
+shape = SubResource("RectangleShape2D_ghlonge")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Ghost/Area Audio Longe" unique_id=1743920613]
+volume_db = -12.04
 
 [node name="Room" type="Node2D" parent="." unique_id=958032959]
 position = Vector2(21, 250)
@@ -672,3 +784,12 @@ sprite_frames = SubResource("SpriteFrames_ok48b")
 autoplay = "default"
 frame_progress = 0.24914083
 flip_h = true
+
+[connection signal="body_entered" from="Ghost/Area Contato" to="Ghost/Area Contato" method="_on_body_entered"]
+[connection signal="body_exited" from="Ghost/Area Contato" to="Ghost/Area Contato" method="_on_body_exited"]
+[connection signal="body_entered" from="Ghost/Area Audio Perto" to="Ghost/Area Audio Perto" method="_on_body_entered"]
+[connection signal="body_exited" from="Ghost/Area Audio Perto" to="Ghost/Area Audio Perto" method="_on_body_exited"]
+[connection signal="body_entered" from="Ghost/Area Audio Medio" to="Ghost/Area Audio Medio" method="_on_body_entered"]
+[connection signal="body_exited" from="Ghost/Area Audio Medio" to="Ghost/Area Audio Medio" method="_on_body_exited"]
+[connection signal="body_entered" from="Ghost/Area Audio Longe" to="Ghost/Area Audio Longe" method="_on_body_entered"]
+[connection signal="body_exited" from="Ghost/Area Audio Longe" to="Ghost/Area Audio Longe" method="_on_body_exited"]
