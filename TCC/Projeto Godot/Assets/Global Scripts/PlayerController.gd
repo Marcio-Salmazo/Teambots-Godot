@@ -71,10 +71,10 @@ func processar_movimento(delta):
 
 	# Recebe os comandos nos quatro sentidos.
 	var direction := Input.get_vector(
-		"ui_left",
-		"ui_right",
-		"ui_up",
-		"ui_down")
+		"mov_esquerda",
+		"mov_direita",
+		"mov_cima",
+		"mov_baixo")
 
 	# Atualiza a direção horizontal.
 	if direction.x != 0:
