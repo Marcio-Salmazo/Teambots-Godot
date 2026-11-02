@@ -1,67 +1,61 @@
-# ==============================================================================
-# PLAYER CONTROLLER - TOP DOWN
-# ==============================================================================
-
+# CONTROLA O COMPORTAMENTO DO JOGADOR
 class_name PlayerController
 extends CharacterBody2D
 
 
-# ==============================================================================
-# REFERÊNCIAS EXTERNAS
-# ==============================================================================
-
+# ------------------------------------------------------------------------------
+# REFERÊNCIAS À COMPONENTES EXTERNOS E GLOBAIS
 @export var animation_controller_path: NodePath
 @onready var animation_controller = get_node_or_null(animation_controller_path)
-
 @export var state_machine_path: NodePath
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
-# ==============================================================================
-# REFERÊNCIAS INTERNAS
-# ==============================================================================
-
+# ------------------------------------------------------------------------------
+# REFERÊNCIAS À COMPONENTES INTERNOS DA CENA
 @onready var visuals = $"Player Visuals"
 @onready var spr_rotator = $"Player Visuals/Player Sprite"
 @onready var sprite = $"Player Visuals/Player Sprite/AnimatedSprite2D (player)"
 
+# ------------------------------------------------------------------------------
+# CONSTANTES E VARIÁVEIS
 const SPEED := 125.0
 const ACCELERATION := 250.0
 const FRICTION := 800.0
-
 # 1 = direita | -1 = esquerda
 var facing_direction: int = -1
 
 # ------------------------------------------------------------------------------
-# INICIALIZAÇÃO
+# FUNÇÃO DE INICIALIZAÇÃO
 func _ready() -> void:
 	
+	# Modo de movimentação flutuante para perspectivas top-down
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
-	
-	# Conecta a máquina de estados às animações.
+	# Verifica a presença de uma FSM
 	if state_machine == null:
 		push_error("PlayerController: StateMachine não encontrada.")
 		return
-		
+	
+	# Conecta o sinal da FSM à função _on_state_changed
 	state_machine.state_changed.connect(_on_state_changed)
-		
-	# Inicializa a animação Idle.
+	# Executa manualmente o método de atualização dos estados para animações
 	_on_state_changed(state_machine.current_state,
 					state_machine.previous_state)
 
 # ------------------------------------------------------------------------------
 # LOOP PRINCIPAL DE FÍSICA
 func _physics_process(delta: float) -> void:
+	
+	# _physics_process() é executada repetidamente em intervalos controlados
+	# Verifica a presença de uma FSM
 	if state_machine == null:
 		return
 	
 	# Verifica se o jogador pode se movimentar.
 	if state_machine.can_move():
-	
 		# Processa os comandos de movimentação.
 		processar_movimento(delta)
-	
 	else:
-		 # Durante o diálogo, desacelera até parar.
+		# Desacelera até parar.
 		velocity = velocity.move_toward(Vector2.ZERO,FRICTION * delta)
 	
 	# Executa o movimento considerando as colisões.
@@ -80,8 +74,7 @@ func processar_movimento(delta):
 		"ui_left",
 		"ui_right",
 		"ui_up",
-        "ui_down"
-	)
+		"ui_down")
 
 	# Atualiza a direção horizontal.
 	if direction.x != 0:
@@ -98,7 +91,6 @@ func processar_movimento(delta):
 	velocity.y = move_toward(velocity.y, target_velocity.y,
 		(ACCELERATION if direction.y != 0 else FRICTION) * delta)
 
-
 # ------------------------------------------------------------------------------
 # ATUALIZAÇÃO DA DIREÇÃO
 func _update_facing_direction():
@@ -109,20 +101,18 @@ func _update_facing_direction():
 # ------------------------------------------------------------------------------
 # ALTERAÇÃO DE ESTADOS
 func _on_state_changed(current_state: int, _previous_state: int):
-
+	# Opera como uma ponte entre a FSM e o controlador de animações.
 	# Atualiza o controlador de animações.
 	if animation_controller:
 		animation_controller.update_player_animation(current_state)
 
 # ------------------------------------------------------------------------------
-# Verifica se o jogador pode conversar.
+# FUNÇÕES DE CONTROLE DO DIÁLOGO
 func pode_dialogar() -> bool:
-	
 	if state_machine == null:
 		return false
-		
-	return (
-		state_machine.is_in_state(PlayerStateMachine.PlayerState.IDLE)
+
+	return (state_machine.is_in_state(PlayerStateMachine.PlayerState.IDLE)
 		or state_machine.is_in_state(PlayerStateMachine.PlayerState.WALK))
 
 # Inicia o diálogo.

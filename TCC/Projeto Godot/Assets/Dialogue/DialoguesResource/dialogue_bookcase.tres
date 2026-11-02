@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://cicud7l3kvyt7"]
+
+[ext_resource type="Script" uid="uid://cy34ykfuwqx4f" path="res://Assets/Dialogue/DialogueData.gd" id="1_knoxd"]
+
+[resource]
+script = ExtResource("1_knoxd")
+speaker = "Estante de Livros:"
+lines = Array[String](["Tantos livros velhos...", "Diria que era desperdício, se ao menos eu lesse de vez em quando."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"

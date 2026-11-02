@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cfoe815w7ywyr" path="res://Assets/Raw Sprites/House/Sprite-0017.png" id="4_2n8qu"]
 [ext_resource type="Texture2D" uid="uid://cb2isnpa80vdg" path="res://Assets/Raw Sprites/House/Sprite-0015.png" id="5_44fq3"]
 [ext_resource type="Texture2D" uid="uid://crxesq3dw20do" path="res://Assets/Raw Sprites/House/Sprite-0008.png" id="6_joswn"]
-[ext_resource type="Script" uid="uid://diphekvk8ayyk" path="res://Assets/Dialog/InteractableDialog.gd" id="7_38qfh"]
+[ext_resource type="Script" uid="uid://diphekvk8ayyk" path="res://Assets/Dialogue/InteractableDialogue.gd" id="7_38qfh"]
+[ext_resource type="Resource" uid="uid://cicud7l3kvyt7" path="res://Assets/Dialogue/DialoguesResource/dialogue_bookcase.tres" id="7_eptvl"]
 [ext_resource type="Texture2D" uid="uid://dlfpgd53sdi5h" path="res://Assets/Raw Sprites/House/Sprite-0005.png" id="7_opsea"]
-[ext_resource type="Resource" uid="uid://djot4pqs4vjgm" path="res://Assets/Dialog/DialoguesResource/dialogue_plant.tres" id="8_t1bdh"]
+[ext_resource type="Resource" uid="uid://djot4pqs4vjgm" path="res://Assets/Dialogue/DialoguesResource/dialogue_plant.tres" id="8_t1bdh"]
 [ext_resource type="Texture2D" uid="uid://cxoqbg5jxrk3m" path="res://Assets/Raw Sprites/House/Sprite-0019.png" id="8_v3cpa"]
 [ext_resource type="Texture2D" uid="uid://cbdqfnnb7p01t" path="res://Assets/Raw Sprites/House/Sprite-46.png" id="9_258im"]
 [ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Global Scripts/PlayerController.gd" id="10_6wcw1"]
@@ -207,10 +208,13 @@ texture_filter = 3
 position = Vector2(823, -24)
 texture = ExtResource("4_2n8qu")
 
-[node name="Bookcase" type="Sprite2D" parent="Corridor" unique_id=950010498]
+[node name="Bookcase" type="Sprite2D" parent="Corridor" unique_id=950010498 node_paths=PackedStringArray("interaction_area")]
 texture_filter = 3
 position = Vector2(555, -60)
 texture = ExtResource("5_44fq3")
+script = ExtResource("7_38qfh")
+dialogue_data = ExtResource("7_eptvl")
+interaction_area = NodePath("StaticBody2D/CollisionShape2D/Area2D")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Corridor/Bookcase" unique_id=536284343]
 collision_layer = 2

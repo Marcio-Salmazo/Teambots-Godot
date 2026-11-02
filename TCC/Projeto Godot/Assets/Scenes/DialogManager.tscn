@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://burfvtveym111"]
 
-[ext_resource type="Script" uid="uid://dvgjw7wdo20gv" path="res://Assets/Dialog/DialogManager.gd" id="1_nuy14"]
+[ext_resource type="Script" uid="uid://dvgjw7wdo20gv" path="res://Assets/Dialogue/DialogueManager.gd" id="1_nuy14"]
+[ext_resource type="FontFile" uid="uid://qrooqay23mye" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="2_ow0t7"]
 
 [node name="DialogManager" type="CanvasLayer" unique_id=1671979640]
+layer = 2
 script = ExtResource("1_nuy14")
 
-[node name="DialogPanel" type="PanelContainer" parent="." unique_id=1134248018]
+[node name="DialoguePanel" type="PanelContainer" parent="." unique_id=1134248018]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -17,12 +19,25 @@ offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="VBox Container" type="Node" parent="DialogPanel" unique_id=1806473671]
+[node name="MarginContainer" type="MarginContainer" parent="DialoguePanel" unique_id=1066877929]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
 
-[node name="Speaker Label" type="Label" parent="DialogPanel/VBox Container" unique_id=1879524680]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="VBox Container" type="VBoxContainer" parent="DialoguePanel/MarginContainer" unique_id=1650650569]
+layout_mode = 2
+theme_override_constants/separation = 24
 
-[node name="Dialog Text" type="Label" parent="DialogPanel/VBox Container" unique_id=2054094219]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Speaker Label" type="Label" parent="DialoguePanel/MarginContainer/VBox Container" unique_id=1879524680]
+layout_mode = 2
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("2_ow0t7")
+theme_override_font_sizes/font_size = 20
+
+[node name="Dialog Text" type="Label" parent="DialoguePanel/MarginContainer/VBox Container" unique_id=2054094219]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ow0t7")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3

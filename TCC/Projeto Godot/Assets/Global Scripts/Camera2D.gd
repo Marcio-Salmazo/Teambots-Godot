@@ -1,5 +1,4 @@
 extends Camera2D
-
 # REFERÊNCIA AO PLAYER
 @export var player: CharacterBody2D
 
