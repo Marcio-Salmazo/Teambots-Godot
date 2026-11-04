@@ -25,6 +25,16 @@ const FRICTION := 800.0
 var facing_direction: int = -1
 
 # ------------------------------------------------------------------------------
+# PENALIDADE CAUSADA PELO FANTASMA (PERMANENTE: não há recuperação)
+# Multiplica a velocidade: 1.0 = normal. Cada toque do fantasma reduz o fator.
+var fator_debuff: float = 1.0
+# Piso do fator: o jogador nunca fica abaixo desse valor da velocidade base.
+# Com 0.0 o jogador pararia de vez (e na casa não há dash para escapar).
+@export_range(0.0, 1.0, 0.05) var fator_minimo: float = 0.0
+# Guarda o tween do feedback visual para não acumular vários ao levar golpes seguidos.
+var _tween_piscar: Tween
+
+# ------------------------------------------------------------------------------
 # FUNÇÃO DE INICIALIZAÇÃO
 func _ready() -> void:
 	
@@ -80,8 +90,8 @@ func processar_movimento(delta):
 	if direction.x != 0:
 		facing_direction = -1 * int(sign(direction.x))
 
-	# Calcula a velocidade desejada.
-	var target_velocity := direction * SPEED
+	# Calcula a velocidade desejada (SPEED é a base; o fantasma reduz o fator).
+	var target_velocity := direction * SPEED * fator_debuff
 
 	# Aplica aceleração ou fricção no eixo X.
 	velocity.x = move_toward(velocity.x, target_velocity.x,
@@ -124,3 +134,19 @@ func iniciar_dialogo() -> void:
 func encerrar_dialogo() -> void:
 	if state_machine != null:
 		state_machine.end_dialogue()
+
+# ------------------------------------------------------------------------------
+# PENALIDADE DO FANTASMA
+# Chamada pelo fantasma (area_2d.gd / hitbox_fantasma.gd) quando ele toca o jogador.
+# Sem imunidade: o fantasma some depois do toque, então cada toque vale um golpe.
+func levar_penalidade(quantidade: float) -> void:
+	fator_debuff = maxf(fator_minimo, fator_debuff - quantidade)
+	_piscar()
+
+# Feedback visual: o sprite fica preto e volta ao normal.
+func _piscar() -> void:
+	if _tween_piscar != null and _tween_piscar.is_valid():
+		_tween_piscar.kill()
+	sprite.modulate = Color.BLACK
+	_tween_piscar = create_tween()
+	_tween_piscar.tween_property(sprite, "modulate", Color.WHITE, 0.4)

@@ -1,0 +1,344 @@
+[gd_scene format=4 uid="uid://dgy4xrpmp5mc2"]
+
+[ext_resource type="TileSet" uid="uid://3whdgl2uh6vg" path="res://Assets/Tiles/House Tiles/house Backgrounds.tres" id="1_3cpnv"]
+[ext_resource type="Texture2D" uid="uid://cycxdm85o81wq" path="res://Assets/Raw Sprites/House/Sprite-0026.png" id="2_djn83"]
+[ext_resource type="Texture2D" uid="uid://ccwlpnomp08a3" path="res://Assets/Raw Sprites/House/Sprite-0007.png" id="3_d8ahe"]
+[ext_resource type="Texture2D" uid="uid://odcuvr48vnbj" path="res://Assets/Raw Sprites/House/Sprite-0020.png" id="4_d4gnh"]
+[ext_resource type="Texture2D" uid="uid://cxoqbg5jxrk3m" path="res://Assets/Raw Sprites/House/Sprite-0019.png" id="5_4roq2"]
+[ext_resource type="Texture2D" uid="uid://bjbktws6jdq1j" path="res://Assets/Raw Sprites/House/Sprite-0018.png" id="6_k0stv"]
+[ext_resource type="Texture2D" uid="uid://fi1n40j68sy2" path="res://Assets/Raw Sprites/House/Sprite-0042.png" id="7_8rcf4"]
+[ext_resource type="Texture2D" uid="uid://dsy8yn0mnidx" path="res://Assets/Raw Sprites/House/Sprite-0010.png" id="8_81sau"]
+[ext_resource type="Texture2D" uid="uid://deu4ll6ajc4nc" path="res://Assets/Raw Sprites/House/Sprite-0011.png" id="9_a38g4"]
+[ext_resource type="Texture2D" uid="uid://bwpatknfc7grs" path="res://Assets/Raw Sprites/House/Sprite-0012.png" id="10_l62ay"]
+[ext_resource type="Texture2D" uid="uid://cjf2kfnfqo6ym" path="res://Assets/Raw Sprites/House/Sprite-0013.png" id="11_j5r3a"]
+[ext_resource type="Texture2D" uid="uid://dpr8rgwvj4jk7" path="res://Assets/Raw Sprites/House/Sprite-0009.png" id="12_bqmyg"]
+[ext_resource type="Texture2D" uid="uid://dxroh13sqie58" path="res://Assets/Raw Sprites/House/Sprite-0006.png" id="13_42fnp"]
+[ext_resource type="Texture2D" uid="uid://cb2isnpa80vdg" path="res://Assets/Raw Sprites/House/Sprite-0015.png" id="14_dqgw8"]
+[ext_resource type="Texture2D" uid="uid://bjfx0cohnrtly" path="res://Assets/Raw Sprites/House/Sprite-0034.png" id="15_rkdyk"]
+[ext_resource type="Texture2D" uid="uid://dqc2ll13piiec" path="res://Assets/Raw Sprites/House/fullWindow.png" id="16_jpais"]
+[ext_resource type="Texture2D" uid="uid://bs3uch0m3jnk3" path="res://Assets/Raw Sprites/Characters/npc2/1.png" id="17_aouxd"]
+[ext_resource type="Texture2D" uid="uid://yv4uywsxqvhm" path="res://Assets/Raw Sprites/Characters/npc2/2.png" id="18_g7q81"]
+[ext_resource type="Texture2D" uid="uid://cr1oolm34jvfu" path="res://Assets/Raw Sprites/Characters/npc3/1.png" id="19_yi4ue"]
+[ext_resource type="Texture2D" uid="uid://dqi4py7bgoru5" path="res://Assets/Raw Sprites/Characters/npc3/4.png" id="20_ysamd"]
+[ext_resource type="Texture2D" uid="uid://qf6he0hppu3d" path="res://Assets/Raw Sprites/Characters/npc1/2.png" id="21_v2kgk"]
+[ext_resource type="Texture2D" uid="uid://bcyh7ape7upax" path="res://Assets/Raw Sprites/Characters/npc1/1.png" id="22_1ain8"]
+[ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Global Scripts/PlayerController.gd" id="23_j5r3a"]
+[ext_resource type="Texture2D" uid="uid://b1sdvoo6kwhs5" path="res://Assets/Raw Sprites/Characters/player/Player Idle.png" id="24_bqmyg"]
+[ext_resource type="Texture2D" uid="uid://b8mc8lj4lurty" path="res://Assets/Raw Sprites/Characters/player/Player Idle 2.png" id="25_42fnp"]
+[ext_resource type="Texture2D" uid="uid://bla0vo41unnld" path="res://Assets/Raw Sprites/Characters/player/Player Walk 2.png" id="26_dqgw8"]
+[ext_resource type="Texture2D" uid="uid://dajq1unxgjsdd" path="res://Assets/Raw Sprites/Characters/player/Player Walk 4.png" id="27_rkdyk"]
+[ext_resource type="Texture2D" uid="uid://bagi1nsa1dym5" path="res://Assets/Raw Sprites/Characters/player/Player Walk 3.png" id="28_jpais"]
+[ext_resource type="Texture2D" uid="uid://d4kdbkadcfxh" path="res://Assets/Raw Sprites/Characters/player/Player Walk.png" id="29_aouxd"]
+[ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Global Scripts/StateMachine.gd" id="30_g7q81"]
+[ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Global Scripts/AnimationsController.gd" id="31_yi4ue"]
+[ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Global Scripts/Camera2D.gd" id="32_ysamd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4m7g"]
+size = Vector2(175, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrjam"]
+size = Vector2(71, 92)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_togsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_aouxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g7q81")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_usr6n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_yi4ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ysamd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vfiak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_v2kgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1ain8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2kgk"]
+size = Vector2(14.129, 9.499966)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ain8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_bqmyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_bqmyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_42fnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_42fnp")
+}],
+"loop": true,
+"name": &"Player Idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_dqgw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_rkdyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_jpais")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_aouxd")
+}],
+"loop": true,
+"name": &"Player Walk",
+"speed": 4.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1745090257]
+
+[node name="Party Hall" type="Node2D" parent="." unique_id=263334076]
+
+[node name="Background" type="TileMapLayer" parent="Party Hall" unique_id=270050376]
+texture_filter = 3
+tile_map_data = PackedByteArray("AAAAABAALgAAAAAAAAAAABEALgAAAAEAAAAAABIALgAAAAIAAAAAABMALgAAAAMAAAAAABQALgAAAAQAAAABABAALgABAAAAAAABABEALgABAAEAAAABABIALgABAAIAAAABABMALgABAAMAAAABABQALgABAAQAAAACABAALgACAAAAAAACABEALgACAAEAAAACABIALgACAAIAAAACABMALgACAAMAAAACABQALgACAAQAAAADABAALgADAAAAAAADABEALgADAAEAAAADABIALgADAAIAAAADABMALgADAAMAAAADABQALgADAAQAAAAEABAALgAEAAAAAAAEABEALgAEAAEAAAAEABIALgAEAAIAAAAEABMALgAEAAMAAAAEABQALgAEAAQAAAAFABAALgAFAAAAAAAFABEALgAFAAEAAAAFABIALgAFAAIAAAAFABMALgAFAAMAAAAFABQALgAFAAQAAAAGABAALgAGAAAAAAAGABEALgAGAAEAAAAGABIALgAGAAIAAAAGABMALgAGAAMAAAAGABQALgAGAAQAAAAHABAALgAHAAAAAAAHABEALgAHAAEAAAAHABIALgAHAAIAAAAHABMALgAHAAMAAAAHABQALgAHAAQAAAAIABAALgAIAAAAAAAIABEALgAIAAEAAAAIABIALgAIAAIAAAAIABMALgAIAAMAAAAIABQALgAIAAQAAAAJABAALgAJAAAAAAAJABEALgAJAAEAAAAJABIALgAJAAIAAAAJABMALgAJAAMAAAAJABQALgAJAAQAAAAKABAALgAKAAAAAAAKABEALgAKAAEAAAAKABIALgAKAAIAAAAKABMALgAKAAMAAAAKABQALgAKAAQAAAALABAALgALAAAAAAALABEALgALAAEAAAALABIALgALAAIAAAALABMALgALAAMAAAALABQALgALAAQAAAAMABAALgAAAAAAAAAMABEALgAAAAEAAAAMABIALgAAAAIAAAAMABMALgAAAAMAAAAMABQALgAAAAQAAAANABAALgABAAAAAAANABEALgABAAEAAAANABIALgABAAIAAAANABMALgABAAMAAAANABQALgABAAQAAAAOABAALgACAAAAAAAOABEALgACAAEAAAAOABIALgACAAIAAAAOABMALgACAAMAAAAOABQALgACAAQAAAAPABAALgADAAAAAAAPABEALgADAAEAAAAPABIALgADAAIAAAAPABMALgADAAMAAAAPABQALgADAAQAAAAQABAALgAEAAAAAAAQABEALgAEAAEAAAAQABIALgAEAAIAAAAQABMALgAEAAMAAAAQABQALgAEAAQAAAARABAALgAFAAAAAAARABEALgAFAAEAAAARABIALgAFAAIAAAARABMALgAFAAMAAAARABQALgAFAAQAAAASABAALgAGAAAAAAASABEALgAGAAEAAAASABIALgAGAAIAAAASABMALgAGAAMAAAASABQALgAGAAQAAAATABAALgAHAAAAAAATABEALgAHAAEAAAATABIALgAHAAIAAAATABMALgAHAAMAAAATABQALgAHAAQAAAAUABAALgAIAAAAAAAUABEALgAIAAEAAAAUABIALgAIAAIAAAAUABMALgAIAAMAAAAUABQALgAIAAQAAAAVABAALgAJAAAAAAAVABEALgAJAAEAAAAVABIALgAJAAIAAAAVABMALgAJAAMAAAAVABQALgAJAAQAAAAWABAALgAKAAAAAAAWABEALgAKAAEAAAAWABIALgAKAAIAAAAWABMALgAKAAMAAAAWABQALgAKAAQAAAAXABAALgALAAAAAAAXABEALgALAAEAAAAXABIALgALAAIAAAAXABMALgALAAMAAAAXABQALgALAAQAAAAYABAALgAAAAAAAAAYABEALgAAAAEAAAAYABIALgAAAAIAAAAYABMALgAAAAMAAAAYABQALgAAAAQAAAAZABAALgABAAAAAAAZABEALgABAAEAAAAZABIALgABAAIAAAAZABMALgABAAMAAAAZABQALgABAAQAAAAaABAALgACAAAAAAAaABEALgACAAEAAAAaABIALgACAAIAAAAaABMALgACAAMAAAAaABQALgACAAQAAAAbABQALgAGAAEAAAAbABMALgAGAAEAAAAbABIALgAGAAEAAAAbABEALgAGAAEAAAAbABAALgAGAAEAAAAbABUALgAGAAEAAAD//xAALgAGAAEAAAD//xEALgAGAAEAAAD//xIALgAGAAEAAAD//xMALgAGAAEAAAD//xQALgAGAAEAAAD//xUALgAGAAEAAAAAABUALgAAAAQAACABABUALgABAAQAACACABUALgACAAQAACADABUALgADAAQAACAEABUALgAEAAQAACAFABUALgAFAAQAACAGABUALgAGAAQAACAHABUALgAHAAQAACAIABUALgAIAAQAACAJABUALgAJAAQAACAKABUALgAKAAQAACALABUALgALAAQAACAMABUALgAAAAQAACANABUALgABAAQAACAOABUALgACAAQAACAPABUALgADAAQAACAQABUALgAEAAQAACARABUALgAFAAQAACASABUALgAGAAQAACATABUALgAHAAQAACAUABUALgAIAAQAACAVABUALgAJAAQAACAWABUALgAKAAQAACAXABUALgALAAQAACAAABYALgAAAAMAAAABABYALgABAAMAAAACABYALgACAAMAAAADABYALgADAAMAAAAEABYALgAEAAMAAAAFABYALgAFAAMAAAAGABYALgAGAAMAAAAHABYALgAHAAMAAAAIABYALgAIAAMAAAAJABYALgAJAAMAAAAKABYALgAKAAMAAAALABYALgALAAMAAAAMABYALgAAAAMAAAANABYALgABAAMAAAAOABYALgACAAMAAAAPABYALgADAAMAAAAQABYALgAEAAMAAAARABYALgAFAAMAAAASABYALgAGAAMAAAATABYALgAHAAMAAAAUABYALgAIAAMAAAAVABYALgAJAAMAAAAWABYALgAKAAMAAAAXABYALgALAAMAAAAYABYALgAAAAMAAAAZABYALgABAAMAAAAaABYALgACAAMAAAAbABYALgADAAIAAAD//xYALgADAAIAAAAYABUALgAGAAQAACAZABUALgAHAAQAACAaABUALgAIAAQAACA=")
+tile_set = ExtResource("1_3cpnv")
+
+[node name="Door" type="Sprite2D" parent="Party Hall" unique_id=384107103]
+texture_filter = 3
+position = Vector2(735, 593)
+texture = ExtResource("2_djn83")
+
+[node name="Table" type="Sprite2D" parent="Party Hall" unique_id=1025424742]
+z_index = 3
+texture_filter = 3
+position = Vector2(615, 667)
+texture = ExtResource("3_d8ahe")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Party Hall/Table" unique_id=866857203]
+z_index = 2
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Party Hall/Table/StaticBody2D" unique_id=1878288388]
+z_index = 2
+position = Vector2(-43.5, 11.5)
+shape = SubResource("RectangleShape2D_a4m7g")
+
+[node name="Table2" type="Sprite2D" parent="Party Hall/Table" unique_id=1613802501]
+z_index = 2
+texture_filter = 3
+position = Vector2(-88, 0)
+texture = ExtResource("3_d8ahe")
+
+[node name="Photo" type="Sprite2D" parent="Party Hall" unique_id=540548921]
+texture_filter = 3
+position = Vector2(350, 584)
+texture = ExtResource("4_d4gnh")
+
+[node name="Photo" type="Sprite2D" parent="Party Hall/Photo" unique_id=1166602981]
+position = Vector2(25, -12)
+texture = ExtResource("5_4roq2")
+
+[node name="Photo2" type="Sprite2D" parent="Party Hall/Photo" unique_id=180547923]
+position = Vector2(2, -21)
+texture = ExtResource("6_k0stv")
+
+[node name="Door2" type="Sprite2D" parent="Party Hall" unique_id=1730956192]
+texture_filter = 3
+position = Vector2(283, 594)
+texture = ExtResource("7_8rcf4")
+
+[node name="Food" type="Sprite2D" parent="Party Hall" unique_id=534593944]
+z_index = 3
+texture_filter = 3
+position = Vector2(0, 5)
+
+[node name="Cake" type="Sprite2D" parent="Party Hall/Food" unique_id=1518688490]
+z_index = 2
+position = Vector2(522, 634)
+texture = ExtResource("8_81sau")
+
+[node name="Soda" type="Sprite2D" parent="Party Hall/Food" unique_id=403116499]
+z_index = 2
+position = Vector2(626, 634)
+texture = ExtResource("9_a38g4")
+
+[node name="Flags" type="Sprite2D" parent="Party Hall/Food" unique_id=398219800]
+position = Vector2(570, 530)
+texture = ExtResource("10_l62ay")
+
+[node name="Candy" type="Sprite2D" parent="Party Hall/Food" unique_id=799301634]
+z_index = 2
+position = Vector2(550, 648)
+texture = ExtResource("11_j5r3a")
+
+[node name="Candy" type="Sprite2D" parent="Party Hall/Food/Candy" unique_id=634241876]
+position = Vector2(6, 0)
+texture = ExtResource("11_j5r3a")
+
+[node name="Candy2" type="Sprite2D" parent="Party Hall/Food/Candy" unique_id=1644425549]
+position = Vector2(12, 0)
+texture = ExtResource("11_j5r3a")
+
+[node name="Candy3" type="Sprite2D" parent="Party Hall/Food/Candy" unique_id=1651613708]
+position = Vector2(18, 0)
+texture = ExtResource("11_j5r3a")
+
+[node name="Candy4" type="Sprite2D" parent="Party Hall/Food/Candy" unique_id=1889069903]
+position = Vector2(3, -5)
+texture = ExtResource("11_j5r3a")
+
+[node name="Candy5" type="Sprite2D" parent="Party Hall/Food/Candy" unique_id=1506508685]
+position = Vector2(-3, -5)
+texture = ExtResource("11_j5r3a")
+
+[node name="Candy6" type="Sprite2D" parent="Party Hall/Food/Candy" unique_id=1208903519]
+position = Vector2(-6, 0)
+texture = ExtResource("11_j5r3a")
+
+[node name="Candy7" type="Sprite2D" parent="Party Hall/Food/Candy" unique_id=1177668288]
+position = Vector2(9, -5)
+texture = ExtResource("11_j5r3a")
+
+[node name="Candy8" type="Sprite2D" parent="Party Hall/Food/Candy" unique_id=1367861585]
+position = Vector2(15, -5)
+texture = ExtResource("11_j5r3a")
+
+[node name="Chips" type="Sprite2D" parent="Party Hall/Food" unique_id=1866835589]
+z_index = 2
+position = Vector2(601, 641)
+texture = ExtResource("12_bqmyg")
+
+[node name="Ballons" type="Sprite2D" parent="Party Hall/Food" unique_id=245433837]
+z_index = -1
+position = Vector2(494, 577)
+texture = ExtResource("13_42fnp")
+
+[node name="Ballons" type="Sprite2D" parent="Party Hall/Food/Ballons" unique_id=157320761]
+z_index = -1
+position = Vector2(151, 0)
+texture = ExtResource("13_42fnp")
+
+[node name="Bookshelf" type="Sprite2D" parent="Party Hall" unique_id=652540310]
+texture_filter = 3
+position = Vector2(200, 611)
+texture = ExtResource("14_dqgw8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Party Hall/Bookshelf" unique_id=1550453928]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Party Hall/Bookshelf/StaticBody2D" unique_id=1032022195]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_rrjam")
+
+[node name="Switch" type="Sprite2D" parent="Party Hall" unique_id=1528526042]
+texture_filter = 3
+position = Vector2(770, 601)
+texture = ExtResource("15_rkdyk")
+
+[node name="FullWindow" type="Sprite2D" parent="Party Hall" unique_id=1447863421]
+texture_filter = 3
+position = Vector2(828, 575)
+texture = ExtResource("16_jpais")
+
+[node name="NPC2" type="AnimatedSprite2D" parent="Party Hall" unique_id=16515527]
+z_index = 1
+texture_filter = 3
+position = Vector2(678, 614.00006)
+scale = Vector2(0.12, 0.12)
+sprite_frames = SubResource("SpriteFrames_togsy")
+autoplay = "default"
+
+[node name="NPC3" type="AnimatedSprite2D" parent="Party Hall" unique_id=1743993635]
+z_index = 1
+texture_filter = 3
+position = Vector2(621, 609.00006)
+scale = Vector2(0.12, 0.12)
+sprite_frames = SubResource("SpriteFrames_usr6n")
+autoplay = "default"
+
+[node name="NPC1" type="AnimatedSprite2D" parent="Party Hall" unique_id=1186763581]
+z_index = 1
+texture_filter = 3
+position = Vector2(469, 613.00006)
+scale = Vector2(0.12, 0.12)
+sprite_frames = SubResource("SpriteFrames_vfiak")
+autoplay = "default"
+flip_h = true
+
+[node name="Player" type="Node" parent="." unique_id=1938137472]
+
+[node name="Player" type="CharacterBody2D" parent="Player" unique_id=1786405635]
+physics_interpolation_mode = 1
+z_index = 2
+position = Vector2(99.00001, 651.9999)
+scale = Vector2(2.5, 2.5)
+collision_mask = 2
+floor_constant_speed = true
+floor_snap_length = 5.0
+script = ExtResource("23_j5r3a")
+animation_controller_path = NodePath("Animations Controller")
+state_machine_path = NodePath("StateMachine")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Player" unique_id=1817066444]
+position = Vector2(0.5, 7.306015)
+scale = Vector2(0.637, 0.696)
+shape = SubResource("RectangleShape2D_v2kgk")
+
+[node name="Player Visuals" type="Node2D" parent="Player/Player" unique_id=491384772]
+
+[node name="Player Sprite" type="Node2D" parent="Player/Player/Player Visuals" unique_id=50052797]
+
+[node name="AnimatedSprite2D (player)" type="AnimatedSprite2D" parent="Player/Player/Player Visuals/Player Sprite" unique_id=720597495]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(0.04, 0.04)
+sprite_frames = SubResource("SpriteFrames_1ain8")
+animation = &"Player Walk"
+speed_scale = 3.0
+
+[node name="StateMachine" type="Node" parent="Player/Player" unique_id=280300471]
+script = ExtResource("30_g7q81")
+
+[node name="Animations Controller" type="Node" parent="Player/Player" unique_id=1207355224]
+script = ExtResource("31_yi4ue")
+player_sprite_path = NodePath("../Player Visuals/Player Sprite/AnimatedSprite2D (player)")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=800255046 node_paths=PackedStringArray("player")]
+physics_interpolation_mode = 1
+position = Vector2(99.00001, 650)
+scale = Vector2(2.5, 2.5)
+offset = Vector2(0, -26)
+zoom = Vector2(3.78, 3.78)
+process_callback = 0
+limit_left = 0
+limit_right = 865
+position_smoothing_enabled = true
+script = ExtResource("32_ysamd")
+player = NodePath("../Player")
