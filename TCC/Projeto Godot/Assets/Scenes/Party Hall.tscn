@@ -22,16 +22,16 @@
 [ext_resource type="Texture2D" uid="uid://dqi4py7bgoru5" path="res://Assets/Raw Sprites/Characters/npc3/4.png" id="20_ysamd"]
 [ext_resource type="Texture2D" uid="uid://qf6he0hppu3d" path="res://Assets/Raw Sprites/Characters/npc1/2.png" id="21_v2kgk"]
 [ext_resource type="Texture2D" uid="uid://bcyh7ape7upax" path="res://Assets/Raw Sprites/Characters/npc1/1.png" id="22_1ain8"]
-[ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Global Scripts/PlayerController.gd" id="23_j5r3a"]
+[ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Scripts/PlayerController.gd" id="23_j5r3a"]
 [ext_resource type="Texture2D" uid="uid://b1sdvoo6kwhs5" path="res://Assets/Raw Sprites/Characters/player/Player Idle.png" id="24_bqmyg"]
 [ext_resource type="Texture2D" uid="uid://b8mc8lj4lurty" path="res://Assets/Raw Sprites/Characters/player/Player Idle 2.png" id="25_42fnp"]
 [ext_resource type="Texture2D" uid="uid://bla0vo41unnld" path="res://Assets/Raw Sprites/Characters/player/Player Walk 2.png" id="26_dqgw8"]
 [ext_resource type="Texture2D" uid="uid://dajq1unxgjsdd" path="res://Assets/Raw Sprites/Characters/player/Player Walk 4.png" id="27_rkdyk"]
 [ext_resource type="Texture2D" uid="uid://bagi1nsa1dym5" path="res://Assets/Raw Sprites/Characters/player/Player Walk 3.png" id="28_jpais"]
 [ext_resource type="Texture2D" uid="uid://d4kdbkadcfxh" path="res://Assets/Raw Sprites/Characters/player/Player Walk.png" id="29_aouxd"]
-[ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Global Scripts/StateMachine.gd" id="30_g7q81"]
-[ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Global Scripts/AnimationsController.gd" id="31_yi4ue"]
-[ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Global Scripts/Camera2D.gd" id="32_ysamd"]
+[ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Scripts/StateMachine.gd" id="30_g7q81"]
+[ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="31_yi4ue"]
+[ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="32_ysamd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4m7g"]
 size = Vector2(175, 41)
@@ -48,7 +48,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_g7q81")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -62,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_ysamd")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 3.0
 }]
@@ -76,7 +76,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("22_1ain8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -99,7 +99,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("25_42fnp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Player Idle",
 "speed": 1.0
 }, {
@@ -116,7 +116,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("29_aouxd")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Player Walk",
 "speed": 4.0
 }]
@@ -242,6 +242,7 @@ texture = ExtResource("13_42fnp")
 
 [node name="Ballons" type="Sprite2D" parent="Party Hall/Food/Ballons" unique_id=157320761]
 z_index = -1
+texture_filter = 3
 position = Vector2(151, 0)
 texture = ExtResource("13_42fnp")
 
