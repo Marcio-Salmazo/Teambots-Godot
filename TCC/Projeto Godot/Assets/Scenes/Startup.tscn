@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bpf6n5rwauqrc"]
+
+[ext_resource type="Texture2D" uid="uid://b17hdf5jyl1ho" path="res://Assets/Raw Sprites/Backgrounds/VortexBG.png" id="2_6y20c"]
+[ext_resource type="Shader" uid="uid://24hkkweln4x0" path="res://Assets/Scenes/vignette.gdshader" id="2_34xdb"]
+[ext_resource type="Script" uid="uid://cqq8dynonyurb" path="res://Assets/Scripts/SpriteTilt.gd" id="3_6y20c"]
+[ext_resource type="Script" uid="uid://b10hvlol74226" path="res://Assets/Dialogue/StartupDialogue.gd" id="4_xw4rl"]
+[ext_resource type="Texture2D" uid="uid://ds6g1ewfs2dhj" path="res://Assets/Raw Sprites/Backgrounds/Grito.png" id="5_oxwxb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wmblj"]
+shader = ExtResource("2_34xdb")
+shader_parameter/darkness = 0.70000003325
+shader_parameter/vignette_strength = 0.70000003325
+shader_parameter/vignette_radius = 0.35000001336512
+shader_parameter/vignette_softness = 0.50000002305148
+shader_parameter/shadow_tint = Color(0.035, 0.015, 0.055, 1)
+
+[node name="Startup" type="Node2D" unique_id=1837423242]
+
+[node name="Effects" type="CanvasLayer" parent="." unique_id=954861463]
+
+[node name="ColorRect" type="ColorRect" parent="Effects" unique_id=835194646]
+material = SubResource("ShaderMaterial_wmblj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=334446965]
+physics_interpolation_mode = 1
+scale = Vector2(2.5, 2.5)
+process_callback = 0
+limit_enabled = false
+limit_left = 0
+limit_top = -9999888
+limit_right = 865
+limit_bottom = 10000112
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2125665689]
+texture_filter = 1
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("2_6y20c")
+script = ExtResource("3_6y20c")
+rotation_amplitude = 0.15
+rotation_speed = 1.0
+movement_speed = 3.0
+scale_amplitude = 0.005
+scale_speed = 1.0
+
+[node name="StartupDialogue" type="CanvasLayer" parent="." unique_id=1792461790]
+script = ExtResource("4_xw4rl")
+
+[node name="DialogueRoot" type="Control" parent="StartupDialogue" unique_id=624253253]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="StartupDialogue/DialogueRoot" unique_id=1065742199]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogueText" type="RichTextLabel" parent="StartupDialogue/DialogueRoot/CenterContainer" unique_id=2072330221]
+texture_filter = 3
+custom_minimum_size = Vector2(1100, 200)
+layout_mode = 2
+bbcode_enabled = true
+text = "Space"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueHint" type="Label" parent="StartupDialogue/DialogueRoot" unique_id=1900064553]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="JumpscareImage" type="TextureRect" parent="StartupDialogue" unique_id=935698666]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_oxwxb")
+stretch_mode = 6
+
+[node name="JumpscareSound" type="AudioStreamPlayer" parent="StartupDialogue" unique_id=646404333]
+
+[node name="BlackScreen" type="ColorRect" parent="StartupDialogue" unique_id=1471584141]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

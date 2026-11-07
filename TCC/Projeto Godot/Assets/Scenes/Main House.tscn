@@ -12,17 +12,17 @@
 [ext_resource type="Resource" uid="uid://djot4pqs4vjgm" path="res://Assets/Dialogue/DialoguesResource/dialogue_plant.tres" id="8_t1bdh"]
 [ext_resource type="Texture2D" uid="uid://cxoqbg5jxrk3m" path="res://Assets/Raw Sprites/House/Sprite-0019.png" id="8_v3cpa"]
 [ext_resource type="Texture2D" uid="uid://cbdqfnnb7p01t" path="res://Assets/Raw Sprites/House/Sprite-46.png" id="9_258im"]
-[ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Global Scripts/PlayerController.gd" id="10_6wcw1"]
+[ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Scripts/PlayerController.gd" id="10_6wcw1"]
 [ext_resource type="Texture2D" uid="uid://b1sdvoo6kwhs5" path="res://Assets/Raw Sprites/Characters/player/Player Idle.png" id="11_o6k55"]
-[ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Global Scripts/AnimationsController.gd" id="12_0itf1"]
+[ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="12_0itf1"]
 [ext_resource type="Texture2D" uid="uid://b8mc8lj4lurty" path="res://Assets/Raw Sprites/Characters/player/Player Idle 2.png" id="12_38qfh"]
-[ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Global Scripts/StateMachine.gd" id="12_ur34d"]
-[ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Global Scripts/Camera2D.gd" id="13_7ramn"]
+[ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Scripts/StateMachine.gd" id="12_ur34d"]
+[ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="13_7ramn"]
 [ext_resource type="Texture2D" uid="uid://d4kdbkadcfxh" path="res://Assets/Raw Sprites/Characters/player/Player Walk.png" id="13_t1bdh"]
 [ext_resource type="Texture2D" uid="uid://bagi1nsa1dym5" path="res://Assets/Raw Sprites/Characters/player/Player Walk 3.png" id="14_eptvl"]
 [ext_resource type="Texture2D" uid="uid://dajq1unxgjsdd" path="res://Assets/Raw Sprites/Characters/player/Player Walk 4.png" id="15_78wat"]
 [ext_resource type="Texture2D" uid="uid://bla0vo41unnld" path="res://Assets/Raw Sprites/Characters/player/Player Walk 2.png" id="16_7x4vy"]
-[ext_resource type="PackedScene" uid="uid://caus1q04ljl0e" path="res://Assets/Scenes/corredor.tscn" id="90_fantasma"]
+[ext_resource type="PackedScene" uid="uid://caus1q04ljl0e" path="res://Assets/Scenes/Corridor.tscn" id="90_fantasma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw8cj"]
 size = Vector2(71, 95)
@@ -57,7 +57,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_38qfh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Player Idle",
 "speed": 1.0
 }, {
@@ -74,7 +74,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_t1bdh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Player Walk",
 "speed": 4.0
 }]
@@ -238,7 +238,4 @@ position_smoothing_enabled = true
 script = ExtResource("13_7ramn")
 player = NodePath("../Player")
 
-[node name="Fantasma" parent="." instance=ExtResource("90_fantasma")]
-
-[node name="Ghost" parent="Fantasma" index="0" node_paths=PackedStringArray("alvo")]
-alvo = NodePath("../../Player/Player")
+[node name="Fantasma" parent="." unique_id=945234758 instance=ExtResource("90_fantasma")]
