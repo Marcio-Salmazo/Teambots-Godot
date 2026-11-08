@@ -25,6 +25,23 @@ const FRICTION := 800.0
 var facing_direction: int = -1
 
 # ------------------------------------------------------------------------------
+# VARIÁVEIS DO DASH (ação "dash" no Mapa de Entrada: Shift ou botão direito do mouse)
+@export_category("Dash")
+@export var dash_speed: float = 400.0
+@export var dash_duration: float = 0.2
+@export var dash_cooldown: float = 0.6
+@export var ghost_trail_scene: PackedScene = preload("res://Assets/Scenes/ghost_trail.tscn")
+@export var ghost_interval: float = 0.05
+## Cor/opacidade inicial da sombra (o fade até 0 é feito em ghost_trail.gd).
+@export var ghost_color: Color = Color(0, 0, 0, 0.5)
+
+var is_dashing: bool = false
+var dash_direction: Vector2 = Vector2.ZERO
+var dash_timer: float = 0.0
+var dash_cooldown_timer: float = 0.0
+var ghost_timer: float = 0.0
+
+# ------------------------------------------------------------------------------
 # PENALIDADE CAUSADA PELO FANTASMA (PERMANENTE: não há recuperação)
 # Multiplica a velocidade: 1.0 = normal. Cada toque do fantasma reduz o fator.
 var fator_debuff: float = 1.0
@@ -60,8 +77,19 @@ func _physics_process(delta: float) -> void:
 	if state_machine == null:
 		return
 	
+	# Contagem regressiva do cooldown do dash.
+	if dash_cooldown_timer > 0.0:
+		dash_cooldown_timer -= delta
+
+	# Inicia o dash (não vale em cooldown, durante outro dash nem em diálogo).
+	if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0.0 and not is_dashing and state_machine.can_move():
+		_iniciar_dash()
+
+	if is_dashing:
+		# Durante o dash, a velocidade é controlada só pelo dash.
+		_processar_dash(delta)
 	# Verifica se o jogador pode se movimentar.
-	if state_machine.can_move():
+	elif state_machine.can_move():
 		# Processa os comandos de movimentação.
 		processar_movimento(delta)
 	else:
@@ -100,6 +128,82 @@ func processar_movimento(delta):
 	# Aplica aceleração ou fricção no eixo Y.
 	velocity.y = move_toward(velocity.y, target_velocity.y,
 		(ACCELERATION if direction.y != 0 else FRICTION) * delta)
+
+# ------------------------------------------------------------------------------
+# LÓGICA DO DASH
+## Direção horizontal para onde o personagem está olhando.
+## A arte original olha para a ESQUERDA e o sprite é espelhado (flip_h) quando
+## facing_direction < 0. Ou seja: facing_direction == -1 significa olhando para a DIREITA,
+## então o vetor precisa do sinal invertido.
+func _direcao_olhando() -> Vector2:
+	return Vector2(-facing_direction, 0)
+
+func _iniciar_dash() -> void:
+	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+
+	if direction == Vector2.ZERO:
+		# Sem input: dash para o lado em que o personagem está olhando.
+		direction = _direcao_olhando()
+	elif direction.x != 0:
+		# Com input: já vira o sprite para a direção do dash.
+		facing_direction = -1 * int(sign(direction.x))
+
+	dash_direction = direction.normalized()
+	is_dashing = true
+	dash_timer = dash_duration
+	dash_cooldown_timer = dash_cooldown
+	ghost_timer = 0.0
+	state_machine.change_state(PlayerStateMachine.PlayerState.DASH)
+
+func _processar_dash(delta: float) -> void:
+	dash_timer -= delta
+	velocity = dash_direction * dash_speed * fator_debuff
+
+	_gerar_ghost_trail(delta)
+
+	if dash_timer <= 0.0:
+		is_dashing = false
+		# Corta a velocidade que sobrou do dash. Sem isso, processar_movimento() reduz
+		# de dash_speed até SPEED a só ACCELERATION px/s² (~1 s deslizando na direção
+		# antiga, mesmo você já apontando para outro lado).
+		velocity = velocity.limit_length(SPEED * fator_debuff)
+		state_machine.change_state(PlayerStateMachine.PlayerState.IDLE)
+		state_machine.update_state()
+
+func _gerar_ghost_trail(delta: float) -> void:
+	ghost_timer -= delta
+	if ghost_timer > 0.0 or ghost_trail_scene == null:
+		return
+	ghost_timer = ghost_interval
+
+	var ghost := ghost_trail_scene.instantiate() as Node2D
+	var ghost_sprite := ghost.get_node_or_null("Sprite2D") as Sprite2D
+	if ghost_sprite == null:
+		push_warning("PlayerController: ghost_trail precisa ter um filho Sprite2D.")
+		ghost.free()
+		return
+
+	# Visual: congela o frame atual do player como silhueta.
+	ghost_sprite.texture = sprite.sprite_frames.get_frame_texture(sprite.animation, sprite.frame)
+	ghost_sprite.centered = sprite.centered
+	ghost_sprite.offset = sprite.offset
+	ghost_sprite.texture_filter = sprite.texture_filter
+	# Usa facing_direction (e não sprite.flip_h): o flip do sprite só é atualizado no
+	# fim do _physics_process, então no 1º frame do dash ele ainda estaria invertido.
+	ghost_sprite.flip_h = facing_direction < 0
+	ghost_sprite.modulate = ghost_color
+
+	# A sombra fica parada no mundo: desliga a interpolação de física (ligada no
+	# projeto) para ela não "deslizar" a partir da origem no primeiro frame.
+	ghost.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
+	ghost.z_index = z_index
+
+	var pai := get_parent()
+	pai.add_child(ghost)
+	# Copia posição, rotação e escala do sprite (player 2.5 x sprite 0.04 = 0.1).
+	ghost.global_transform = sprite.global_transform
+	# Mesmo z_index do player, mas logo ANTES dele na árvore => desenha atrás.
+	pai.move_child(ghost, get_index())
 
 # ------------------------------------------------------------------------------
 # ATUALIZAÇÃO DA DIREÇÃO

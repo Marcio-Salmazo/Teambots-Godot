@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://bagi1nsa1dym5" path="res://Assets/Raw Sprites/Characters/player/Player Walk 3.png" id="14_eptvl"]
 [ext_resource type="Texture2D" uid="uid://dajq1unxgjsdd" path="res://Assets/Raw Sprites/Characters/player/Player Walk 4.png" id="15_78wat"]
 [ext_resource type="Texture2D" uid="uid://bla0vo41unnld" path="res://Assets/Raw Sprites/Characters/player/Player Walk 2.png" id="16_7x4vy"]
-[ext_resource type="PackedScene" uid="uid://caus1q04ljl0e" path="res://Assets/Scenes/Corridor.tscn" id="90_fantasma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw8cj"]
 size = Vector2(71, 95)
@@ -237,5 +236,3 @@ limit_right = 865
 position_smoothing_enabled = true
 script = ExtResource("13_7ramn")
 player = NodePath("../Player")
-
-[node name="Fantasma" parent="." unique_id=945234758 instance=ExtResource("90_fantasma")]
