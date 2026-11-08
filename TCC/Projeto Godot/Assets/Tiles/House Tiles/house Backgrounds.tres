@@ -281,6 +281,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2f7j"]
 texture = ExtResource("3_kyt7x")
 texture_region_size = Vector2i(32, 32)
+use_texture_padding = false
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0

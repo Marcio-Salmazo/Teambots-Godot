@@ -10,7 +10,8 @@ enum PlayerState {
 	WALK,
 	JUMP,
 	FALL,
-	DIALOGUE
+	DIALOGUE,
+	DASH
 }
 
 # SINAL DE MUDANÇA DE ESTADO
@@ -38,9 +39,10 @@ func _ready() -> void:
 # CHAMADA CONTINUAMENTE PELO PLAYER CONTROLLER
 func update_state() -> void:
 
-	if player == null or dialogue_active:
+	# Durante o dash, quem controla o estado é o PlayerController.
+	if player == null or dialogue_active or current_state == PlayerState.DASH:
 		return
-	
+
 	# Variável que armazena o estado que deverá ser aplicado ao personagem.
 	var next_state: PlayerState
 

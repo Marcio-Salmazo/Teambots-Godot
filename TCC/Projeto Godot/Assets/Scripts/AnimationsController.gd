@@ -36,3 +36,5 @@ func update_player_animation(state: int):
 			_play("Player Walk")
 		PlayerStateMachine.PlayerState.DIALOGUE:
 			_play("Player Idle")
+		PlayerStateMachine.PlayerState.DASH:
+			_play("Player Walk")

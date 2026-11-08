@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://q2f6apheto22"]
+
+[ext_resource type="Script" uid="uid://cc4raq3p0qod6" path="res://Assets/Scenes/ghost_trail.gd" id="1_ldjv3"]
+
+[node name="GhostTrail" type="Node2D" unique_id=536603981]
+script = ExtResource("1_ldjv3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1503021764]
