@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://d1qgv5tfxejbb"]
 
 [ext_resource type="TileSet" uid="uid://3whdgl2uh6vg" path="res://Assets/Tiles/House Tiles/house Backgrounds.tres" id="1_qbvt2"]
+[ext_resource type="Script" uid="uid://ciun45kyib4if" path="res://Assets/Scenes/Levels.gd" id="1_vcnxq"]
 [ext_resource type="Texture2D" uid="uid://cydsxub8ph6sd" path="res://Assets/Raw Sprites/House/Sprite-0025.png" id="2_pt1vb"]
 [ext_resource type="Texture2D" uid="uid://c4dn5bg4eelov" path="res://Assets/Raw Sprites/House/Sprite-0030.png" id="3_sqr4b"]
 [ext_resource type="Texture2D" uid="uid://cx3jqupspijgc" path="res://Assets/Raw Sprites/House/Sprite-0031.png" id="4_vcnxq"]
@@ -30,6 +31,9 @@
 [ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Scripts/StateMachine.gd" id="28_d6nmp"]
 [ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="29_6ny5e"]
 [ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="30_33o0n"]
+[ext_resource type="PackedScene" uid="uid://c1vd456q8jd3n" path="res://Assets/Scenes/pathway.tscn" id="32_vcnxq"]
+[ext_resource type="Script" uid="uid://bkg1meulxw03h" path="res://Assets/Scenes/pathway.gd" id="33_7p0os"]
+[ext_resource type="Script" uid="uid://cjxeh4sgjbjjm" path="res://Assets/Scenes/creditos_pc.gd" id="34_7p0os"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ten4y"]
 size = Vector2(62, 92)
@@ -45,6 +49,9 @@ size = Vector2(27.5, 55.17108)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36cxt"]
 size = Vector2(60.833336, 42.673103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kj56o"]
+size = Vector2(91.25, 71.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i00gx"]
 size = Vector2(14.129, 9.499966)
@@ -86,7 +93,11 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqr4b"]
+size = Vector2(46, 108)
+
 [node name="Room Scene" type="Node2D" unique_id=2125208278]
+script = ExtResource("1_vcnxq")
 
 [node name="Room" type="Node2D" parent="." unique_id=610066994]
 position = Vector2(21, 259)
@@ -242,6 +253,13 @@ texture_filter = 3
 position = Vector2(-48, -2)
 texture = ExtResource("20_r5t31")
 
+[node name="Pc creditoss" type="Area2D" parent="Room" unique_id=589317979]
+script = ExtResource("34_7p0os")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Pc creditoss" unique_id=232469277]
+position = Vector2(249, 28)
+shape = SubResource("RectangleShape2D_kj56o")
+
 [node name="Player" type="Node" parent="." unique_id=1028142000]
 
 [node name="Player" type="CharacterBody2D" parent="Player" unique_id=117201474]
@@ -292,3 +310,24 @@ limit_right = 865
 position_smoothing_enabled = true
 script = ExtResource("30_33o0n")
 player = NodePath("../Player")
+
+[node name="Transicao" type="Node" parent="." unique_id=1152484883]
+
+[node name="pathway" parent="Transicao" unique_id=1064925599 instance=ExtResource("32_vcnxq")]
+position = Vector2(121, 353)
+collision_layer = 5
+script = ExtResource("33_7p0os")
+nome = "Main House"
+
+[node name="CollisionShape2D" parent="Transicao/pathway" index="0" unique_id=1027692109]
+position = Vector2(331, -94)
+shape = SubResource("RectangleShape2D_sqr4b")
+
+[node name="Node" type="Node" parent="." unique_id=1317457289]
+
+[node name="HousePos" type="Marker2D" parent="Node" unique_id=637693435]
+
+[connection signal="body_entered" from="Room/Pc creditoss" to="Room/Pc creditoss" method="_on_body_entered"]
+[connection signal="body_entered" from="Transicao/pathway" to="Transicao/pathway" method="_on_body_entered"]
+
+[editable path="Transicao/pathway"]

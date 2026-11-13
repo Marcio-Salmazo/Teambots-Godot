@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="Projeto_TCC"
-run/main_scene="uid://igp0met4r1pl"
+run/main_scene="uid://bpf6n5rwauqrc"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogueManager="*uid://burfvtveym111"
+Global="*uid://bwg4du8k7e1gn"
+AudioManager="*uid://cnr6kayyhm5rv"
 
 [display]
 

@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="12_44a6y"]
 [ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="13_j8wto"]
 [ext_resource type="AudioStream" uid="uid://dtaemtvtu8pei" path="res://Assets/Fantasma/tensao_fantasma.mp3" id="14_tensao"]
+[ext_resource type="PackedScene" uid="uid://c1vd456q8jd3n" path="res://Assets/Scenes/pathway.tscn" id="15_k7fsc"]
+[ext_resource type="Script" uid="uid://c3l0u3bpi857" path="res://Assets/Scenes/pathwayarea.gd" id="16_ktfpe"]
 
 [sub_resource type="Animation" id="Animation_ghreset"]
 length = 0.001
@@ -107,6 +109,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kj56o"]
 size = Vector2(1052, 345)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ai3r"]
+size = Vector2(148, 344)
 
 [node name="Node2D" type="Node2D" unique_id=1788938321]
 
@@ -226,7 +231,7 @@ player = NodePath("../Player")
 position = Vector2(12, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=876043887]
-position = Vector2(486, 235)
+position = Vector2(470, 55)
 shape = SubResource("RectangleShape2D_kj56o")
 debug_color = Color(0.44449422, 0.59697944, 0.091837145, 0.41960785)
 
@@ -244,6 +249,16 @@ position = Vector2(50, 251)
 [node name="Marker2D4" type="Marker2D" parent="spawn" unique_id=252117384 groups=["spawn_fantasma"]]
 position = Vector2(365, 232)
 
+[node name="Party Hall" parent="." unique_id=1064925599 instance=ExtResource("15_k7fsc")]
+position = Vector2(784, 51)
+collision_layer = 5
+script = ExtResource("16_ktfpe")
+nome = "Party Hall"
+
+[node name="CollisionShape2D" parent="Party Hall" index="0" unique_id=1027692109]
+position = Vector2(-431, 1)
+shape = SubResource("RectangleShape2D_4ai3r")
+
 [connection signal="body_entered" from="Ghost/Area Contato" to="Ghost/Area Contato" method="_on_body_entered"]
 [connection signal="body_exited" from="Ghost/Area Contato" to="Ghost/Area Contato" method="_on_body_exited"]
 [connection signal="body_entered" from="Ghost/Area Audio Perto" to="Ghost/Area Audio Perto" method="_on_body_entered"]
@@ -252,3 +267,6 @@ position = Vector2(365, 232)
 [connection signal="body_exited" from="Ghost/Area Audio Medio" to="Ghost/Area Audio Medio" method="_on_body_exited"]
 [connection signal="body_entered" from="Ghost/Area Audio Longe" to="Ghost/Area Audio Longe" method="_on_body_entered"]
 [connection signal="body_exited" from="Ghost/Area Audio Longe" to="Ghost/Area Audio Longe" method="_on_body_exited"]
+[connection signal="body_entered" from="Party Hall" to="Party Hall" method="_on_body_entered"]
+
+[editable path="Party Hall"]

@@ -109,10 +109,10 @@ func processar_movimento(delta):
 
 	# Recebe os comandos nos quatro sentidos.
 	var direction := Input.get_vector(
-		"ui_left",
-		"ui_right",
-		"ui_up",
-		"ui_down")
+		"mov_esquerda",
+		"mov_direita",
+		"mov_cima",
+		"mov_baixo")
 
 	# Atualiza a direção horizontal.
 	if direction.x != 0:
@@ -139,7 +139,7 @@ func _direcao_olhando() -> Vector2:
 	return Vector2(-facing_direction, 0)
 
 func _iniciar_dash() -> void:
-	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction := Input.get_vector("mov_esquerda", "mov_direita", "mov_cima", "mov_baixo")
 
 	if direction == Vector2.ZERO:
 		# Sem input: dash para o lado em que o personagem está olhando.
