@@ -40,7 +40,7 @@ size = Vector2(62, 92)
 [sub_resource type="Resource" id="Resource_joswn"]
 script = ExtResource("18_7p0os")
 speaker = "Armario"
-lines = Array[String](["sdffsfsfdfsfsf"])
+lines = Array[String](["Seu velho armário. Dentro dele há uma grande desorganização de roupas e outras coisas.", "Sobre o armário, mais lembranças de gostos passados. De alguma forma, agora você parece se identificar ainda mais com aqueles bonecos.", "Mas você já não liga mais para isso. "])
 metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5lwt"]
@@ -54,7 +54,7 @@ size = Vector2(67.083336, 35.833332)
 [sub_resource type="Resource" id="Resource_p7wp1"]
 script = ExtResource("18_7p0os")
 speaker = "cama"
-lines = Array[String](["adadadad"])
+lines = Array[String](["Sua bagunçada cama.", "Acima dela você deixou suas roupas desarrumadas.", "Você não quer arrumá-las.", "Na parede, os pôsteres te lembram de seus hobbies passados.", " Eles já não parecem tão interessantes. Porque você já não liga mais para isso."])
 metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pnui"]
@@ -63,13 +63,22 @@ size = Vector2(67.5, 40.833313)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7kujk"]
 size = Vector2(34.47396, 35.312546)
 
+[sub_resource type="Resource" id="Resource_vcnxq"]
+script = ExtResource("18_7p0os")
+speaker = "Puff"
+lines = Array[String]([" Seu Puff favorito. Você usava ele antigamente para poder alcançar sua prateleira. ", "Mas agora, para realizar até mesmo essa simples ação, faz a fadiga de seu corpo gritar mais alto.", " E você já não liga mais para isso."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p0os"]
+size = Vector2(49.40631, 49.479187)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeqmx"]
 size = Vector2(33.266136, 59.85681)
 
 [sub_resource type="Resource" id="Resource_t5lwt"]
 script = ExtResource("18_7p0os")
-speaker = "asd"
-lines = Array[String](["ewrwerewrwe", "sdefsfs"])
+speaker = "Créditos"
+lines = Array[String](["Teste", ""])
 metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36cxt"]
@@ -378,6 +387,18 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Puff/StaticBody2D" unique_id=864189208]
 position = Vector2(-10.65625, -3.8146973e-06)
 shape = SubResource("RectangleShape2D_7kujk")
+
+[node name="DialogueInteractable" type="Node2D" parent="Room/Puff" unique_id=1401380045]
+position = Vector2(-28.333332, -29.166666)
+script = ExtResource("17_sqr4b")
+dialogue_data = SubResource("Resource_vcnxq")
+metadata/_custom_type_script = "uid://bd6v2pbmfmr5i"
+
+[node name="Area2D" type="Area2D" parent="Room/Puff/DialogueInteractable" unique_id=909110539]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Puff/DialogueInteractable/Area2D" unique_id=671388934]
+position = Vector2(28.817749, 37.364594)
+shape = SubResource("RectangleShape2D_7p0os")
 
 [node name="Table" type="Sprite2D" parent="Room" unique_id=1304528778]
 texture_filter = 3

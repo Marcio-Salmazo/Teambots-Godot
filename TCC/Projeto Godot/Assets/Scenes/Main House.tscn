@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c1vd456q8jd3n" path="res://Assets/Scenes/pathway.tscn" id="6_ghq0b"]
 [ext_resource type="Script" uid="uid://bkg1meulxw03h" path="res://Assets/Scenes/pathway.gd" id="7_6bknb"]
 [ext_resource type="Texture2D" uid="uid://cb2isnpa80vdg" path="res://Assets/Raw Sprites/House/Sprite-0015.png" id="8_5vpow"]
+[ext_resource type="Script" uid="uid://diphekvk8ayyk" path="res://Assets/Dialogue/InteractableDialogue.gd" id="9_6wcw1"]
 [ext_resource type="Texture2D" uid="uid://cfoe815w7ywyr" path="res://Assets/Raw Sprites/House/Sprite-0017.png" id="9_xi6rq"]
 [ext_resource type="Texture2D" uid="uid://cxoqbg5jxrk3m" path="res://Assets/Raw Sprites/House/Sprite-0019.png" id="10_5y0eb"]
 [ext_resource type="Texture2D" uid="uid://odcuvr48vnbj" path="res://Assets/Raw Sprites/House/Sprite-0020.png" id="11_5277a"]
@@ -19,7 +20,6 @@
 [ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Scripts/StateMachine.gd" id="17_j70qc"]
 [ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="18_f7a8w"]
 [ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="19_0akcj"]
-[ext_resource type="Script" uid="uid://bd6v2pbmfmr5i" path="res://Assets/Scenes/interactable.gd" id="20_ab0h8"]
 [ext_resource type="Script" uid="uid://cy34ykfuwqx4f" path="res://Assets/Dialogue/DialogueData.gd" id="21_7p0a3"]
 [ext_resource type="Script" uid="uid://b0hnpmobbrg4" path="res://Assets/Scenes/escada.gd" id="54_escadagd"]
 
@@ -28,6 +28,36 @@ size = Vector2(46, 108)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tajiq"]
 size = Vector2(51, 111)
+
+[sub_resource type="Resource" id="Resource_fgajp"]
+script = ExtResource("21_7p0a3")
+speaker = "Porta"
+lines = Array[String](["O quarto de seus pais. Provavelmente não tem ninguém ali dentro, por conta de festa. ", "Mesmo não ligando, você sente que não deveria entrar."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai4ln"]
+size = Vector2(84, 98.9375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgajp"]
+size = Vector2(75.375, 96.125)
+
+[sub_resource type="Resource" id="Resource_0itf1"]
+script = ExtResource("21_7p0a3")
+speaker = "Armário"
+lines = Array[String](["Todos esses livros te lembram de todas as aventuras que você teve ao lê-los. ", "Mas agora, a empolgação de ler cada página, foi substituída por cansaço.", "Você até pensou em olhar dentro das gavetas a baixo. Mas você já não liga mais para isso."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ramn"]
+size = Vector2(109.75, 51.9375)
+
+[sub_resource type="Resource" id="Resource_6wcw1"]
+script = ExtResource("21_7p0a3")
+speaker = "Fotos"
+lines = Array[String](["Essas 3 fotos empoeiradas estão penduradas na parede desde que você lembre.", "São fotos com sua família, de alguns acontecimentos muito coloridos e divertidos em sua vida. ", "A foto que mais chama a atenção, é um quadro separado de você e de sua mãe.", "Mas agora, parece que o brilho e a cor que esses quadros possuíam, desapareceu."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0itf1"]
+size = Vector2(51.875, 108.96875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_joswn"]
 size = Vector2(58.84616, 24.727272)
@@ -201,15 +231,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Resource" id="Resource_v3cpa"]
-script = ExtResource("21_7p0a3")
-speaker = "Livros"
-lines = Array[String](["livros"])
-metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_so0ym"]
-size = Vector2(89, 115)
-
 [node name="MainHouse" type="Node2D" unique_id=572524228]
 script = ExtResource("1_2eiwk")
 
@@ -252,10 +273,41 @@ shape = SubResource("RectangleShape2D_v3cpa")
 position = Vector2(-0.5, 7.5)
 shape = SubResource("RectangleShape2D_tajiq")
 
+[node name="DialogueInteractable" type="Node2D" parent="Corridor/Sprite0021" unique_id=188616541 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(-4, 8)
+script = ExtResource("9_6wcw1")
+dialogue_data = SubResource("Resource_fgajp")
+interaction_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Corridor/Sprite0021/DialogueInteractable" unique_id=1810766852]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Sprite0021/DialogueInteractable/Area2D" unique_id=778765746]
+position = Vector2(20, -0.53125)
+shape = SubResource("RectangleShape2D_ai4ln")
+
 [node name="Sprite0015" type="Sprite2D" parent="Corridor" unique_id=1404641492]
 texture_filter = 1
 position = Vector2(143, -69)
 texture = ExtResource("8_5vpow")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Corridor/Sprite0015" unique_id=1720642257]
+position = Vector2(11, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Sprite0015/StaticBody2D" unique_id=307993880]
+position = Vector2(-11.6875, -10.0625)
+shape = SubResource("RectangleShape2D_fgajp")
+
+[node name="DialogueInteractable" type="Node2D" parent="Corridor/Sprite0015" unique_id=1900582756 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(-4, 8)
+script = ExtResource("9_6wcw1")
+dialogue_data = SubResource("Resource_0itf1")
+interaction_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Corridor/Sprite0015/DialogueInteractable" unique_id=210180142]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Sprite0015/DialogueInteractable/Area2D" unique_id=1354185331]
+position = Vector2(7.125, 22.96875)
+shape = SubResource("RectangleShape2D_7ramn")
 
 [node name="Sprite0018" type="Sprite2D" parent="Corridor" unique_id=763419132]
 z_index = 4
@@ -268,6 +320,18 @@ texture = ExtResource("9_xi6rq")
 texture_filter = 1
 position = Vector2(293, -98)
 texture = ExtResource("10_5y0eb")
+
+[node name="DialogueInteractable" type="Node2D" parent="Corridor/Sprite0019" unique_id=569391891 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(-4, 8)
+script = ExtResource("9_6wcw1")
+dialogue_data = SubResource("Resource_6wcw1")
+interaction_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Corridor/Sprite0019/DialogueInteractable" unique_id=500388597]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Sprite0019/DialogueInteractable/Area2D" unique_id=1925056297]
+position = Vector2(15.0625, 23.515625)
+shape = SubResource("RectangleShape2D_0itf1")
 
 [node name="Sprite0020" type="Sprite2D" parent="Corridor" unique_id=1407542049]
 texture_filter = 1
@@ -387,17 +451,6 @@ position = Vector2(50, -48)
 
 [node name="CorredorPos" type="Marker2D" parent="." unique_id=1843507896]
 position = Vector2(352, -10)
-
-[node name="DialogueInteractable" type="Node2D" parent="." unique_id=2080092215]
-script = ExtResource("20_ab0h8")
-dialogue_data = SubResource("Resource_v3cpa")
-metadata/_custom_type_script = "uid://bd6v2pbmfmr5i"
-
-[node name="Area2D" type="Area2D" parent="DialogueInteractable" unique_id=1277553444]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteractable/Area2D" unique_id=921168465]
-position = Vector2(145.5, -60.5)
-shape = SubResource("RectangleShape2D_so0ym")
 
 [node name="BanheiroPos" type="Marker2D" parent="." unique_id=200310670]
 position = Vector2(398, -72)
