@@ -272,11 +272,15 @@ texture_region_size = Vector2i(32, 32)
 2:4/0 = 0
 3:4/0 = 0
 4:4/0 = 0
+5:4/next_alternative_id = 2
 5:4/0 = 0
+5:4/1 = 1
 6:4/0 = 0
 7:4/0 = 0
 8:4/0 = 0
 9:4/0 = 0
+2:3/0 = 0
+3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2f7j"]
 texture = ExtResource("3_kyt7x")

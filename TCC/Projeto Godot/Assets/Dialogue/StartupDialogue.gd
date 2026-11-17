@@ -1,4 +1,3 @@
-
 extends CanvasLayer
 
 # REFERÊNCIAS À INTERFACE
@@ -6,12 +5,15 @@ extends CanvasLayer
 @onready var dialogue_text: RichTextLabel = $DialogueRoot/CenterContainer/DialogueText
 @onready var continue_hint: Label = $DialogueRoot/ContinueHint
 
+
 # CONFIGURAÇÕES DO TYPEWRITER
 @export_group("Typewriter")
 @export var characters_per_second: float = 25.0
+@export var nome: String
 
 var typing_active: bool = false
 var typing_progress: float = 0.0
+var hint_timer: float = 0.0
 
 # FADE IN
 @export_group("Fade In")
@@ -39,63 +41,54 @@ var dialogue_active: bool = false
 
 # DADOS DA NARRATIVA
 var dialogue_lines: Array[Dictionary] = [
-
 	{
 		"text": "VOCÊ SABE QUE NÃO ESTÁ BEM, NÉ?",
 		"size": 100,
 		"color": "#b3b3b3",
 		"font": "res://Assets/Fonts/CrimsonRitual.ttf"
 	},
-
 	{
 		"text": "Eu estou bem...",
 		"size": 40,
 		"color": "#787878",
 		"font": "res://Assets/Fonts/Pixelta.ttf"
 	},
-
 	{
 		"text": "É sério... eu estou bem...",
 		"size": 32,
 		"color": "#787878",
 		"font": "res://Assets/Fonts/Pixelta.ttf"
 	},
-
 	{
 		"text": "MAS VOCÊ SABE QUE NÃO ESTÁ BEM!",
 		"size": 80,
 		"color": "#b3b3b3",
 		"font": "res://Assets/Fonts/CrimsonRitual.ttf"
 	},
-	
 	{
 		"text": "EU ESTOU BEM!",
 		"size": 50,
 		"color": "#787878",
 		"font": "res://Assets/Fonts/Pixelta.ttf"
 	},
-	
 	{
 		"text": "Eu estou bem...!",
 		"size": 30,
 		"color": "#787878",
 		"font": "res://Assets/Fonts/Pixelta.ttf"
 	},
-	
 	{
 		"text": "eu estou bem...",
 		"size": 20,
 		"color": "#787878",
 		"font": "res://Assets/Fonts/Pixelta.ttf"
 	},
-	
 	{
 		"text": "Eu...",
 		"size": 15,
 		"color": "#787878",
 		"font": "res://Assets/Fonts/Pixelta.ttf"
 	},
-	
 	{
 		"text": "Eu... estou bem?",
 		"size": 12,
@@ -108,41 +101,32 @@ var dialogue_lines: Array[Dictionary] = [
 # INICIALIZAÇÃO
 
 func _ready() -> void:
-	
 	dialogue_text.bbcode_enabled = true
-	var bobbing_effect = load(
-	"res://Assets/Scripts/BobbingEffect.gd").new()
-	
+	var bobbing_effect = load("res://Assets/Scripts/BobbingEffect.gd").new()
 	dialogue_text.install_effect(bobbing_effect)
 	
 	dialogue_root.show()
+	continue_hint.hide() 
+	
 	dialogue_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	dialogue_text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	dialogue_index = 0
 	
-	# Inicialmente invisível
 	dialogue_root.modulate.a = 0.0
-	# Prepara a primeira fala
 	show_current_line()
-	# Aguarda antes de iniciar a transição
-	await get_tree().create_timer(initial_delay).timeout
-	# Cria o Fade-in
-	var tween = create_tween()
 	
-	tween.tween_property(dialogue_root, "modulate:a", 
-		1.0, fade_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	await get_tree().create_timer(initial_delay).timeout
+	
+	var tween = create_tween()
+	tween.tween_property(dialogue_root, "modulate:a", 1.0, fade_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		
-	# Aguarda o término da animação
 	await tween.finished
-	# Libera os comandos do jogador
 	dialogue_active = true
 	
 # --------------------------------------------------
 # RECEBE O COMANDO DO JOGADOR
 
-
 func _unhandled_input(event: InputEvent) -> void:
-	
 	if not dialogue_active:
 		return
 		
@@ -150,58 +134,40 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventKey and event.echo:
 			return
 
-		# Se ainda estiver digitando, revela tudo
+		# Pega a referência do Viewport ANTES de qualquer chance de mudar de cena
+		var vp = get_viewport()
+
 		if typing_active:
 			dialogue_text.visible_characters = -1
 			typing_active = false
-
-		# Caso contrário, avança
 		else:
 			advance_dialogue()
 		
-		get_viewport().set_input_as_handled()
+		# Verifica se a referência é válida antes de consumir o input
+		if vp:
+			vp.set_input_as_handled()
 
 # --------------------------------------------------
 # EXIBE A FALA ATUAL
 
 func show_current_line() -> void:
-
 	if dialogue_index >= dialogue_lines.size():
 		end_dialogue()
 		return
 
 	var line: Dictionary = dialogue_lines[dialogue_index]
 
-	# TEXTO COM EFEITO BOBBING
-	dialogue_text.parse_bbcode(
-		"[bobbing]" + line.get("text", "") + "[/bobbing]")
-
-	# Inicia o efeito de digitação
+	dialogue_text.parse_bbcode("[bobbing]" + line.get("text", "") + "[/bobbing]")
 	start_typing()
 
-	# TAMANHO
-	dialogue_text.add_theme_font_size_override(
-		"normal_font_size",
-		line.get("size", 28)
-	)
+	dialogue_text.add_theme_font_size_override("normal_font_size", line.get("size", 28))
+	dialogue_text.add_theme_color_override("default_color", Color(line.get("color", "#FFFFFF")))
 
-	# COR
-	dialogue_text.add_theme_color_override(
-		"default_color",
-		Color(line.get("color", "#FFFFFF"))
-	)
-
-	# FONTE PERSONALIZADA
 	var font_path: String = line.get("font", "")
-
 	if font_path != "":
 		var custom_font := load(font_path) as Font
-
 		if custom_font != null:
-			dialogue_text.add_theme_font_override(
-				"normal_font",
-				custom_font
-			)
+			dialogue_text.add_theme_font_override("normal_font", custom_font)
 	else:
 		dialogue_text.remove_theme_font_override("normal_font")
 
@@ -209,20 +175,25 @@ func show_current_line() -> void:
 # AVANÇA PARA A PRÓXIMA FALA
 
 func advance_dialogue() -> void:
-	
 	if ending_dialogue:
 		return
 
-	# Verifica se estamos na última frase
 	if dialogue_index >= dialogue_lines.size() - 1:
 		ending_dialogue = true
 		dialogue_active = false
-		
 		dialogue_root.hide()
-		trigger_jumpscare()
+		
+		# Faz o código pausar aqui e esperar a função inteira do jumpscare terminar
+		await trigger_jumpscare()
+		
+		# Se precisar de um tempo extra ALÉM do jumpscare (ex: 1.5 segundos de tela preta), 
+		# você pode adicionar um timer manual assim:
+		await get_tree().create_timer(1.5).timeout
+		
+		change_level()
+		
 		return
 
-	# Avança normalmente
 	dialogue_index += 1
 	show_current_line()
 
@@ -237,51 +208,53 @@ func end_dialogue() -> void:
 # VERIFICA SE A NARRATIVA ESTÁ ATIVA
 
 func is_dialogue_active() -> bool:
-
 	return dialogue_active
 
 # --------------------------------------------------
-# PROCESSO DE DIGITAÇÃO
 func _process(delta: float) -> void:
 	
 	if not typing_active:
+		if dialogue_active and not ending_dialogue:
+			hint_timer += delta
+			if hint_timer >= 5.0 and not continue_hint.visible:
+				continue_hint.show()
+		
+		if continue_hint.visible:
+			continue_hint.modulate.a = abs(sin(Time.get_ticks_msec() * 0.003))
+			
 		return
 		
 	typing_progress += delta * characters_per_second
 	var total_characters = dialogue_text.get_total_character_count()
-	dialogue_text.visible_characters = min(int(typing_progress), 
-		total_characters)
+	dialogue_text.visible_characters = min(int(typing_progress), total_characters)
 		
-	# Verifica se toda a fala já foi exibida
 	if dialogue_text.visible_characters >= total_characters:
 		typing_active = false
 
 # --------------------------------------------------
-# FUNÇÃO DE DIGITAÇÃO
 func start_typing() -> void:
-	
 	typing_progress = 0.0
 	dialogue_text.visible_characters = 0
 	typing_active = true
+	
+	hint_timer = 0.0
+	continue_hint.hide()
+	continue_hint.modulate.a = 1.0
 
 # --------------------------------------------------
 # FUNÇÃO DE GATILHO DO JUMPSCARE
 func trigger_jumpscare() -> void:
-	
-	# Aguarda antes do susto
 	await get_tree().create_timer(jumpscare_delay).timeout
 	
-	# Exibe a imagem e reproduz o som
 	jumpscare_image.show()
 	jumpscare_sound.play()
 	jumpscare_active = true
 
-	# Aguarda a duração do jumpscare
 	await get_tree().create_timer(jumpscare_duration).timeout
 
-	# Esconde a imagem
 	jumpscare_image.hide()
-
-	# Deixa a tela completamente preta
 	black_screen.show()
 	jumpscare_active = false
+
+func change_level():
+	get_tree().change_scene_to_file("res://Assets/Scenes/" + nome + ".tscn")
