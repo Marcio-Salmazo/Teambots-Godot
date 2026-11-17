@@ -39,8 +39,8 @@ size = Vector2(62, 92)
 
 [sub_resource type="Resource" id="Resource_joswn"]
 script = ExtResource("18_7p0os")
-speaker = "Armario"
-lines = Array[String](["sdffsfsfdfsfsf"])
+speaker = "Armário"
+lines = Array[String](["Seu velho armário. Dentro dele há uma grande desorganização de roupas e outras coisas.", "Sobre o armário, mais lembranças de gostos passados. De alguma forma, agora você parece se identificar ainda mais com aqueles bonecos.", "Mas você já não liga mais para isso. "])
 metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5lwt"]
@@ -48,13 +48,10 @@ metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ai3r"]
 size = Vector2(60, 88.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kspws"]
-size = Vector2(67.083336, 35.833332)
-
-[sub_resource type="Resource" id="Resource_p7wp1"]
+[sub_resource type="Resource" id="Resource_7p0os"]
 script = ExtResource("18_7p0os")
-speaker = "cama"
-lines = Array[String](["adadadad"])
+speaker = "Cama"
+lines = Array[String](["Sua bagunçada cama.", "Acima dela você deixou suas roupas desarrumadas.", "Você não quer arrumá-las.", "Na parede, os pôsteres te lembram de seus hobbies passados.", " Eles já não parecem tão interessantes. Porque você já não liga mais para isso."])
 metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pnui"]
@@ -62,6 +59,15 @@ size = Vector2(67.5, 40.833313)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7kujk"]
 size = Vector2(34.47396, 35.312546)
+
+[sub_resource type="Resource" id="Resource_uaky1"]
+script = ExtResource("18_7p0os")
+speaker = "Puff"
+lines = Array[String]([" Seu Puff favorito. Você usava ele antigamente para poder alcançar sua prateleira. ", "Mas agora, para realizar até mesmo essa simples ação, faz a fadiga de seu corpo gritar mais alto.", " E você já não liga mais para isso."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xu1a0"]
+size = Vector2(54.25, 61.031273)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeqmx"]
 size = Vector2(33.266136, 59.85681)
@@ -291,9 +297,10 @@ light_mask = 2
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_ten4y")
 
-[node name="Armario" type="Node2D" parent="Room/Wardrobe" unique_id=1512878946]
+[node name="Armario" type="Node2D" parent="Room/Wardrobe" unique_id=1512878946 node_paths=PackedStringArray("interaction_area")]
 script = ExtResource("17_sqr4b")
 dialogue_data = SubResource("Resource_joswn")
+interaction_area = NodePath("StaticBody2D/CollisionShape2D/Area2D")
 metadata/_custom_type_script = "uid://diphekvk8ayyk"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Room/Wardrobe/Armario" unique_id=858168304]
@@ -311,7 +318,7 @@ shape = SubResource("RectangleShape2D_4ai3r")
 
 [node name="Bed" type="Sprite2D" parent="Room" unique_id=1574860697]
 texture_filter = 3
-position = Vector2(27, 50)
+position = Vector2(27, 55)
 scale = Vector2(1.2, 1.2)
 
 [node name="bed" type="Sprite2D" parent="Room/Bed" unique_id=1194334090]
@@ -351,23 +358,29 @@ scale = Vector2(0.7291666, 0.7196216)
 skew = 0.14167345
 texture = ExtResource("6_vlwyy")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Room/Bed" unique_id=1798093029]
-position = Vector2(-1.6666679, -4.1666718)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Bed/StaticBody2D" unique_id=1155930037]
-position = Vector2(-4.375, -22.083344)
-shape = SubResource("RectangleShape2D_kspws")
-
-[node name="DialogueInteractable" type="Node2D" parent="Room/Bed" unique_id=870502170]
-position = Vector2(-28.333332, -29.166666)
+[node name="DialogueInteractable" type="Node2D" parent="Room/Bed" unique_id=870502170 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(-28.333332, -12.500008)
 script = ExtResource("17_sqr4b")
-dialogue_data = SubResource("Resource_p7wp1")
+dialogue_data = SubResource("Resource_7p0os")
+interaction_area = NodePath("Area2D")
 metadata/_custom_type_script = "uid://bd6v2pbmfmr5i"
 
 [node name="Area2D" type="Area2D" parent="Room/Bed/DialogueInteractable" unique_id=1339386817]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Bed/DialogueInteractable/Area2D" unique_id=1558768815]
+position = Vector2(22.083334, 10.4166565)
+shape = SubResource("RectangleShape2D_6pnui")
+
+[node name="DialogueInteractable2" type="Node2D" parent="Room/Bed" unique_id=1188273463 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(-28.333332, -29.166666)
+script = ExtResource("17_sqr4b")
+dialogue_data = SubResource("Resource_7p0os")
+interaction_area = NodePath("Area2D")
+metadata/_custom_type_script = "uid://bd6v2pbmfmr5i"
+
+[node name="Area2D" type="Area2D" parent="Room/Bed/DialogueInteractable2" unique_id=210915264]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Bed/DialogueInteractable2/Area2D" unique_id=1553837272]
 position = Vector2(22.083334, 10.4166565)
 shape = SubResource("RectangleShape2D_6pnui")
 
@@ -384,6 +397,18 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Puff/StaticBody2D" unique_id=864189208]
 position = Vector2(-10.65625, -3.8146973e-06)
 shape = SubResource("RectangleShape2D_7kujk")
+
+[node name="DialogueInteractable" type="Node2D" parent="Room/Puff" unique_id=1800643675 node_paths=PackedStringArray("interaction_area")]
+script = ExtResource("17_sqr4b")
+dialogue_data = SubResource("Resource_uaky1")
+interaction_area = NodePath("Area2D")
+metadata/_custom_type_script = "uid://bd6v2pbmfmr5i"
+
+[node name="Area2D" type="Area2D" parent="Room/Puff/DialogueInteractable" unique_id=312303008]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Puff/DialogueInteractable/Area2D" unique_id=762982415]
+position = Vector2(-1.9375, -0.484375)
+shape = SubResource("RectangleShape2D_xu1a0")
 
 [node name="Table" type="Sprite2D" parent="Room" unique_id=1304528778]
 texture_filter = 3

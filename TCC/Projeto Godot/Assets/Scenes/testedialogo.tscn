@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://e03gohtqid13"]
+
+[ext_resource type="Script" uid="uid://bd6v2pbmfmr5i" path="res://Assets/Scenes/interactable.gd" id="1_4c6j7"]
+[ext_resource type="Script" uid="uid://cy34ykfuwqx4f" path="res://Assets/Dialogue/DialogueData.gd" id="2_emg34"]
+
+[sub_resource type="Resource" id="Resource_i6vif"]
+script = ExtResource("2_emg34")
+speaker = "nome"
+lines = Array[String](["efef", "erfgergf", "erfref"])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcwxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhte1"]
+size = Vector2(79.811844, 76.76976)
+
+[sub_resource type="Resource" id="Resource_rnpw7"]
+script = ExtResource("2_emg34")
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xu1a0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uaky1"]
+
+[node name="Node2D" type="Node2D" unique_id=2085500441]
+
+[node name="Area Credito" type="Node2D" parent="." unique_id=1906406648 node_paths=PackedStringArray("interaction_area")]
+script = ExtResource("1_4c6j7")
+dialogue_data = SubResource("Resource_i6vif")
+interaction_area = NodePath("StaticBody2D/CollisionShape2D/Area2D")
+metadata/_custom_type_script = "uid://diphekvk8ayyk"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area Credito" unique_id=682607089]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area Credito/StaticBody2D" unique_id=1866232639]
+shape = SubResource("RectangleShape2D_hcwxp")
+
+[node name="Area2D" type="Area2D" parent="Area Credito/StaticBody2D/CollisionShape2D" unique_id=1907402623]
+position = Vector2(-1.0080414, -6.8895874)
+scale = Vector2(1, 0.9999999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area Credito/StaticBody2D/CollisionShape2D/Area2D" unique_id=179503335]
+position = Vector2(0, 6.889592)
+shape = SubResource("RectangleShape2D_uhte1")
+
+[node name="DialogueInteractable" type="Node2D" parent="." unique_id=190805496]
+script = ExtResource("1_4c6j7")
+dialogue_data = SubResource("Resource_rnpw7")
+metadata/_custom_type_script = "uid://bd6v2pbmfmr5i"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DialogueInteractable" unique_id=2064969746]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteractable/StaticBody2D" unique_id=92440221]
+shape = SubResource("RectangleShape2D_xu1a0")
+
+[node name="Area2D" type="Area2D" parent="DialogueInteractable/StaticBody2D/CollisionShape2D" unique_id=54022741]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteractable/StaticBody2D/CollisionShape2D/Area2D" unique_id=324394193]
+shape = SubResource("RectangleShape2D_uaky1")

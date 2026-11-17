@@ -1,0 +1,356 @@
+[gd_scene format=4 uid="uid://dtw1vlbrdsvis"]
+
+[ext_resource type="Texture2D" uid="uid://6lemcmrg05q3" path="res://Assets/Fantasma/ghost_sheet.png" id="1_j3drg"]
+[ext_resource type="Script" uid="uid://pf0bhmpr7hya" path="res://Assets/Fantasma/fantasma.gd" id="2_fp661"]
+[ext_resource type="Script" uid="uid://bw13pxi8bveid" path="res://Assets/Fantasma/area_fantasma.gd" id="3_rdfc2"]
+[ext_resource type="AudioStream" uid="uid://dtaemtvtu8pei" path="res://Assets/Fantasma/tensao_fantasma.mp3" id="14_tensao"]
+[ext_resource type="TileSet" uid="uid://bw0jib64oaf20" path="res://Assets/Raw Sprites/House Tiles/Corredor.tres" id="15_45qh7"]
+[ext_resource type="Texture2D" uid="uid://diih06plwrrsj" path="res://Assets/Raw Sprites/Corredor/Sprite-0005.png" id="16_44a6y"]
+[ext_resource type="Texture2D" uid="uid://b1ibsgbhcmaln" path="res://Assets/Raw Sprites/Corredor/Sprite-0009.png" id="16_53q5d"]
+[ext_resource type="Texture2D" uid="uid://bmo8sxio477h1" path="res://Assets/Raw Sprites/Corredor/Sprite-0006.png" id="17_4n25s"]
+[ext_resource type="Texture2D" uid="uid://nofdyardx30a" path="res://Assets/Raw Sprites/Corredor/Sprite-0007.png" id="18_1lo3c"]
+[ext_resource type="Texture2D" uid="uid://c48ige3wtghuk" path="res://Assets/Raw Sprites/Corredor/Sprite-0003.png" id="18_204ke"]
+[ext_resource type="Texture2D" uid="uid://c8cbw61xdylhv" path="res://Assets/Raw Sprites/Corredor/Sprite-0004.png" id="19_eosuo"]
+[ext_resource type="Texture2D" uid="uid://clp5nfappy8sj" path="res://Assets/Raw Sprites/Corredor/Sprite-0015.png" id="19_o7oge"]
+[ext_resource type="Texture2D" uid="uid://ddqj1vfufrxq2" path="res://Assets/Raw Sprites/Corredor/Sprite-0014.png" id="20_qmov7"]
+[ext_resource type="Texture2D" uid="uid://2e4co68popgi" path="res://Assets/Raw Sprites/Corredor/Sprite-0011.png" id="24_m44e3"]
+[ext_resource type="Texture2D" uid="uid://dyx3we37oxda1" path="res://Assets/Raw Sprites/Corredor/Sprite-0012.png" id="25_26ev0"]
+[ext_resource type="Texture2D" uid="uid://bfo31jfjhcd4y" path="res://Assets/Raw Sprites/Corredor/Sprite-0013.png" id="26_meebk"]
+[ext_resource type="Texture2D" uid="uid://efifjhbg5akt" path="res://Assets/Raw Sprites/Corredor/SpriteCinzaDoChao.jpeg" id="27_c6al5"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0002.png" id="c_Sprite0002"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0008.png" id="c_Sprite0008"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-8.png" id="c_Sprite8"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0017.png" id="c_Sprite0017"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0026.png" id="c_Sprite0026"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-000.png" id="c_Sprite000"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/7.png" id="c_7"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0010.png" id="c_Sprite0010"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0016.png" id="c_Sprite0016"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0021.png" id="c_Sprite0021"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0023.png" id="c_Sprite0023"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0025.png" id="c_Sprite0025"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0022.png" id="c_Sprite0022"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0024.png" id="c_Sprite0024"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0018.png" id="c_Sprite0018"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0019.png" id="c_Sprite0019"]
+[ext_resource type="Texture2D" path="res://Assets/Raw Sprites/Corredor/Sprite-0020.png" id="c_Sprite0020"]
+
+[sub_resource type="Animation" id="Animation_ghreset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ghmov"]
+resource_name = "mov_ghost"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oc8o0"]
+_data = {
+&"RESET": SubResource("Animation_ghreset"),
+&"mov_ghost": SubResource("Animation_ghmov")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cfns"]
+size = Vector2(44, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pif8"]
+size = Vector2(154, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgwxi"]
+size = Vector2(308, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ripfr"]
+size = Vector2(600, 560)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sorrisos"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("c_Sprite0018")
+}, {
+"duration": 1.0,
+"texture": ExtResource("c_Sprite0019")
+}, {
+"duration": 1.0,
+"texture": ExtResource("c_Sprite0020")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1788938321]
+
+[node name="Ghost" type="Sprite2D" parent="." unique_id=699752200 node_paths=PackedStringArray("alvo")]
+z_index = 3
+texture_filter = 1
+position = Vector2(1452, -141)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_j3drg")
+hframes = 4
+script = ExtResource("2_fp661")
+alvo = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ghost" unique_id=1816871402]
+libraries/ = SubResource("AnimationLibrary_oc8o0")
+autoplay = &"mov_ghost"
+
+[node name="Area Contato" type="Area2D" parent="Ghost" unique_id=925820514 node_paths=PackedStringArray("alvo")]
+scale = Vector2(0.6666667, 0.6666667)
+script = ExtResource("3_rdfc2")
+alvo = NodePath("..")
+deslocamento = Vector2(0, 18)
+causa_contato = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area Contato" unique_id=916200474]
+shape = SubResource("RectangleShape2D_0cfns")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Ghost/Area Contato" unique_id=1531756104]
+
+[node name="Area Audio Perto" type="Area2D" parent="Ghost" unique_id=1191434518 node_paths=PackedStringArray("alvo")]
+scale = Vector2(0.6666667, 0.6666667)
+script = ExtResource("3_rdfc2")
+alvo = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area Audio Perto" unique_id=591868667]
+shape = SubResource("RectangleShape2D_5pif8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Ghost/Area Audio Perto" unique_id=1270121384]
+stream = ExtResource("14_tensao")
+
+[node name="Area Audio Medio" type="Area2D" parent="Ghost" unique_id=1828921252 node_paths=PackedStringArray("alvo")]
+scale = Vector2(0.6666667, 0.6666667)
+script = ExtResource("3_rdfc2")
+alvo = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area Audio Medio" unique_id=1191588762]
+shape = SubResource("RectangleShape2D_pgwxi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Ghost/Area Audio Medio" unique_id=876990259]
+stream = ExtResource("14_tensao")
+volume_db = -6.02
+
+[node name="Area Audio Longe" type="Area2D" parent="Ghost" unique_id=110752000 node_paths=PackedStringArray("alvo")]
+scale = Vector2(0.6666667, 0.6666667)
+script = ExtResource("3_rdfc2")
+alvo = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area Audio Longe" unique_id=1240194996]
+shape = SubResource("RectangleShape2D_ripfr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Ghost/Area Audio Longe" unique_id=1985281182]
+stream = ExtResource("14_tensao")
+volume_db = -12.04
+
+[node name="spawn" type="Node" parent="." unique_id=8443408]
+
+[node name="Marker2D" type="Marker2D" parent="spawn" unique_id=1164506650 groups=["spawn_fantasma"]]
+position = Vector2(661, 1044)
+
+[node name="Marker2D2" type="Marker2D" parent="spawn" unique_id=640102695 groups=["spawn_fantasma"]]
+position = Vector2(1215, 1051)
+
+[node name="Marker2D3" type="Marker2D" parent="spawn" unique_id=1726048981 groups=["spawn_fantasma"]]
+position = Vector2(851, 1682)
+
+[node name="Marker2D4" type="Marker2D" parent="spawn" unique_id=252117384 groups=["spawn_fantasma"]]
+position = Vector2(1166, 1663)
+
+[node name="Corredor" type="TileMapLayer" parent="." unique_id=49958809]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAEABAAAAAAAAAAAAAEABEAAAAAAAEAAAAEABIAAAAAAAIAAAAEABMAAAAAAAMAAAAEABQAAAAAAAQAAAAFABAAAAABAAAAAAAFABEAAAABAAEAAAAFABIAAAABAAIAAAAFABMAAAABAAMAAAAFABQAAAABAAQAAAAGABAAAAACAAAAAAAGABEAAAACAAEAAAAGABIAAAACAAIAAAAGABMAAAACAAMAAAAGABQAAAACAAQAAAAHABAAAAADAAAAAAAHABEAAAADAAEAAAAHABIAAAADAAIAAAAHABQAAAADAAQAAAAIABAAAAAEAAAAAAAIABEAAAAEAAEAAAAIABIAAAAEAAIAAAAIABMAAAAEAAMAAAAIABQAAAAEAAQAAAAJABAAAAAFAAAAAAAJABEAAAAFAAEAAAAJABIAAAAFAAIAAAAJABMAAAAFAAMAAAAJABQAAAAFAAQAAAAKABAAAAAGAAAAAAAKABEAAAAGAAEAAAAKABIAAAAGAAIAAAAKABMAAAAGAAMAAAAKABQAAAAGAAQAAAALABAAAAAHAAAAAAALABEAAAAHAAEAAAALABIAAAAHAAIAAAALABMAAAAHAAMAAAALABQAAAAHAAQAAAAMABAAAAAIAAAAAAAMABEAAAAIAAEAAAAMABIAAAAIAAIAAAAMABMAAAAIAAMAAAAMABQAAAAIAAQAAAANABAAAAAJAAAAAAANABEAAAAJAAEAAAANABIAAAAJAAIAAAANABMAAAAJAAMAAAANABQAAAAJAAQAAAAOABAAAAAKAAAAAAAOABEAAAAKAAEAAAAOABIAAAAKAAIAAAAOABMAAAAKAAMAAAAOABQAAAAKAAQAAAAPABAAAAALAAAAAAAPABEAAAALAAEAAAAPABIAAAALAAIAAAAPABMAAAALAAMAAAAPABQAAAALAAQAAAAQABAAAAAMAAAAAAAQABEAAAAMAAEAAAAQABIAAAAMAAIAAAAQABMAAAAMAAMAAAAQABQAAAAMAAQAAAARABAAAAANAAAAAAARABEAAAANAAEAAAARABIAAAANAAIAAAARABMAAAANAAMAAAARABQAAAANAAQAAAASABAAAAAAAAAAAAASABEAAAAAAAEAAAASABIAAAAAAAIAAAASABMAAAAAAAMAAAASABQAAAAAAAQAAAATABAAAAABAAAAAAATABEAAAABAAEAAAATABIAAAABAAIAAAATABMAAAABAAMAAAATABQAAAABAAQAAAAUABAAAAACAAAAAAAUABEAAAACAAEAAAAUABIAAAACAAIAAAAUABMAAAACAAMAAAAUABQAAAACAAQAAAAVABAAAAADAAAAAAAVABEAAAADAAEAAAAVABIAAAADAAIAAAAVABMAAAADAAMAAAAVABQAAAADAAQAAAAWABAAAAAEAAAAAAAWABEAAAAEAAEAAAAWABIAAAAEAAIAAAAWABMAAAAEAAMAAAAWABQAAAAEAAQAAAAXABAAAAAFAAAAAAAXABEAAAAFAAEAAAAXABIAAAAFAAIAAAAXABMAAAAFAAMAAAAXABQAAAAFAAQAAAAYABAAAAAGAAAAAAAYABEAAAAGAAEAAAAYABIAAAAGAAIAAAAYABMAAAAGAAMAAAAYABQAAAAGAAQAAAAZABAAAAAHAAAAAAAZABEAAAAHAAEAAAAZABIAAAAHAAIAAAAZABMAAAAHAAMAAAAZABQAAAAHAAQAAAAaABAAAAAIAAAAAAAaABEAAAAIAAEAAAAaABIAAAAIAAIAAAAaABMAAAAIAAMAAAAaABQAAAAIAAQAAAAbABAAAAAJAAAAAAAbABEAAAAJAAEAAAAbABIAAAAJAAIAAAAbABMAAAAJAAMAAAAbABQAAAAJAAQAAAAcABAAAAAKAAAAAAAcABEAAAAKAAEAAAAcABIAAAAKAAIAAAAcABMAAAAKAAMAAAAcABQAAAAKAAQAAAAdABAAAAALAAAAAAAdABEAAAALAAEAAAAdABIAAAALAAIAAAAdABMAAAALAAMAAAAdABQAAAALAAQAAAAeABAAAAAMAAAAAAAeABEAAAAMAAEAAAAeABIAAAAMAAIAAAAeABMAAAAMAAMAAAAeABQAAAAMAAQAAAAfABAAAAANAAAAAAAfABEAAAANAAEAAAAfABIAAAANAAIAAAAfABMAAAANAAMAAAAfABQAAAANAAQAAAAgABAAAAAAAAAAAAAgABEAAAAAAAEAAAAgABIAAAAAAAIAAAAgABMAAAAAAAMAAAAgABQAAAAAAAQAAAAhABAAAAABAAAAAAAhABEAAAABAAEAAAAhABIAAAABAAIAAAAhABMAAAABAAMAAAAhABQAAAABAAQAAAAiABAAAAACAAAAAAAiABEAAAACAAEAAAAiABIAAAACAAIAAAAiABMAAAACAAMAAAAiABQAAAACAAQAAAAEABUAAAAAAAQAACAFABUAAAABAAQAACAGABUAAAACAAQAACAHABUAAAADAAQAACAIABUAAAAEAAQAACAJABUAAAAFAAQAACAKABUAAAAGAAQAACALABUAAAAHAAQAACAMABUAAAAIAAQAACANABUAAAAJAAQAACAOABUAAAAKAAQAACAPABUAAAALAAQAACAQABUAAAAMAAQAACARABUAAAANAAQAACASABUAAAAAAAQAACATABUAAAABAAQAACAUABUAAAACAAQAACAVABUAAAADAAQAACAWABUAAAAEAAQAACAXABUAAAAFAAQAACAYABUAAAAGAAQAACAZABUAAAAHAAQAACAaABUAAAAIAAQAACAbABUAAAAJAAQAACAcABUAAAAKAAQAACAdABUAAAALAAQAACAeABUAAAAMAAQAACAfABUAAAANAAQAACAgABUAAAAAAAQAACAhABUAAAABAAQAACAiABUAAAACAAQAACAHABMAAAADAAMAAAA=")
+tile_set = ExtResource("15_45qh7")
+
+[node name="CorredorArte" type="Node2D" parent="." unique_id=656043347]
+texture_filter = 1
+position = Vector2(128, 512)
+
+[node name="Fundo" type="Sprite2D" parent="CorredorArte" unique_id=64423586]
+position = Vector2(0, 0)
+texture = ExtResource("c_Sprite0002")
+centered = false
+
+[node name="Sprite0008" type="Sprite2D" parent="CorredorArte" unique_id=1031546279]
+position = Vector2(261, 128)
+texture = ExtResource("c_Sprite0008")
+centered = false
+
+[node name="Sprite8" type="Sprite2D" parent="CorredorArte" unique_id=1518289184]
+position = Vector2(598, 127)
+texture = ExtResource("c_Sprite8")
+centered = false
+
+[node name="Sprite0017" type="Sprite2D" parent="CorredorArte" unique_id=1655518330]
+position = Vector2(947, 128)
+texture = ExtResource("c_Sprite0017")
+centered = false
+
+[node name="Sprite0026" type="Sprite2D" parent="CorredorArte" unique_id=1552234620]
+position = Vector2(1598, 128)
+texture = ExtResource("c_Sprite0026")
+centered = false
+
+[node name="Sprite0003" type="Sprite2D" parent="CorredorArte" unique_id=739223028]
+texture_filter = 1
+position = Vector2(22, 37)
+texture = ExtResource("18_204ke")
+centered = false
+
+[node name="Sprite000" type="Sprite2D" parent="CorredorArte" unique_id=1429683971]
+position = Vector2(110, 44)
+texture = ExtResource("c_Sprite000")
+centered = false
+
+[node name="Sprite7" type="Sprite2D" parent="CorredorArte" unique_id=1789086098]
+position = Vector2(167, 75)
+texture = ExtResource("c_7")
+centered = false
+
+[node name="Sprite0005" type="Sprite2D" parent="CorredorArte" unique_id=1420312372]
+position = Vector2(177, 38)
+texture = ExtResource("16_44a6y")
+centered = false
+
+[node name="Sprite0004" type="Sprite2D" parent="CorredorArte" unique_id=220893946]
+position = Vector2(205, 51)
+texture = ExtResource("19_eosuo")
+centered = false
+
+[node name="Sprite0006" type="Sprite2D" parent="CorredorArte" unique_id=989526260]
+position = Vector2(211, 29)
+texture = ExtResource("17_4n25s")
+centered = false
+
+[node name="Sprite0007" type="Sprite2D" parent="CorredorArte" unique_id=1354541415]
+position = Vector2(348, 26)
+texture = ExtResource("18_1lo3c")
+centered = false
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "",
+"source_uid": -1
+},
+"slice_section": true
+}
+
+[node name="Sprite0009" type="Sprite2D" parent="CorredorArte" unique_id=98719375]
+position = Vector2(564, 51)
+texture = ExtResource("16_53q5d")
+centered = false
+
+[node name="Sprite0011" type="Sprite2D" parent="CorredorArte" unique_id=1524823243]
+position = Vector2(618, 62)
+texture = ExtResource("24_m44e3")
+centered = false
+
+[node name="Sprite0012" type="Sprite2D" parent="CorredorArte" unique_id=2143870446]
+position = Vector2(661, 45)
+texture = ExtResource("25_26ev0")
+centered = false
+
+[node name="Sprite0010" type="Sprite2D" parent="CorredorArte" unique_id=1309249091]
+position = Vector2(686, 67)
+texture = ExtResource("c_Sprite0010")
+centered = false
+
+[node name="Sprite0013" type="Sprite2D" parent="CorredorArte" unique_id=1947086729]
+position = Vector2(789, 48)
+texture = ExtResource("26_meebk")
+centered = false
+
+[node name="Sprite0014" type="Sprite2D" parent="CorredorArte" unique_id=1041537538]
+position = Vector2(959, 42)
+texture = ExtResource("20_qmov7")
+centered = false
+
+[node name="Sprite0016" type="Sprite2D" parent="CorredorArte" unique_id=1179972442]
+position = Vector2(1030, 60)
+texture = ExtResource("c_Sprite0016")
+centered = false
+
+[node name="Sprite0015" type="Sprite2D" parent="CorredorArte" unique_id=226705958]
+position = Vector2(1097, 41)
+texture = ExtResource("19_o7oge")
+centered = false
+
+[node name="Sprite0018" type="AnimatedSprite2D" parent="CorredorArte" unique_id=356761495]
+position = Vector2(1194, 27)
+sprite_frames = SubResource("SpriteFrames_sorrisos")
+autoplay = "default"
+centered = false
+
+[node name="Sprite0021" type="Sprite2D" parent="CorredorArte" unique_id=765094333]
+position = Vector2(1389, 43)
+texture = ExtResource("c_Sprite0021")
+centered = false
+
+[node name="Sprite0023" type="Sprite2D" parent="CorredorArte" unique_id=390916610]
+position = Vector2(1426, 76)
+texture = ExtResource("c_Sprite0023")
+centered = false
+
+[node name="Sprite0025" type="Sprite2D" parent="CorredorArte" unique_id=1507710246]
+position = Vector2(1475, 3)
+texture = ExtResource("c_Sprite0025")
+centered = false
+
+[node name="Sprite0022" type="Sprite2D" parent="CorredorArte" unique_id=1516066559]
+position = Vector2(1528, 56)
+texture = ExtResource("c_Sprite0022")
+centered = false
+
+[node name="Sprite0024" type="Sprite2D" parent="CorredorArte" unique_id=1683774971]
+position = Vector2(1693, 50)
+texture = ExtResource("c_Sprite0024")
+centered = false
+
+[node name="WhatsAppImage20261114At16_17_08" type="Sprite2D" parent="." unique_id=1123923314]
+position = Vector2(358, 756)
+scale = Vector2(3.0421052, 1)
+texture = ExtResource("27_c6al5")
+
+[connection signal="body_entered" from="Ghost/Area Contato" to="Ghost/Area Contato" method="_on_body_entered"]
+[connection signal="body_exited" from="Ghost/Area Contato" to="Ghost/Area Contato" method="_on_body_exited"]
+[connection signal="body_entered" from="Ghost/Area Audio Perto" to="Ghost/Area Audio Perto" method="_on_body_entered"]
+[connection signal="body_exited" from="Ghost/Area Audio Perto" to="Ghost/Area Audio Perto" method="_on_body_exited"]
+[connection signal="body_entered" from="Ghost/Area Audio Medio" to="Ghost/Area Audio Medio" method="_on_body_entered"]
+[connection signal="body_exited" from="Ghost/Area Audio Medio" to="Ghost/Area Audio Medio" method="_on_body_exited"]
+[connection signal="body_entered" from="Ghost/Area Audio Longe" to="Ghost/Area Audio Longe" method="_on_body_entered"]
+[connection signal="body_exited" from="Ghost/Area Audio Longe" to="Ghost/Area Audio Longe" method="_on_body_exited"]

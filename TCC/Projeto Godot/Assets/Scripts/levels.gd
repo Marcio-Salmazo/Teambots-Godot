@@ -22,3 +22,7 @@ func _ready() -> void:
 	camera.global_position = jogador.global_position
 	camera.reset_smoothing()
 	camera.reset_physics_interpolation()
+
+
+func _on_pathway_2_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
