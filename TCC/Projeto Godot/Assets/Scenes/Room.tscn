@@ -75,6 +75,9 @@ metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36cxt"]
 size = Vector2(79.811844, 76.76976)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor_bottom"]
+size = Vector2(384, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i00gx"]
 size = Vector2(14.129, 9.499966)
 
@@ -493,6 +496,14 @@ position = Vector2(117, 151)
 [node name="Sprite0023" type="Sprite2D" parent="Room" unique_id=188333544]
 position = Vector2(54, 53)
 
+[node name="BottomWall" type="StaticBody2D" parent="Room" unique_id=1984726351]
+position = Vector2(171, 92)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/BottomWall" unique_id=1984726352]
+position = Vector2(0, 18)
+shape = SubResource("RectangleShape2D_floor_bottom")
+
 [node name="Player" type="Node" parent="." unique_id=1028142000]
 
 [node name="Player" type="CharacterBody2D" parent="Player" unique_id=117201474]
@@ -538,12 +549,12 @@ idle_fallback_frame = null
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1559908054 node_paths=PackedStringArray("player")]
 physics_interpolation_mode = 1
 position = Vector2(167, 313)
-zoom = Vector2(4, 3.685)
+zoom = Vector2(4, 4)
 process_callback = 0
 limit_left = 0
-limit_top = 169
+limit_top = 174
 limit_right = 384
-limit_bottom = 363
+limit_bottom = 360
 position_smoothing_enabled = true
 script = ExtResource("30_da6ve")
 player = NodePath("../Player")

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cc0nw20lwj5au"]
+[gd_scene format=3 uid="uid://caus1q04ljl0e"]
 
 [ext_resource type="Texture2D" uid="uid://6lemcmrg05q3" path="res://Assets/Fantasma/ghost_sheet.png" id="1_j3drg"]
 [ext_resource type="Script" uid="uid://pf0bhmpr7hya" path="res://Assets/Fantasma/fantasma.gd" id="2_fp661"]

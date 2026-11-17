@@ -185,6 +185,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7fyu"]
+size = Vector2(20, 226)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urcl0"]
+size = Vector2(468, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7wp1"]
+size = Vector2(586, 43)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ctnp"]
 size = Vector2(82, 20)
 
@@ -196,7 +205,7 @@ size = Vector2(46, 108)
 [node name="Banheiro" type="TileMapLayer" parent="." unique_id=927139091]
 texture_filter = 1
 position = Vector2(495, 277)
-tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAD+/wAAAAACAAIAAAD+/wEAAAAAAAIAAAD+/wIAAAAAAAMAAAD+/wMAAAAAAAQAAAD+/wQAAAAAAAUAAAD/////AAABAAAAAAD//wAAAAABAAEAAAD//wEAAAABAAIAAAD//wIAAAABAAMAAAD//wMAAAABAAQAAAD//wQAAAABAAUAAAAAAP//AAACAAAAAAAAAAAAAAACAAEAAAAAAAEAAAACAAIAAAAAAAIAAAACAAMAAAAAAAMAAAACAAQAAAAAAAQAAAACAAUAAAABAP//AAADAAAAAAABAAAAAAADAAEAAAABAAEAAAADAAIAAAABAAIAAAADAAMAAAABAAMAAAADAAQAAAABAAQAAAADAAUAAAACAP//AAAEAAAAAAACAAAAAAAEAAEAAAACAAEAAAAEAAIAAAACAAIAAAAEAAMAAAACAAMAAAAEAAQAAAACAAQAAAAEAAUAAAADAP//AAACAAEAAAADAAAAAAACAAIAAAADAAEAAAACAAEAAAADAAIAAAACAAIAAAADAAMAAAACAAEAAAADAAQAAAACAAIAAAD9/wMAAAACAAEAAAD9/wQAAAACAAIAAAD9////AAACAAEAAAD9/wAAAAACAAIAAAD9/wEAAAACAAEAAAD9/wIAAAACAAIAAAD9/wUAAAACAAIAAAD+/wUAAAACAAIAAAD//wUAAAACAAIAAAAAAAUAAAACAAIAAAACAAUAAAACAAIAAAADAAUAAAACAAIAAAABAAUAAAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAD+/wAAAAAAAAEAAAD+/wEAAAAAAAIAAAD+/wIAAAAAAAMAAAD+/wMAAAAAAAQAAAD+/wQAAAAAAAUAAAD/////AAABAAAAAAD//wAAAAABAAEAAAD//wEAAAABAAIAAAD//wIAAAABAAMAAAD//wMAAAABAAQAAAD//wQAAAABAAUAAAAAAP//AAACAAAAAAAAAAAAAAACAAEAAAAAAAEAAAACAAIAAAAAAAIAAAACAAMAAAAAAAMAAAACAAQAAAAAAAQAAAACAAUAAAABAP//AAADAAAAAAABAAAAAAADAAEAAAABAAEAAAADAAIAAAABAAIAAAADAAMAAAABAAMAAAADAAQAAAABAAQAAAADAAUAAAACAP//AAAEAAAAAAACAAAAAAAEAAEAAAACAAEAAAAEAAIAAAACAAIAAAAEAAMAAAACAAMAAAAEAAQAAAACAAQAAAAEAAUAAAA=")
 tile_set = ExtResource("1_5oiyg")
 
 [node name="Sprite0010" type="Sprite2D" parent="Banheiro" unique_id=1501388879]
@@ -254,7 +263,7 @@ physics_interpolation_mode = 1
 z_index = 2
 position = Vector2(465, 355)
 scale = Vector2(2.2, 2.2)
-collision_mask = 3
+collision_mask = 2
 floor_constant_speed = true
 floor_snap_length = 5.0
 script = ExtResource("11_1882o")
@@ -294,13 +303,54 @@ physics_interpolation_mode = 1
 position = Vector2(463, 350)
 zoom = Vector2(5, 5)
 process_callback = 0
-limit_left = 431
-limit_top = 245
-limit_right = 591
-limit_bottom = 435
+limit_left = 319
+limit_top = 233
+limit_right = 703
+limit_bottom = 449
 position_smoothing_enabled = true
 script = ExtResource("16_iptxj")
 player = NodePath("../Player")
+
+[node name="bordas" type="Node" parent="." unique_id=1305070933]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bordas" unique_id=600362529]
+position = Vector2(298, 400)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bordas/StaticBody2D" unique_id=1676587766]
+position = Vector2(123, -53)
+shape = SubResource("RectangleShape2D_c7fyu")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="bordas" unique_id=2004469483]
+position = Vector2(298, 400)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bordas/StaticBody2D2" unique_id=742868269]
+position = Vector2(355, -38)
+shape = SubResource("RectangleShape2D_urcl0")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="bordas" unique_id=1572127544]
+position = Vector2(764, 396)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bordas/StaticBody2D3" unique_id=240738986]
+position = Vector2(-164, -51)
+shape = SubResource("RectangleShape2D_c7fyu")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="bordas" unique_id=2087988321]
+position = Vector2(318, 623)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bordas/StaticBody2D4" unique_id=2030638348]
+position = Vector2(214, -180)
+shape = SubResource("RectangleShape2D_urcl0")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="bordas" unique_id=354233658]
+position = Vector2(495, 275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bordas/StaticBody2D5" unique_id=1356604275]
+position = Vector2(283, 31.5)
+shape = SubResource("RectangleShape2D_p7wp1")
 
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=622067810]
 visibility_layer = 3
