@@ -102,6 +102,7 @@ position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_si3vk")
 
 [node name="Ref" type="Sprite2D" parent="Party Hall" unique_id=1883801675]
+visible = false
 position = Vector2(247, 861)
 texture = ExtResource("5_qqbkv")
 
@@ -194,14 +195,14 @@ position_smoothing_enabled = true
 script = ExtResource("22_ppha4")
 player = NodePath("../Player")
 
-[node name="Sprite0011" type="Sprite2D" parent="." unique_id=2044389951]
+[node name="planta" type="Sprite2D" parent="." unique_id=2044389951]
 texture_filter = 1
 position = Vector2(389, 632)
 texture = ExtResource("23_i6yje")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite0011" unique_id=1224589895]
+[node name="StaticBody2D" type="StaticBody2D" parent="planta" unique_id=1224589895]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite0011/StaticBody2D" unique_id=1515616441]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="planta/StaticBody2D" unique_id=1515616441]
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_vh54y")

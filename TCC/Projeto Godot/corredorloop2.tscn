@@ -1,0 +1,208 @@
+[gd_scene format=4 uid="uid://meoodph1nntn"]
+
+[ext_resource type="TileSet" uid="uid://3whdgl2uh6vg" path="res://Assets/Tiles/House Tiles/house Backgrounds.tres" id="1_wltsg"]
+[ext_resource type="Texture2D" uid="uid://cycxdm85o81wq" path="res://Assets/Raw Sprites/House/Sprite-0026.png" id="2_4ba1f"]
+[ext_resource type="Texture2D" uid="uid://fi1n40j68sy2" path="res://Assets/Raw Sprites/House/Sprite-0042.png" id="3_bha4b"]
+[ext_resource type="Texture2D" uid="uid://ckfdgcfwcum4s" path="res://Assets/Raw Sprites/House/Sprite-0003.png" id="4_mkwa5"]
+[ext_resource type="Texture2D" uid="uid://b7mnvlr4qf4oi" path="res://Assets/Raw Sprites/House/ref.png" id="5_1n4sr"]
+[ext_resource type="Texture2D" uid="uid://bhfbfwd7w8q3k" path="res://Assets/Raw Sprites/Corredor2/Sprite-0006.png" id="6_iwng2"]
+[ext_resource type="Texture2D" uid="uid://bwpatknfc7grs" path="res://Assets/Raw Sprites/House/Sprite-0012.png" id="7_wltsg"]
+[ext_resource type="Texture2D" uid="uid://gm4urmh8o3bv" path="res://Assets/Raw Sprites/Corredor2/Sprite-0005.png" id="8_fa1xe"]
+[ext_resource type="Texture2D" uid="uid://bbcur2uq771qw" path="res://Assets/Raw Sprites/House/janela_loop2.2png.png" id="9_4ba1f"]
+[ext_resource type="Texture2D" uid="uid://dsy8yn0mnidx" path="res://Assets/Raw Sprites/House/Sprite-0010.png" id="10_ad1oi"]
+[ext_resource type="Texture2D" uid="uid://crxesq3dw20do" path="res://Assets/Raw Sprites/House/Sprite-0008.png" id="11_psmw1"]
+[ext_resource type="Texture2D" uid="uid://xwcrj4koiecl" path="res://Assets/Raw Sprites/House/bandeiras loop.png" id="12_bha4b"]
+[ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Scripts/PlayerController.gd" id="13_5dpr0"]
+[ext_resource type="Texture2D" uid="uid://b1sdvoo6kwhs5" path="res://Assets/Raw Sprites/Characters/player/Player Idle.png" id="14_qikwy"]
+[ext_resource type="Texture2D" uid="uid://b8mc8lj4lurty" path="res://Assets/Raw Sprites/Characters/player/Player Idle 2.png" id="15_8q04k"]
+[ext_resource type="Texture2D" uid="uid://bla0vo41unnld" path="res://Assets/Raw Sprites/Characters/player/Player Walk 2.png" id="16_ugedt"]
+[ext_resource type="Texture2D" uid="uid://dajq1unxgjsdd" path="res://Assets/Raw Sprites/Characters/player/Player Walk 4.png" id="17_7o8hk"]
+[ext_resource type="Texture2D" uid="uid://bagi1nsa1dym5" path="res://Assets/Raw Sprites/Characters/player/Player Walk 3.png" id="18_23c8w"]
+[ext_resource type="Texture2D" uid="uid://d4kdbkadcfxh" path="res://Assets/Raw Sprites/Characters/player/Player Walk.png" id="19_bidgy"]
+[ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Scripts/StateMachine.gd" id="20_8vnnx"]
+[ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="21_6f8vb"]
+[ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="22_yfadm"]
+[ext_resource type="Texture2D" uid="uid://boxlxh6824b15" path="res://Assets/Raw Sprites/Corredor2/Sprite-0011.png" id="23_33ktt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si3vk"]
+size = Vector2(80.25, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8h4l"]
+size = Vector2(11.931059, 8.925192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q375d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_qikwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qikwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8q04k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8q04k")
+}],
+"loop": 1,
+"name": &"Player Idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ugedt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7o8hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_23c8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_bidgy")
+}],
+"loop": 1,
+"name": &"Player Walk",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vh54y"]
+size = Vector2(22.125, 20)
+
+[node name="Node2D" type="Node2D" unique_id=570550313]
+
+[node name="Party Hall" type="Node2D" parent="." unique_id=1356010403]
+
+[node name="Background" type="TileMapLayer" parent="Party Hall" unique_id=2055415254]
+texture_filter = 3
+tile_map_data = PackedByteArray("AAAAABAAAAAAAAAAAAAAABEAAAAAAAEAAAAAABIAAAAAAAIAAAAAABQAAAAAAAQAAAABABAAAAABAAAAAAABABEAAAABAAEAAAABABIAAAABAAIAAAABABMAAAABAAMAAAABABQAAAABAAQAAAACABAAAAACAAAAAAACABEAAAACAAEAAAACABIAAAACAAIAAAACABMAAAACAAMAAAACABQAAAACAAQAAAADABAAAAADAAAAAAADABEAAAADAAEAAAADABIAAAADAAIAAAADABMAAAADAAMAAAADABQAAAADAAQAAAAEABAAAAAEAAAAAAAEABEAAAAEAAEAAAAEABIAAAAEAAIAAAAEABMAAAAEAAMAAAAEABQAAAAEAAQAAAAFABAAAAAFAAAAAAAFABEAAAAFAAEAAAAFABIAAAAFAAIAAAAFABMAAAAFAAMAAAAFABQAAAAFAAQAAAAGABAAAAAGAAAAAAAGABEAAAAGAAEAAAAGABIAAAAGAAIAAAAGABMAAAAGAAMAAAAGABQAAAAGAAQAAAAHABAAAAAHAAAAAAAHABEAAAAHAAEAAAAHABIAAAAHAAIAAAAHABMAAAAHAAMAAAAHABQAAAAHAAQAAAAIABAAAAAIAAAAAAAIABEAAAAIAAEAAAAIABIAAAAIAAIAAAAIABMAAAAIAAMAAAAIABQAAAAIAAQAAAAJABAAAAAJAAAAAAAJABEAAAAJAAEAAAAJABIAAAAJAAIAAAAJABMAAAAJAAMAAAAJABQAAAAJAAQAAAAKABAAAAAKAAAAAAAKABEAAAAKAAEAAAAKABIAAAAKAAIAAAAKABMAAAAKAAMAAAAKABQAAAAKAAQAAAALABAAAAALAAAAAAALABEAAAALAAEAAAALABIAAAALAAIAAAALABQAAAALAAQAAAAMABAAAAAMAAAAAAAMABEAAAAMAAEAAAAMABIAAAAMAAIAAAAMABMAAAAMAAMAAAAMABQAAAAMAAQAAAANABAAAAANAAAAAAANABEAAAANAAEAAAANABIAAAANAAIAAAANABMAAAANAAMAAAANABQAAAANAAQAAAAOABAAAAAOAAAAAAAOABEAAAAOAAEAAAAOABIAAAAOAAIAAAAOABMAAAAOAAMAAAAOABQAAAAOAAQAAAD//xAALgAGAAEAAAD//xEALgAGAAEAAAD//xIALgAGAAEAAAD//xMALgAGAAEAAAD//xQALgAGAAEAAAD//xUALgAGAAEAAAAAABUAAAAAAAUAAAABABUAAAABAAUAAAACABUAAAACAAUAAAADABUAAAADAAUAAAAEABUAAAAEAAUAAAAFABUAAAAFAAUAAAAGABUAAAAGAAUAAAAHABUAAAAHAAUAAAAIABUAAAAIAAUAAAAJABUAAAAJAAUAAAAKABUAAAAKAAUAAAALABUAAAALAAUAAAAMABUAAAAMAAUAAAANABUAAAANAAUAAAAOABUAAAAOAAUAAAAAABYALgAAAAMAAAABABYALgABAAMAAAACABYALgACAAMAAAADABYALgADAAMAAAAEABYALgAEAAMAAAAFABYALgAFAAMAAAAGABYALgAGAAMAAAAHABYALgAHAAMAAAAIABYALgAIAAMAAAAJABYALgAJAAMAAAAKABYALgAKAAMAAAALABYALgALAAMAAAAMABYALgAAAAMAAAANABYALgABAAMAAAAOABYALgACAAMAAAD//xYALgADAAIAAAAPABAALgAGAAEAAAAPABEALgAGAAEAAAAPABIALgAGAAEAAAAPABMALgAGAAEAAAAPABQALgAGAAEAAAAPABUALgAGAAEAAAAPABYALgADAAIAAAAAABMAAAAAAAMAAAALABMAAAALAAMAAAA=")
+tile_set = ExtResource("1_wltsg")
+
+[node name="Door" type="Sprite2D" parent="Party Hall" unique_id=785591947]
+texture_filter = 3
+position = Vector2(433, 594)
+texture = ExtResource("2_4ba1f")
+
+[node name="Door2" type="Sprite2D" parent="Party Hall" unique_id=485146100]
+texture_filter = 3
+position = Vector2(52, 594)
+texture = ExtResource("3_bha4b")
+
+[node name="Bookshelf" type="Sprite2D" parent="Party Hall" unique_id=2027364084]
+texture_filter = 3
+position = Vector2(134, 622)
+texture = ExtResource("4_mkwa5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Party Hall/Bookshelf" unique_id=214118379]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Party Hall/Bookshelf/StaticBody2D" unique_id=1153092777]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_si3vk")
+
+[node name="Ref" type="Sprite2D" parent="Party Hall" unique_id=1883801675]
+visible = false
+position = Vector2(247, 861)
+texture = ExtResource("5_1n4sr")
+
+[node name="quadros" type="Sprite2D" parent="Party Hall" unique_id=1240050666]
+texture_filter = 1
+position = Vector2(151, 544)
+texture = ExtResource("6_iwng2")
+
+[node name="Sprite0004" type="Sprite2D" parent="Party Hall/quadros" unique_id=261258217]
+texture_filter = 1
+position = Vector2(0, 28)
+texture = ExtResource("7_wltsg")
+
+[node name="Sprite0005" type="Sprite2D" parent="Party Hall/quadros" unique_id=125076851]
+texture_filter = 1
+position = Vector2(-33, 13)
+texture = ExtResource("8_fa1xe")
+
+[node name="janela" type="Sprite2D" parent="." unique_id=1276343675]
+z_index = 2
+texture_filter = 1
+position = Vector2(320, 580)
+scale = Vector2(1.0412371, 1)
+texture = ExtResource("9_4ba1f")
+
+[node name="porta" type="Sprite2D" parent="." unique_id=1663085685]
+z_index = 2
+texture_filter = 1
+position = Vector2(221, 596)
+texture = ExtResource("10_ad1oi")
+
+[node name="tapete" type="Sprite2D" parent="." unique_id=1648836804]
+texture_filter = 1
+position = Vector2(224, 658)
+texture = ExtResource("11_psmw1")
+
+[node name="bandeira" type="Sprite2D" parent="." unique_id=427170408]
+texture_filter = 1
+position = Vector2(470, 561)
+texture = ExtResource("12_bha4b")
+
+[node name="Player" type="Node" parent="." unique_id=735361939]
+
+[node name="Player" type="CharacterBody2D" parent="Player" unique_id=343079343]
+physics_interpolation_mode = 1
+z_index = 2
+position = Vector2(99.00001, 651.9999)
+scale = Vector2(2.5, 2.5)
+collision_mask = 2
+floor_constant_speed = true
+floor_snap_length = 5.0
+script = ExtResource("13_5dpr0")
+animation_controller_path = NodePath("Animations Controller")
+state_machine_path = NodePath("StateMachine")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Player" unique_id=268940132]
+position = Vector2(-0.20004654, 7.506012)
+scale = Vector2(0.637, 0.696)
+shape = SubResource("RectangleShape2D_n8h4l")
+
+[node name="Player Visuals" type="Node2D" parent="Player/Player" unique_id=1671466427]
+
+[node name="Player Sprite" type="Node2D" parent="Player/Player/Player Visuals" unique_id=21977864]
+
+[node name="AnimatedSprite2D (player)" type="AnimatedSprite2D" parent="Player/Player/Player Visuals/Player Sprite" unique_id=286756321]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(0.04, 0.04)
+sprite_frames = SubResource("SpriteFrames_q375d")
+animation = &"Player Walk"
+speed_scale = 3.0
+
+[node name="StateMachine" type="Node" parent="Player/Player" unique_id=1221619316]
+script = ExtResource("20_8vnnx")
+
+[node name="Animations Controller" type="Node" parent="Player/Player" unique_id=1786403664]
+script = ExtResource("21_6f8vb")
+player_sprite_path = NodePath("../Player Visuals/Player Sprite/AnimatedSprite2D (player)")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1115520517 node_paths=PackedStringArray("player")]
+physics_interpolation_mode = 1
+position = Vector2(99.00001, 650)
+scale = Vector2(2.5, 2.5)
+offset = Vector2(0, -26)
+zoom = Vector2(3.78, 3.78)
+process_callback = 0
+limit_left = 0
+limit_right = 865
+position_smoothing_enabled = true
+script = ExtResource("22_yfadm")
+player = NodePath("../Player")
+
+[node name="planta" type="Sprite2D" parent="." unique_id=2044389951]
+texture_filter = 1
+position = Vector2(389, 632)
+texture = ExtResource("23_33ktt")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="planta" unique_id=1224589895]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="planta/StaticBody2D" unique_id=1515616441]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_vh54y")
