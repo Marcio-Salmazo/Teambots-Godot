@@ -308,7 +308,7 @@ shape = SubResource("RectangleShape2D_4ai3r")
 
 [node name="Bed" type="Sprite2D" parent="Room" unique_id=1574860697]
 texture_filter = 3
-position = Vector2(27, 55)
+position = Vector2(27, 50)
 scale = Vector2(1.2, 1.2)
 
 [node name="bed" type="Sprite2D" parent="Room/Bed" unique_id=1194334090]
