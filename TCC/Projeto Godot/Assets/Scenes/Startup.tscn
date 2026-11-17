@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://cqq8dynonyurb" path="res://Assets/Scripts/SpriteTilt.gd" id="3_6y20c"]
 [ext_resource type="Script" uid="uid://b10hvlol74226" path="res://Assets/Dialogue/StartupDialogue.gd" id="4_xw4rl"]
 [ext_resource type="Texture2D" uid="uid://ds6g1ewfs2dhj" path="res://Assets/Raw Sprites/Backgrounds/Grito.png" id="5_oxwxb"]
+[ext_resource type="PackedScene" uid="uid://c1vd456q8jd3n" path="res://Assets/Scenes/pathway.tscn" id="6_g6krv"]
+[ext_resource type="Script" uid="uid://bkg1meulxw03h" path="res://Assets/Scenes/pathway.gd" id="7_nvfxv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wmblj"]
 shader = ExtResource("2_34xdb")
@@ -49,6 +51,7 @@ scale_speed = 1.0
 
 [node name="StartupDialogue" type="CanvasLayer" parent="." unique_id=1792461790]
 script = ExtResource("4_xw4rl")
+nome = "Room"
 
 [node name="DialogueRoot" type="Control" parent="StartupDialogue" unique_id=624253253]
 layout_mode = 3
@@ -79,9 +82,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ContinueHint" type="Label" parent="StartupDialogue/DialogueRoot" unique_id=1900064553]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -184.0
+offset_top = -128.0
+offset_right = 184.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "[ ESPAÇO ]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="JumpscareImage" type="TextureRect" parent="StartupDialogue" unique_id=935698666]
 visible = false
@@ -104,3 +118,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Transicao" type="Node" parent="." unique_id=426018712]
+
+[node name="pathway" parent="Transicao" unique_id=1064925599 instance=ExtResource("6_g6krv")]
+position = Vector2(784, 51)
+collision_layer = 5
+script = ExtResource("7_nvfxv")
+nome = "Room"
+
+[connection signal="body_entered" from="Transicao/pathway" to="Transicao/pathway" method="_on_body_entered"]
