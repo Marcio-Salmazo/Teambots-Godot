@@ -1,25 +1,33 @@
-[gd_scene format=4 uid="uid://igp0met4r1pl"]
+[gd_scene format=4 uid="uid://cfqn7gvmi7u1q"]
 
-[ext_resource type="Script" uid="uid://d3ersle61m31l" path="res://Assets/Scripts/levels.gd" id="1_opsea"]
-[ext_resource type="TileSet" uid="uid://3whdgl2uh6vg" path="res://Assets/Tiles/House Tiles/house Backgrounds.tres" id="1_tw8cj"]
-[ext_resource type="Texture2D" uid="uid://67dfqsc1xaqp" path="res://Assets/Raw Sprites/House/Sprite-0043.png" id="2_tw8cj"]
-[ext_resource type="Texture2D" uid="uid://bmvvaaj2sww2r" path="res://Assets/Raw Sprites/House/Sprite-0021.png" id="3_vbv7s"]
-[ext_resource type="Texture2D" uid="uid://cfoe815w7ywyr" path="res://Assets/Raw Sprites/House/Sprite-0017.png" id="4_2n8qu"]
-[ext_resource type="Texture2D" uid="uid://cb2isnpa80vdg" path="res://Assets/Raw Sprites/House/Sprite-0015.png" id="5_44fq3"]
-[ext_resource type="Texture2D" uid="uid://cxoqbg5jxrk3m" path="res://Assets/Raw Sprites/House/Sprite-0019.png" id="8_v3cpa"]
-[ext_resource type="Texture2D" uid="uid://odcuvr48vnbj" path="res://Assets/Raw Sprites/House/Sprite-0020.png" id="9_6wcw1"]
-[ext_resource type="Texture2D" uid="uid://cbdqfnnb7p01t" path="res://Assets/Raw Sprites/House/Sprite-46.png" id="9_258im"]
-[ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Scripts/PlayerController.gd" id="10_6wcw1"]
-[ext_resource type="Texture2D" uid="uid://bjbktws6jdq1j" path="res://Assets/Raw Sprites/House/Sprite-0018.png" id="10_fgajp"]
-[ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="12_0itf1"]
-[ext_resource type="Script" uid="uid://bkg1meulxw03h" path="res://Assets/Scenes/pathway.gd" id="12_joswn"]
-[ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Scripts/StateMachine.gd" id="12_ur34d"]
-[ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="13_7ramn"]
-[ext_resource type="Texture2D" uid="uid://bhmi6pg1ykjlg" path="res://Assets/Raw Sprites/Characters/player/Lucy_Parado.png" id="14_44fq3"]
-[ext_resource type="Script" uid="uid://bd6v2pbmfmr5i" path="res://Assets/Scenes/interactable.gd" id="19_opsea"]
-[ext_resource type="PackedScene" uid="uid://c1vd456q8jd3n" path="res://Assets/Scenes/pathway.tscn" id="20_ewidj"]
-[ext_resource type="Script" uid="uid://cy34ykfuwqx4f" path="res://Assets/Dialogue/DialogueData.gd" id="20_v3cpa"]
-[ext_resource type="Texture2D" uid="uid://bsksqa6sorv8o" path="res://Assets/Raw Sprites/Characters/player/Lucy_Andando.png" id="23_0itf1"]
+[ext_resource type="Script" uid="uid://d3ersle61m31l" path="res://Assets/Scripts/levels.gd" id="1_2eiwk"]
+[ext_resource type="TileSet" uid="uid://3whdgl2uh6vg" path="res://Assets/Raw Sprites/House Tiles/house Backgrounds.tres" id="2_6wcw1"]
+[ext_resource type="Texture2D" uid="uid://67dfqsc1xaqp" path="res://Assets/Raw Sprites/House/Sprite-0043.png" id="3_0qbxx"]
+[ext_resource type="Texture2D" uid="uid://bmvvaaj2sww2r" path="res://Assets/Raw Sprites/House/Sprite-0021.png" id="4_7yx62"]
+[ext_resource type="Script" uid="uid://bjao8123jqsh7" path="res://Assets/Scenes/sprite_0021.gd" id="5_8wv2f"]
+[ext_resource type="PackedScene" uid="uid://c1vd456q8jd3n" path="res://Assets/Scenes/pathway.tscn" id="6_ghq0b"]
+[ext_resource type="Script" uid="uid://bkg1meulxw03h" path="res://Assets/Scenes/pathway.gd" id="7_6bknb"]
+[ext_resource type="Texture2D" uid="uid://cb2isnpa80vdg" path="res://Assets/Raw Sprites/House/Sprite-0015.png" id="8_5vpow"]
+[ext_resource type="Texture2D" uid="uid://cfoe815w7ywyr" path="res://Assets/Raw Sprites/House/Sprite-0017.png" id="9_xi6rq"]
+[ext_resource type="Texture2D" uid="uid://cxoqbg5jxrk3m" path="res://Assets/Raw Sprites/House/Sprite-0019.png" id="10_5y0eb"]
+[ext_resource type="Texture2D" uid="uid://odcuvr48vnbj" path="res://Assets/Raw Sprites/House/Sprite-0020.png" id="11_5277a"]
+[ext_resource type="Texture2D" uid="uid://bjbktws6jdq1j" path="res://Assets/Raw Sprites/House/Sprite-0018.png" id="12_d1kxk"]
+[ext_resource type="Texture2D" uid="uid://cbdqfnnb7p01t" path="res://Assets/Raw Sprites/House/Sprite-46.png" id="13_0cro7"]
+[ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Scripts/PlayerController.gd" id="14_nnir5"]
+[ext_resource type="Texture2D" uid="uid://bsksqa6sorv8o" path="res://Assets/Raw Sprites/Characters/player/Lucy_Andando.png" id="15_31f1e"]
+[ext_resource type="Texture2D" uid="uid://bhmi6pg1ykjlg" path="res://Assets/Raw Sprites/Characters/player/Lucy_Parado.png" id="16_oyxxv"]
+[ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Scripts/StateMachine.gd" id="17_j70qc"]
+[ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="18_f7a8w"]
+[ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="19_0akcj"]
+[ext_resource type="Script" uid="uid://bd6v2pbmfmr5i" path="res://Assets/Scenes/interactable.gd" id="20_ab0h8"]
+[ext_resource type="Script" uid="uid://cy34ykfuwqx4f" path="res://Assets/Dialogue/DialogueData.gd" id="21_7p0a3"]
+[ext_resource type="Script" uid="uid://b0hnpmobbrg4" path="res://Assets/Scenes/escada.gd" id="54_escadagd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3cpa"]
+size = Vector2(46, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tajiq"]
+size = Vector2(51, 111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_joswn"]
 size = Vector2(58.84616, 24.727272)
@@ -27,94 +35,94 @@ size = Vector2(58.84616, 24.727272)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opsea"]
 size = Vector2(93, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3cpa"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wcw1"]
 size = Vector2(46, 108)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_258im"]
 size = Vector2(14.129, 9.499966)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hhx8"]
-atlas = ExtResource("23_0itf1")
+atlas = ExtResource("15_31f1e")
 region = Rect2(0, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pwygm"]
-atlas = ExtResource("23_0itf1")
+atlas = ExtResource("15_31f1e")
 region = Rect2(70, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbvt2"]
-atlas = ExtResource("23_0itf1")
+atlas = ExtResource("15_31f1e")
 region = Rect2(140, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pt1vb"]
-atlas = ExtResource("23_0itf1")
+atlas = ExtResource("15_31f1e")
 region = Rect2(210, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqr4b"]
-atlas = ExtResource("23_0itf1")
+atlas = ExtResource("15_31f1e")
 region = Rect2(280, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vcnxq"]
-atlas = ExtResource("23_0itf1")
+atlas = ExtResource("15_31f1e")
 region = Rect2(350, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7p0os"]
-atlas = ExtResource("23_0itf1")
+atlas = ExtResource("15_31f1e")
 region = Rect2(420, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wfa8e"]
-atlas = ExtResource("23_0itf1")
+atlas = ExtResource("15_31f1e")
 region = Rect2(490, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qanb0"]
-atlas = ExtResource("23_0itf1")
+atlas = ExtResource("15_31f1e")
 region = Rect2(560, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qg135"]
-atlas = ExtResource("23_0itf1")
+atlas = ExtResource("15_31f1e")
 region = Rect2(630, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqoow"]
-atlas = ExtResource("14_44fq3")
+atlas = ExtResource("16_oyxxv")
 region = Rect2(0, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bgqkl"]
-atlas = ExtResource("14_44fq3")
+atlas = ExtResource("16_oyxxv")
 region = Rect2(70, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_whrs2"]
-atlas = ExtResource("14_44fq3")
+atlas = ExtResource("16_oyxxv")
 region = Rect2(140, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bl85x"]
-atlas = ExtResource("14_44fq3")
+atlas = ExtResource("16_oyxxv")
 region = Rect2(210, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1rxbo"]
-atlas = ExtResource("14_44fq3")
+atlas = ExtResource("16_oyxxv")
 region = Rect2(280, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4o0qc"]
-atlas = ExtResource("14_44fq3")
+atlas = ExtResource("16_oyxxv")
 region = Rect2(350, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kshq4"]
-atlas = ExtResource("14_44fq3")
+atlas = ExtResource("16_oyxxv")
 region = Rect2(420, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_th8he"]
-atlas = ExtResource("14_44fq3")
+atlas = ExtResource("16_oyxxv")
 region = Rect2(490, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7kqlg"]
-atlas = ExtResource("14_44fq3")
+atlas = ExtResource("16_oyxxv")
 region = Rect2(560, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ociog"]
-atlas = ExtResource("14_44fq3")
+atlas = ExtResource("16_oyxxv")
 region = Rect2(630, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqgu6"]
-atlas = ExtResource("14_44fq3")
+atlas = ExtResource("16_oyxxv")
 region = Rect2(700, 0, 70, 70)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6wcw1"]
@@ -193,11 +201,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wcw1"]
-size = Vector2(46, 108)
-
 [sub_resource type="Resource" id="Resource_v3cpa"]
-script = ExtResource("20_v3cpa")
+script = ExtResource("21_7p0a3")
 speaker = "Livros"
 lines = Array[String](["livros"])
 metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
@@ -206,61 +211,79 @@ metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
 size = Vector2(89, 115)
 
 [node name="MainHouse" type="Node2D" unique_id=572524228]
-script = ExtResource("1_opsea")
+script = ExtResource("1_2eiwk")
 
 [node name="Corridor" type="Node" parent="." unique_id=556579061]
 
 [node name="Background" type="TileMapLayer" parent="Corridor" unique_id=1966516093]
 texture_filter = 3
 tile_map_data = PackedByteArray("AAAAAPv/LgAAAAAAAAAAAPz/LgAAAAEAAAAAAP7/LgAAAAMAAAAAAP//LgAAAAQAAAABAPv/LgABAAAAAAABAPz/LgABAAEAAAABAP3/LgABAAIAAAABAP7/LgABAAMAAAABAP//LgABAAQAAAACAPv/LgACAAAAAAACAPz/LgACAAEAAAACAP3/LgACAAIAAAACAP7/LgACAAMAAAACAP//LgACAAQAAAADAPv/LgADAAAAAAADAPz/LgADAAEAAAADAP3/LgADAAIAAAADAP7/LgADAAMAAAAEAPv/LgAEAAAAAAAEAPz/LgAEAAEAAAAEAP3/LgAEAAIAAAAEAP7/LgAEAAMAAAAEAP//LgAEAAQAAAAFAPv/LgAFAAAAAAAFAPz/LgAFAAEAAAAFAP3/LgAFAAIAAAAFAP7/LgAFAAMAAAAFAP//LgAFAAQAAAAGAPv/LgAGAAAAAAAGAPz/LgAGAAEAAAAGAP3/LgAGAAIAAAAGAP7/LgAGAAMAAAAGAP//LgAGAAQAAAAHAPv/LgAHAAAAAAAHAPz/LgAHAAEAAAAHAP3/LgAHAAIAAAAHAP7/LgAHAAMAAAAHAP//LgAHAAQAAAAIAPv/LgAIAAAAAAAIAPz/LgAIAAEAAAAIAP3/LgAIAAIAAAAIAP7/LgAIAAMAAAAIAP//LgAIAAQAAAAJAPv/LgAJAAAAAAAJAPz/LgAJAAEAAAAJAP3/LgAJAAIAAAAJAP7/LgAJAAMAAAAJAP//LgAJAAQAAAAKAPv/LgAKAAAAAAAKAPz/LgAKAAEAAAAKAP3/LgAKAAIAAAAKAP7/LgAKAAMAAAALAPv/LgALAAAAAAALAPz/LgALAAEAAAALAP3/LgALAAIAAAALAP7/LgALAAMAAAALAP//LgALAAQAAAAMAPv/LgAAAAAAAAAMAPz/LgAAAAEAAAAMAP3/LgAAAAIAAAAMAP7/LgAAAAMAAAAMAP//LgAAAAQAAAANAPv/LgABAAAAAAANAPz/LgABAAEAAAANAP3/LgABAAIAAAANAP//LgABAAQAAAADAAAAMAADAAQAACAEAAAAMAAEAAQAACAFAAAAMAAFAAQAACAGAAAAMAAGAAQAACAHAAAAMAAHAAQAACAJAAAAMAAJAAQAACAKAAAAMAAAAAQAACALAAAAMAABAAQAACAMAAAAMAACAAQAACANAAAAMAADAAQAACAAAAAAMAAAAAQAACABAAAAMAABAAQAACACAAAAMAACAAQAACADAP//LgADAAQAAAAAAAEALgAEAAEAAAABAAEALgAEAAEAAAACAAEALgAEAAEAAAADAAEALgAEAAEAAAAEAAEALgAEAAEAAAAFAAEALgAEAAEAAAAGAAEALgAEAAEAAAAHAAEALgAEAAEAAAAJAAEALgAEAAEAAAAKAAEALgAEAAEAAAAAAP3/LgAAAAIAAAAKAP//LgAKAAQAAAANAP7/LgABAAMAAAAIAAEALgAEAAEAAAAIAAAAMAAIAAQAACALAAEALgAEAAEAAAAMAAEALgAEAAEAAAANAAEALgAEAAEAAAD///v/LgAEAAEAAAD///z/LgAEAAEAAAD///3/LgAEAAEAAAD///7/LgAEAAEAAAD/////LgAEAAEAAAD//wAALgAEAAEAAAD//wEALgAEAAEAAAAOAPv/LgAEAAEAAAAOAPz/LgAEAAEAAAAOAP3/LgAEAAEAAAAOAP7/LgAEAAEAAAAOAP//LgAEAAEAAAAOAAAALgAEAAEAAAAOAAEALgAEAAEAAAA=")
-tile_set = ExtResource("1_tw8cj")
+tile_set = ExtResource("2_6wcw1")
 
 [node name="Semi-Open Door" type="Sprite2D" parent="Corridor" unique_id=1624083214]
 texture_filter = 3
 position = Vector2(48, -79)
-texture = ExtResource("2_tw8cj")
+texture = ExtResource("3_0qbxx")
 
 [node name="Closed Door" type="Sprite2D" parent="Corridor" unique_id=1436130747]
 texture_filter = 3
 position = Vector2(398, -79)
-texture = ExtResource("3_vbv7s")
+texture = ExtResource("4_7yx62")
 
 [node name="Sprite0021" type="Sprite2D" parent="Corridor" unique_id=286832679]
 texture_filter = 1
 position = Vector2(235, -79)
-texture = ExtResource("3_vbv7s")
+texture = ExtResource("4_7yx62")
+script = ExtResource("5_8wv2f")
+
+[node name="pathway" parent="Corridor/Sprite0021" unique_id=1064925599 instance=ExtResource("6_ghq0b")]
+position = Vector2(121, 353)
+collision_layer = 5
+script = ExtResource("7_6bknb")
+nome = "null"
+
+[node name="CollisionShape2D" parent="Corridor/Sprite0021/pathway" index="0" unique_id=1027692109]
+position = Vector2(-120, -344)
+shape = SubResource("RectangleShape2D_v3cpa")
+
+[node name="Area2D" type="Area2D" parent="Corridor/Sprite0021" unique_id=2046399874]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Sprite0021/Area2D" unique_id=174697730]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_tajiq")
 
 [node name="Sprite0015" type="Sprite2D" parent="Corridor" unique_id=1404641492]
 texture_filter = 1
 position = Vector2(143, -69)
-texture = ExtResource("5_44fq3")
+texture = ExtResource("8_5vpow")
 
 [node name="Sprite0018" type="Sprite2D" parent="Corridor" unique_id=763419132]
 z_index = 4
 texture_filter = 1
 position = Vector2(409.57895, -21)
 scale = Vector2(0.84210527, 1)
-texture = ExtResource("4_2n8qu")
+texture = ExtResource("9_xi6rq")
 
 [node name="Sprite0019" type="Sprite2D" parent="Corridor" unique_id=488138680]
 texture_filter = 1
 position = Vector2(293, -98)
-texture = ExtResource("8_v3cpa")
+texture = ExtResource("10_5y0eb")
 
 [node name="Sprite0020" type="Sprite2D" parent="Corridor" unique_id=1407542049]
 texture_filter = 1
 position = Vector2(319, -112)
-texture = ExtResource("9_6wcw1")
+texture = ExtResource("11_5277a")
 
 [node name="Sprite0022" type="Sprite2D" parent="Corridor" unique_id=213050991]
 texture_filter = 1
 position = Vector2(319, -93)
-texture = ExtResource("10_fgajp")
+texture = ExtResource("12_d1kxk")
 
 [node name="Stairs" type="Sprite2D" parent="Corridor" unique_id=1233444504]
+texture_filter = 1
 position = Vector2(407.99997, 15.500001)
 scale = Vector2(1.1428573, 1.375)
-texture = ExtResource("9_258im")
+texture = ExtResource("13_0cro7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Corridor/Stairs" unique_id=934787930]
 position = Vector2(359.18744, -0.36363506)
@@ -268,30 +291,40 @@ scale = Vector2(1.1374998, 1)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Stairs/StaticBody2D" unique_id=1102484907]
-position = Vector2(-314.80774, -1.9073486e-06)
+position = Vector2(-314.23077, -1.9073486e-06)
 shape = SubResource("RectangleShape2D_joswn")
 
 [node name="Transicao" type="Node" parent="." unique_id=1842498319]
 
-[node name="corredor" parent="Transicao" unique_id=1064925599 instance=ExtResource("20_ewidj")]
+[node name="corredor" parent="Transicao" unique_id=1367797161 instance=ExtResource("6_ghq0b")]
 position = Vector2(784, 51)
 collision_layer = 5
-script = ExtResource("12_joswn")
+script = ExtResource("54_escadagd")
 nome = "corredor"
 
 [node name="CollisionShape2D" parent="Transicao/corredor" index="0" unique_id=1027692109]
-position = Vector2(-381.5, -35)
+position = Vector2(-382, -34)
 shape = SubResource("RectangleShape2D_opsea")
 
-[node name="pathway" parent="Transicao" unique_id=1865480960 instance=ExtResource("20_ewidj")]
+[node name="quarto" parent="Transicao" unique_id=1865480960 instance=ExtResource("6_ghq0b")]
 position = Vector2(121, 353)
 collision_layer = 5
-script = ExtResource("12_joswn")
+script = ExtResource("7_6bknb")
 nome = "Room"
 
-[node name="CollisionShape2D" parent="Transicao/pathway" index="0" unique_id=1027692109]
+[node name="CollisionShape2D" parent="Transicao/quarto" index="0" unique_id=1027692109]
 position = Vector2(-73, -424)
 shape = SubResource("RectangleShape2D_v3cpa")
+
+[node name="banheiro" parent="Transicao" unique_id=1840467919 instance=ExtResource("6_ghq0b")]
+position = Vector2(173, 1)
+collision_layer = 5
+script = ExtResource("7_6bknb")
+nome = "banheiro"
+
+[node name="CollisionShape2D" parent="Transicao/banheiro" index="0" unique_id=1027692109]
+position = Vector2(225, -73)
+shape = SubResource("RectangleShape2D_6wcw1")
 
 [node name="Player" type="Node" parent="." unique_id=187996533]
 
@@ -303,7 +336,7 @@ scale = Vector2(2.2, 2.2)
 collision_mask = 2
 floor_constant_speed = true
 floor_snap_length = 5.0
-script = ExtResource("10_6wcw1")
+script = ExtResource("14_nnir5")
 animation_controller_path = NodePath("Animations Controller")
 state_machine_path = NodePath("StateMachine")
 
@@ -326,10 +359,10 @@ animation = &"andando"
 speed_scale = 3.0
 
 [node name="StateMachine" type="Node" parent="Player/Player" unique_id=179657854]
-script = ExtResource("12_ur34d")
+script = ExtResource("17_j70qc")
 
 [node name="Animations Controller" type="Node" parent="Player/Player" unique_id=1429530607]
-script = ExtResource("12_0itf1")
+script = ExtResource("18_f7a8w")
 player_sprite_path = NodePath("../Player Visuals/Player Sprite/AnimatedSprite2D (player)")
 walk_animations = null
 idle_animations = null
@@ -346,7 +379,7 @@ limit_top = -157
 limit_right = 447
 limit_bottom = 31
 position_smoothing_enabled = true
-script = ExtResource("13_7ramn")
+script = ExtResource("19_0akcj")
 player = NodePath("../Player")
 
 [node name="RoomPos" type="Marker2D" parent="." unique_id=1821070783]
@@ -355,18 +388,8 @@ position = Vector2(50, -48)
 [node name="CorredorPos" type="Marker2D" parent="." unique_id=1843507896]
 position = Vector2(352, -10)
 
-[node name="pathway" parent="." unique_id=1840467919 instance=ExtResource("20_ewidj")]
-position = Vector2(173, 1)
-collision_layer = 5
-script = ExtResource("12_joswn")
-nome = "banheiro"
-
-[node name="CollisionShape2D" parent="pathway" index="0" unique_id=1027692109]
-position = Vector2(225, -73)
-shape = SubResource("RectangleShape2D_6wcw1")
-
 [node name="DialogueInteractable" type="Node2D" parent="." unique_id=2080092215]
-script = ExtResource("19_opsea")
+script = ExtResource("20_ab0h8")
 dialogue_data = SubResource("Resource_v3cpa")
 metadata/_custom_type_script = "uid://bd6v2pbmfmr5i"
 
@@ -379,10 +402,12 @@ shape = SubResource("RectangleShape2D_so0ym")
 [node name="BanheiroPos" type="Marker2D" parent="." unique_id=200310670]
 position = Vector2(398, -72)
 
+[connection signal="body_entered" from="Corridor/Sprite0021/pathway" to="Corridor/Sprite0021/pathway" method="_on_body_entered"]
 [connection signal="body_entered" from="Transicao/corredor" to="Transicao/corredor" method="_on_body_entered"]
-[connection signal="body_entered" from="Transicao/pathway" to="Transicao/pathway" method="_on_body_entered"]
-[connection signal="body_entered" from="pathway" to="pathway" method="_on_body_entered"]
+[connection signal="body_entered" from="Transicao/quarto" to="Transicao/quarto" method="_on_body_entered"]
+[connection signal="body_entered" from="Transicao/banheiro" to="Transicao/banheiro" method="_on_body_entered"]
 
+[editable path="Corridor/Sprite0021/pathway"]
 [editable path="Transicao/corredor"]
-[editable path="Transicao/pathway"]
-[editable path="pathway"]
+[editable path="Transicao/quarto"]
+[editable path="Transicao/banheiro"]
