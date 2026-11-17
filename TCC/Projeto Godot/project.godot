@@ -23,9 +23,8 @@ AudioManager="*uid://cnr6kayyhm5rv"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=3
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
