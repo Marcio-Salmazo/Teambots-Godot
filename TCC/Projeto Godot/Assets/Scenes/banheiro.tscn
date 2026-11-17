@@ -2,8 +2,10 @@
 
 [ext_resource type="TileSet" uid="uid://by4q5esp6nuvw" path="res://Assets/Raw Sprites/House Tiles/Banheiro.tres" id="1_5oiyg"]
 [ext_resource type="Texture2D" uid="uid://cr48qtxlefhm5" path="res://Assets/Raw Sprites/Banheiro/Sprite-0010.png" id="2_kq3tk"]
+[ext_resource type="Script" uid="uid://diphekvk8ayyk" path="res://Assets/Dialogue/InteractableDialogue.gd" id="3_cnsim"]
 [ext_resource type="Texture2D" uid="uid://cr5is5m4swpeb" path="res://Assets/Raw Sprites/Banheiro/Sprite-0014.png" id="3_da1gd"]
 [ext_resource type="Texture2D" uid="uid://ddqj1vfufrxq2" path="res://Assets/Raw Sprites/Corredor/Sprite-0014.png" id="4_cnsim"]
+[ext_resource type="Script" uid="uid://cy34ykfuwqx4f" path="res://Assets/Dialogue/DialogueData.gd" id="4_n5yek"]
 [ext_resource type="Texture2D" uid="uid://d1j20o8i4mse1" path="res://Assets/Raw Sprites/Banheiro/Sprite-0012.png" id="5_n5yek"]
 [ext_resource type="Texture2D" uid="uid://mts6yhh2jxh6" path="res://Assets/Raw Sprites/Banheiro/Sprite-0013.png" id="6_cb5vy"]
 [ext_resource type="Texture2D" uid="uid://be354nvyxmpok" path="res://Assets/Raw Sprites/Banheiro/Sprite-0016.png" id="7_pjuxn"]
@@ -19,8 +21,53 @@
 [ext_resource type="PackedScene" uid="uid://c1vd456q8jd3n" path="res://Assets/Scenes/pathway.tscn" id="17_t3rtc"]
 [ext_resource type="Script" uid="uid://bkg1meulxw03h" path="res://Assets/Scenes/pathway.gd" id="18_5q2ax"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4xw3"]
-size = Vector2(45, 35)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmblj"]
+size = Vector2(42.5, 36.5)
+
+[sub_resource type="Resource" id="Resource_n5yek"]
+script = ExtResource("4_n5yek")
+speaker = "Box do chuveiro"
+lines = Array[String](["Um box de chuveiro.", "Sobre o vidro, está uma toalha vermelha. Essa é a sua toalha.", "Banhos são revigorantes, mas agora, essa simples ação, já é o suficiente para te deixar mais cansado."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iguee"]
+size = Vector2(60, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da1gd"]
+size = Vector2(13, 26)
+
+[sub_resource type="Resource" id="Resource_da1gd"]
+script = ExtResource("4_n5yek")
+speaker = "Lixeira"
+lines = Array[String](["Acima da lixeira, um rolo de papel higiênico.", "Você pondera no pensamento de que depois de cumprirem a sua função, eles são descartados. ", "Talvez você devesse fazer o mesmo.", "Você não sabe o porquê pensou sobre isso ao olhar um papel higiênico."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnsim"]
+size = Vector2(21, 51.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjuxn"]
+size = Vector2(50.75, 42.25)
+
+[sub_resource type="Resource" id="Resource_thhw1"]
+script = ExtResource("4_n5yek")
+speaker = "Espelho"
+lines = Array[String](["Não importa o que você faça ou sinta.", "Ainda assim, mesmo depois de tudo, esse é você, Lucy."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpegq"]
+size = Vector2(43.5, 53.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5yek"]
+size = Vector2(19.5, 40.5)
+
+[sub_resource type="Resource" id="Resource_cnsim"]
+script = ExtResource("4_n5yek")
+speaker = "Privada"
+lines = Array[String]([" Uma privada.", "Você espera que qualquer banheiro tenha uma dessas."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb5vy"]
+size = Vector2(24, 51.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fo4rq"]
 size = Vector2(14.129, 9.499966)
@@ -185,9 +232,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ctnp"]
-size = Vector2(82, 20)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0furd"]
 size = Vector2(46, 108)
 
@@ -203,16 +247,22 @@ tile_set = ExtResource("1_5oiyg")
 position = Vector2(74, 141)
 texture = ExtResource("2_kq3tk")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Banheiro/Sprite0010" unique_id=269374810]
-light_mask = 3
-visibility_layer = 3
-collision_layer = 2
+[node name="StaticBody2D" type="StaticBody2D" parent="Banheiro/Sprite0010" unique_id=1513949338]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Sprite0010/StaticBody2D" unique_id=53044714]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(1.5, -0.5)
-shape = SubResource("RectangleShape2D_b4xw3")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Sprite0010/StaticBody2D" unique_id=1175871075]
+position = Vector2(0.25, 0.75)
+shape = SubResource("RectangleShape2D_wmblj")
+
+[node name="DialogueInteractable" type="Node2D" parent="Banheiro/Sprite0010" unique_id=399194821 node_paths=PackedStringArray("interaction_area")]
+script = ExtResource("3_cnsim")
+dialogue_data = SubResource("Resource_n5yek")
+interaction_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Banheiro/Sprite0010/DialogueInteractable" unique_id=1493285741]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Sprite0010/DialogueInteractable/Area2D" unique_id=1192058868]
+position = Vector2(-8, 4)
+shape = SubResource("RectangleShape2D_iguee")
 
 [node name="Sprite0014" type="Sprite2D" parent="Banheiro" unique_id=71247597]
 position = Vector2(-53, 148)
@@ -226,6 +276,25 @@ texture = ExtResource("4_cnsim")
 position = Vector2(59, 90)
 texture = ExtResource("5_n5yek")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Banheiro/Sprite0012" unique_id=1898782027]
+position = Vector2(-9, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Sprite0012/StaticBody2D" unique_id=362560734]
+position = Vector2(9.5, -5)
+shape = SubResource("RectangleShape2D_da1gd")
+
+[node name="DialogueInteractable" type="Node2D" parent="Banheiro/Sprite0012" unique_id=640810950 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(-4, 8)
+script = ExtResource("3_cnsim")
+dialogue_data = SubResource("Resource_da1gd")
+interaction_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Banheiro/Sprite0012/DialogueInteractable" unique_id=1555202382]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Sprite0012/DialogueInteractable/Area2D" unique_id=747202637]
+position = Vector2(4.5, -8)
+shape = SubResource("RectangleShape2D_cnsim")
+
 [node name="Sprite0013" type="Sprite2D" parent="Banheiro" unique_id=320848774]
 position = Vector2(-32, 113)
 texture = ExtResource("6_cb5vy")
@@ -234,9 +303,47 @@ texture = ExtResource("6_cb5vy")
 position = Vector2(22, 84)
 texture = ExtResource("7_pjuxn")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Banheiro/Sprite0017" unique_id=2059901595]
+position = Vector2(11, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Sprite0017/StaticBody2D" unique_id=962779440]
+position = Vector2(-10.375, -9.125)
+shape = SubResource("RectangleShape2D_pjuxn")
+
+[node name="DialogueInteractable" type="Node2D" parent="Banheiro/Sprite0017" unique_id=133302709 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(-4, 8)
+script = ExtResource("3_cnsim")
+dialogue_data = SubResource("Resource_thhw1")
+interaction_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Banheiro/Sprite0017/DialogueInteractable" unique_id=208751911]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Sprite0017/DialogueInteractable/Area2D" unique_id=1755144933]
+position = Vector2(3.25, -2.9375)
+shape = SubResource("RectangleShape2D_rpegq")
+
 [node name="Sprite0016" type="Sprite2D" parent="Banheiro" unique_id=1140102881]
 position = Vector2(82, 84)
 texture = ExtResource("8_rpegq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Banheiro/Sprite0016" unique_id=946618822]
+position = Vector2(11, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Sprite0016/StaticBody2D" unique_id=924479668]
+position = Vector2(-10.75, -10.25)
+shape = SubResource("RectangleShape2D_n5yek")
+
+[node name="DialogueInteractable" type="Node2D" parent="Banheiro/Sprite0016" unique_id=1503770596 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(16, 14)
+script = ExtResource("3_cnsim")
+dialogue_data = SubResource("Resource_cnsim")
+interaction_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Banheiro/Sprite0016/DialogueInteractable" unique_id=380068732]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Sprite0016/DialogueInteractable/Area2D" unique_id=1599579037]
+position = Vector2(-14, -8)
+shape = SubResource("RectangleShape2D_cb5vy")
 
 [node name="Sprite0011" type="Sprite2D" parent="Banheiro" unique_id=761800022]
 position = Vector2(19, 44)
@@ -305,10 +412,6 @@ player = NodePath("../Player")
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=622067810]
 visibility_layer = 3
 position = Vector2(990, 552)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1975424432]
-position = Vector2(-238, 49)
-shape = SubResource("RectangleShape2D_3ctnp")
 
 [node name="MainHousePos" type="Marker2D" parent="." unique_id=1836584476]
 position = Vector2(464, 332)
