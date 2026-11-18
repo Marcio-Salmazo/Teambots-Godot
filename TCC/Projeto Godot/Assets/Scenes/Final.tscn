@@ -16,20 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://efifjhbg5akt" path="res://Assets/Raw Sprites/Corredor/SpriteCinzaDoChao.jpeg" id="9_cugen"]
 [ext_resource type="Texture2D" uid="uid://gonu7g2kii3d" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos9.png" id="10_ykeiw"]
 [ext_resource type="Texture2D" uid="uid://c0fk4638v2j5h" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos10.png" id="11_kfswl"]
-[ext_resource type="Texture2D" uid="uid://b1p3ll6q74dwf" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado1.png" id="12_k66e8"]
-[ext_resource type="Texture2D" uid="uid://cbpoqxwo7r5n6" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado2.png" id="13_d3e57"]
-[ext_resource type="Texture2D" uid="uid://cw6s2jxcffjgx" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado3.png" id="14_aax63"]
-[ext_resource type="Texture2D" uid="uid://c0yw5qmykewso" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado4.png" id="15_ng8ob"]
-[ext_resource type="Texture2D" uid="uid://ut7k7fhka8j0" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado5.png" id="16_5siw3"]
-[ext_resource type="Texture2D" uid="uid://s3q0p7f0ofsy" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado6.png" id="17_cy7qg"]
-[ext_resource type="Texture2D" uid="uid://vwewg7oary2g" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado7.png" id="18_acr4q"]
-[ext_resource type="Texture2D" uid="uid://1p668dotyv1" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado8.png" id="19_fq6d1"]
 [ext_resource type="Texture2D" uid="uid://dsea3obkiga2l" path="res://Assets/Raw Sprites/Corredor2/Sprite-0008.png" id="20_ekph5"]
-[ext_resource type="Texture2D" uid="uid://dedevrt8vf2dv" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado9.png" id="20_yab5r"]
 [ext_resource type="Texture2D" uid="uid://h0elf52371yd" path="res://Assets/Raw Sprites/Corredor2/Sprite-8.png" id="21_17d33"]
-[ext_resource type="Texture2D" uid="uid://evuhxkn180rq" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado10.png" id="21_32imw"]
 [ext_resource type="Texture2D" uid="uid://cv5th3obncu08" path="res://Assets/Raw Sprites/Corredor2/Sprite-0017.png" id="22_5f5ra"]
-[ext_resource type="Texture2D" uid="uid://ctpge3pxjc0ja" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado11.png" id="22_b20dk"]
 [ext_resource type="Texture2D" uid="uid://cky1bon0iut6l" path="res://Assets/Raw Sprites/Corredor2/Sprite-0026.png" id="23_ykeiw"]
 [ext_resource type="Texture2D" uid="uid://dif87wl5fjxlf" path="res://Assets/Raw Sprites/Corredor2/Sprite-0003.png" id="24_kfswl"]
 [ext_resource type="Texture2D" uid="uid://c814m4t61k8r1" path="res://Assets/Raw Sprites/Corredor2/Sprite-000.png" id="25_k66e8"]
@@ -62,94 +51,12 @@
 [ext_resource type="Texture2D" uid="uid://c4se7thnj5ki6" path="res://Assets/Raw Sprites/Corredor2/Sprite-0025.png" id="44_2ms74"]
 [ext_resource type="Texture2D" uid="uid://dmbtqlwx3icxb" path="res://Assets/Raw Sprites/Characters/Sombra Parada/Sombra parada6.png" id="44_38j23"]
 [ext_resource type="Texture2D" uid="uid://dybftym4rdjwb" path="res://Assets/Raw Sprites/Characters/Sombra Parada/Sombra parada7.png" id="45_f44p1"]
-[ext_resource type="Texture2D" uid="uid://bdalqn4aicdho" path="res://Assets/Raw Sprites/Corredor2/Sprite-0022.png" id="45_lrpa3"]
 [ext_resource type="Texture2D" uid="uid://b1d8vfvokf44w" path="res://Assets/Raw Sprites/Corredor2/Sprite-0024.png" id="46_q1p54"]
+[ext_resource type="Script" uid="uid://cl2mypille1v5" path="res://Assets/Scripts/FinalDemoCutscene.gd" id="47_f44p1"]
 [ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Scripts/PlayerController.gd" id="47_xad1g"]
 [ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Scripts/StateMachine.gd" id="50_0v0b2"]
 [ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="51_3673f"]
 [ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="52_yw5yd"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_57mis"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_pyb7j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_8qisd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_u0cm8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_hexsg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_4ry58")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ekph5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_17d33")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_5f5ra")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_ykeiw")
-}, {
-"duration": 20.0,
-"texture": ExtResource("11_kfswl")
-}],
-"loop": 1,
-"name": &"stare",
-"speed": 10.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7eyvd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_k66e8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_d3e57")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_aax63")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_ng8ob")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_5siw3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_cy7qg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_acr4q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_fq6d1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_yab5r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_32imw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_b20dk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_32imw")
-}],
-"loop": 1,
-"name": &"stare",
-"speed": 8.0
-}]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yfwre"]
 load_path = "res://.godot/imported/ghost_sheet.png-7f04108c3d11dd8cb41494626b2a1910.ctex"
@@ -203,6 +110,9 @@ size = Vector2(308, 288)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ripfr"]
 size = Vector2(600, 560)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f44p1"]
+size = Vector2(144, 64.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8aq7"]
 size = Vector2(33.5, 96.5)
@@ -276,28 +186,49 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57mis"]
+size = Vector2(44, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oj72k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pyb7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8qisd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u0cm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hexsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4ry58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ekph5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_17d33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5f5ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ykeiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kfswl")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 6.0
+}]
+
 [node name="Corredor" type="Node2D" unique_id=1788938321]
 script = ExtResource("1_h23i0")
-
-[node name="Monstro1" type="AnimatedSprite2D" parent="." unique_id=1581827692]
-z_index = 1
-texture_filter = 1
-position = Vector2(888.99994, 254.00002)
-scale = Vector2(0.6351351, 0.7845529)
-sprite_frames = SubResource("SpriteFrames_57mis")
-animation = &"stare"
-autoplay = "stare"
-frame_progress = 0.36518905
-
-[node name="Monstro2" type="AnimatedSprite2D" parent="." unique_id=2120286521]
-z_index = 1
-texture_filter = 1
-position = Vector2(1584.1593, 270)
-scale = Vector2(0.8683631, 0.6155232)
-sprite_frames = SubResource("SpriteFrames_7eyvd")
-animation = &"stare"
-autoplay = "stare"
-frame_progress = 0.8953262
 
 [node name="Ghost" type="Sprite2D" parent="." unique_id=699752200 node_paths=PackedStringArray("alvo")]
 z_index = 3
@@ -331,6 +262,7 @@ script = ExtResource("4_f44p1")
 alvo = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area Audio Perto" unique_id=591868667]
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_5pif8")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Ghost/Area Audio Perto" unique_id=1270121384]
@@ -342,6 +274,7 @@ script = ExtResource("4_f44p1")
 alvo = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area Audio Medio" unique_id=1191588762]
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_pgwxi")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Ghost/Area Audio Medio" unique_id=876990259]
@@ -354,6 +287,7 @@ script = ExtResource("4_f44p1")
 alvo = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area Audio Longe" unique_id=1240194996]
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_ripfr")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Ghost/Area Audio Longe" unique_id=1985281182]
@@ -401,6 +335,12 @@ centered = false
 position = Vector2(1598, 128)
 texture = ExtResource("23_ykeiw")
 centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprites/Sprite0026" unique_id=701648250]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprites/Sprite0026/StaticBody2D" unique_id=1310485450]
+position = Vector2(90, 31.875)
+shape = SubResource("RectangleShape2D_f44p1")
 
 [node name="Sprite0003" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=980219372]
 texture_filter = 1
@@ -539,11 +479,6 @@ position = Vector2(1475, 3)
 texture = ExtResource("44_2ms74")
 centered = false
 
-[node name="Sprite0022" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=172060934]
-position = Vector2(1528, 56)
-texture = ExtResource("45_lrpa3")
-centered = false
-
 [node name="Sprite0024" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1480634978]
 position = Vector2(1693, 50)
 texture = ExtResource("46_q1p54")
@@ -556,7 +491,7 @@ texture = ExtResource("9_cugen")
 
 [node name="Player" type="Node" parent="." unique_id=979423441]
 
-[node name="Player" type="CharacterBody2D" parent="Player" unique_id=1089180727]
+[node name="Player" type="CharacterBody2D" parent="Player" unique_id=1089180727 groups=["jogador"]]
 physics_interpolation_mode = 1
 z_index = 2
 position = Vector2(49, 269)
@@ -609,6 +544,22 @@ limit_bottom = 358
 position_smoothing_enabled = true
 script = ExtResource("52_yw5yd")
 player = NodePath("../Player")
+
+[node name="Cutscene" type="Node2D" parent="." unique_id=1145015879]
+position = Vector2(17, 77)
+
+[node name="Area2D" type="Area2D" parent="Cutscene" unique_id=480894958]
+position = Vector2(1596, 241)
+script = ExtResource("47_f44p1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscene/Area2D" unique_id=1311662373]
+position = Vector2(-12, 12)
+shape = SubResource("RectangleShape2D_57mis")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cutscene/Area2D" unique_id=2047809547]
+texture_filter = 1
+position = Vector2(-17, -77)
+sprite_frames = SubResource("SpriteFrames_oj72k")
 
 [connection signal="body_entered" from="Ghost/Area Contato" to="Ghost/Area Contato" method="_on_body_entered"]
 [connection signal="body_exited" from="Ghost/Area Contato" to="Ghost/Area Contato" method="_on_body_exited"]
