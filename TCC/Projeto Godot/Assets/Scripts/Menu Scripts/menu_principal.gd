@@ -28,4 +28,4 @@ func _on_opcoes_pressed() -> void:
 	get_tree().change_scene_to_file("res://Assets/Scenes/Menu Scenes/opcoes.tscn")
 
 func _on_iniciar_pressed() -> void:
-	get_tree().change_scene_to_file("res://Assets/Scenes/Room.tscn")
+	get_tree().change_scene_to_file("res://Assets/Scenes/Startup.tscn")
