@@ -36,10 +36,10 @@ lines = Array[String](["O quarto de seus pais. Provavelmente não tem ninguém a
 metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai4ln"]
-size = Vector2(84, 98.9375)
+size = Vector2(50, 109.46875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fgajp"]
-size = Vector2(75.375, 96.125)
+size = Vector2(75.375, 96)
 
 [sub_resource type="Resource" id="Resource_0itf1"]
 script = ExtResource("21_7p0a3")
@@ -48,7 +48,7 @@ lines = Array[String](["Todos esses livros te lembram de todas as aventuras que 
 metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ramn"]
-size = Vector2(109.75, 51.9375)
+size = Vector2(100, 51.9375)
 
 [sub_resource type="Resource" id="Resource_6wcw1"]
 script = ExtResource("21_7p0a3")
@@ -282,19 +282,20 @@ interaction_area = NodePath("Area2D")
 [node name="Area2D" type="Area2D" parent="Corridor/Sprite0021/DialogueInteractable" unique_id=1810766852]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Sprite0021/DialogueInteractable/Area2D" unique_id=778765746]
-position = Vector2(20, -0.53125)
+position = Vector2(4, -0.734375)
 shape = SubResource("RectangleShape2D_ai4ln")
 
 [node name="Sprite0015" type="Sprite2D" parent="Corridor" unique_id=1404641492]
 texture_filter = 1
-position = Vector2(143, -69)
+position = Vector2(143, -61)
 texture = ExtResource("8_5vpow")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Corridor/Sprite0015" unique_id=1720642257]
 position = Vector2(11, 11)
+collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Sprite0015/StaticBody2D" unique_id=307993880]
-position = Vector2(-11.6875, -10.0625)
+position = Vector2(-11.6875, -10)
 shape = SubResource("RectangleShape2D_fgajp")
 
 [node name="DialogueInteractable" type="Node2D" parent="Corridor/Sprite0015" unique_id=1900582756 node_paths=PackedStringArray("interaction_area")]
@@ -306,7 +307,7 @@ interaction_area = NodePath("Area2D")
 [node name="Area2D" type="Area2D" parent="Corridor/Sprite0015/DialogueInteractable" unique_id=210180142]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/Sprite0015/DialogueInteractable/Area2D" unique_id=1354185331]
-position = Vector2(7.125, 22.96875)
+position = Vector2(3, 29)
 shape = SubResource("RectangleShape2D_7ramn")
 
 [node name="Sprite0018" type="Sprite2D" parent="Corridor" unique_id=763419132]
