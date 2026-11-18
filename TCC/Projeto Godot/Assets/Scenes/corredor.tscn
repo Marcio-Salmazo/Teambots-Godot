@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://csgty3osfp3a"]
 
 [ext_resource type="TileSet" uid="uid://bw0jib64oaf20" path="res://Assets/Raw Sprites/House Tiles/Corredor.tres" id="15_45qh7"]
-[ext_resource type="Texture2D" uid="uid://diih06plwrrsj" path="res://Assets/Raw Sprites/Corredor/Sprite-0005.png" id="16_44a6y"]
 [ext_resource type="Texture2D" uid="uid://b1ibsgbhcmaln" path="res://Assets/Raw Sprites/Corredor/Sprite-0009.png" id="16_53q5d"]
 [ext_resource type="Texture2D" uid="uid://bmo8sxio477h1" path="res://Assets/Raw Sprites/Corredor/Sprite-0006.png" id="17_4n25s"]
 [ext_resource type="Texture2D" uid="uid://nofdyardx30a" path="res://Assets/Raw Sprites/Corredor/Sprite-0007.png" id="18_1lo3c"]
@@ -22,6 +21,15 @@
 [ext_resource type="Script" uid="uid://d3ersle61m31l" path="res://Assets/Scripts/levels.gd" id="52_levels"]
 [ext_resource type="PackedScene" uid="uid://c1vd456q8jd3n" path="res://Assets/Scenes/pathway.tscn" id="53_pathway"]
 [ext_resource type="Script" uid="uid://bkg1meulxw03h" path="res://Assets/Scenes/pathway.gd" id="54_pathwaygd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44a6y"]
+size = Vector2(61, 41)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j8wto"]
+load_path = "res://.godot/imported/Sprite-0005.png-d4fd18ac32b93933f40c9fe5fcab8c7e.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_204ke"]
+size = Vector2(27, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1roc"]
 size = Vector2(14.129, 9.499966)
@@ -235,6 +243,12 @@ texture = ExtResource("16_53q5d")
 position = Vector2(264, 632)
 texture = ExtResource("17_4n25s")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Corredor/Sprite0006" unique_id=1782622523]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corredor/Sprite0006/StaticBody2D" unique_id=292641967]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_44a6y")
+
 [node name="Sprite0007" type="Sprite2D" parent="Corredor" unique_id=1354541415]
 position = Vector2(346.75003, 692.75)
 scale = Vector2(1.0024998, 1.0624988)
@@ -267,8 +281,14 @@ texture = ExtResource("19_o7oge")
 
 [node name="Sprite0005" type="Sprite2D" parent="Corredor" unique_id=1420312372]
 position = Vector2(498, 630)
-texture = ExtResource("16_44a6y")
+texture = SubResource("CompressedTexture2D_j8wto")
 flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Corredor/Sprite0005" unique_id=1594528030]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corredor/Sprite0005/StaticBody2D" unique_id=1407490639]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_204ke")
 
 [node name="Sprite0003" type="Sprite2D" parent="Corredor" unique_id=739223028]
 texture_filter = 1
