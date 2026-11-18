@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://csgty3osfp3a"]
 
+[ext_resource type="Texture2D" uid="uid://67dfqsc1xaqp" path="res://Assets/Raw Sprites/House/Sprite-0043.png" id="9_j8wto"]
 [ext_resource type="Texture2D" uid="uid://dyywlmflt7glu" path="res://Assets/Raw Sprites/House/Sprite-0005a.png" id="10_j8wto"]
 [ext_resource type="Texture2D" uid="uid://cgyxcspyk6qw1" path="res://Assets/Raw Sprites/House/Sprite-0004a.png" id="12_204ke"]
 [ext_resource type="TileSet" uid="uid://bw0jib64oaf20" path="res://Assets/Raw Sprites/House Tiles/Corredor.tres" id="15_45qh7"]
@@ -7,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bmo8sxio477h1" path="res://Assets/Raw Sprites/Corredor/Sprite-0006.png" id="17_4n25s"]
 [ext_resource type="Texture2D" uid="uid://nofdyardx30a" path="res://Assets/Raw Sprites/Corredor/Sprite-0007.png" id="18_1lo3c"]
 [ext_resource type="Texture2D" uid="uid://c48ige3wtghuk" path="res://Assets/Raw Sprites/Corredor/Sprite-0003.png" id="18_204ke"]
-[ext_resource type="Texture2D" uid="uid://clp5nfappy8sj" path="res://Assets/Raw Sprites/Corredor/Sprite-0015.png" id="19_o7oge"]
 [ext_resource type="Texture2D" uid="uid://ddqj1vfufrxq2" path="res://Assets/Raw Sprites/Corredor/Sprite-0014.png" id="20_qmov7"]
 [ext_resource type="Texture2D" uid="uid://2e4co68popgi" path="res://Assets/Raw Sprites/Corredor/Sprite-0011.png" id="24_m44e3"]
 [ext_resource type="Texture2D" uid="uid://dyx3we37oxda1" path="res://Assets/Raw Sprites/Corredor/Sprite-0012.png" id="25_26ev0"]
@@ -193,7 +193,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_voltaporta"]
-size = Vector2(60, 118)
+size = Vector2(60, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8wto"]
+size = Vector2(60, 112)
 
 [node name="Corredor" type="Node2D" unique_id=1788938321]
 script = ExtResource("52_levels")
@@ -275,7 +278,7 @@ metadata/_aseprite_wizard_interface_config_ = {
 
 [node name="Sprite0016" type="Sprite2D" parent="Corredor" unique_id=1179972442]
 position = Vector2(178, 594)
-texture = ExtResource("19_o7oge")
+texture = ExtResource("9_j8wto")
 
 [node name="Sprite0005" type="Sprite2D" parent="Corredor" unique_id=1420312372]
 position = Vector2(498, 630)
@@ -376,9 +379,23 @@ script = ExtResource("54_pathwaygd")
 nome = "Main House"
 
 [node name="CollisionShape2D" parent="Transicao/pathway" index="0" unique_id=1027692109]
-position = Vector2(6, -15)
+position = Vector2(6, -5)
 shape = SubResource("RectangleShape2D_voltaporta")
 
+[node name="Transicao2" type="Node" parent="." unique_id=1474672083]
+
+[node name="pathway" parent="Transicao2" unique_id=1064925599 instance=ExtResource("53_pathway")]
+position = Vector2(320, 250)
+collision_layer = 5
+script = ExtResource("54_pathwaygd")
+nome = "loop_corredor"
+
+[node name="CollisionShape2D" parent="Transicao2/pathway" index="0" unique_id=1027692109]
+position = Vector2(-262, 10)
+shape = SubResource("RectangleShape2D_j8wto")
+
 [connection signal="body_entered" from="Transicao/pathway" to="Transicao/pathway" method="_on_body_entered"]
+[connection signal="body_entered" from="Transicao2/pathway" to="Transicao2/pathway" method="_on_body_entered"]
 
 [editable path="Transicao/pathway"]
+[editable path="Transicao2/pathway"]

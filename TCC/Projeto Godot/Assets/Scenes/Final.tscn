@@ -549,7 +549,7 @@ texture = ExtResource("9_cugen")
 [node name="Player" type="CharacterBody2D" parent="Player" unique_id=1089180727]
 physics_interpolation_mode = 1
 z_index = 2
-position = Vector2(329, 279)
+position = Vector2(49, 269)
 scale = Vector2(2.2, 2.2)
 collision_mask = 3
 floor_constant_speed = true
@@ -588,7 +588,7 @@ idle_fallback_frame = null
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=605804674 node_paths=PackedStringArray("player")]
 physics_interpolation_mode = 1
-position = Vector2(295, 265)
+position = Vector2(15, 255)
 zoom = Vector2(3.7, 3.7)
 process_callback = 0
 limit_left = 0

@@ -1,17 +1,22 @@
 [gd_scene format=4 uid="uid://dsh03m4t01mbo"]
 
 [ext_resource type="TileSet" uid="uid://3whdgl2uh6vg" path="res://Assets/Raw Sprites/House Tiles/house Backgrounds.tres" id="1_a6pml"]
+[ext_resource type="Script" uid="uid://bb01xg4w7xdsd" path="res://Assets/Scripts/LoopCorredor.gd" id="1_e4dhk"]
 [ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Scripts/PlayerController.gd" id="2_ra8u7"]
 [ext_resource type="Texture2D" uid="uid://bsksqa6sorv8o" path="res://Assets/Raw Sprites/Characters/player/Lucy_Andando.png" id="3_4h2wo"]
 [ext_resource type="Texture2D" uid="uid://bhmi6pg1ykjlg" path="res://Assets/Raw Sprites/Characters/player/Lucy_Parado.png" id="4_2qny4"]
 [ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Scripts/StateMachine.gd" id="5_ypvcw"]
 [ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="6_ctyfa"]
 [ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="7_mf5cw"]
-[ext_resource type="Texture2D" uid="uid://dgxglpyt3ip34" path="res://Assets/Raw Sprites/House/Sprite-0045.png" id="8_ctyfa"]
+[ext_resource type="Texture2D" uid="uid://bmvvaaj2sww2r" path="res://Assets/Raw Sprites/House/Sprite-0021.png" id="8_hl5l2"]
+[ext_resource type="PackedScene" uid="uid://c1vd456q8jd3n" path="res://Assets/Scenes/pathway.tscn" id="9_hl5l2"]
 [ext_resource type="Texture2D" uid="uid://bj8jfqn5ftxsc" path="res://Assets/Raw Sprites/Corredor2/7.png" id="9_mf5cw"]
+[ext_resource type="Script" uid="uid://bkg1meulxw03h" path="res://Assets/Scenes/pathway.gd" id="10_e4dhk"]
 [ext_resource type="Texture2D" uid="uid://e7v2fmgdcwwf" path="res://Assets/Raw Sprites/Corredor2/Sprite-0004.png" id="10_oik5o"]
 [ext_resource type="Texture2D" uid="uid://gm4urmh8o3bv" path="res://Assets/Raw Sprites/Corredor2/Sprite-0005.png" id="11_gr165"]
+[ext_resource type="Script" uid="uid://diphekvk8ayyk" path="res://Assets/Dialogue/InteractableDialogue.gd" id="11_u2uvb"]
 [ext_resource type="Texture2D" uid="uid://bhfbfwd7w8q3k" path="res://Assets/Raw Sprites/Corredor2/Sprite-0006.png" id="12_gjvji"]
+[ext_resource type="Script" uid="uid://cy34ykfuwqx4f" path="res://Assets/Dialogue/DialogueData.gd" id="12_s71s0"]
 [ext_resource type="Texture2D" uid="uid://dsy8yn0mnidx" path="res://Assets/Raw Sprites/House/Sprite-0010.png" id="13_b4ixx"]
 [ext_resource type="Texture2D" uid="uid://dpr8rgwvj4jk7" path="res://Assets/Raw Sprites/House/Sprite-0009.png" id="14_7iw50"]
 [ext_resource type="Texture2D" uid="uid://crxesq3dw20do" path="res://Assets/Raw Sprites/House/Sprite-0008.png" id="15_j8g4p"]
@@ -23,6 +28,12 @@
 [ext_resource type="Texture2D" uid="uid://dqjmwoqf11yo6" path="res://Assets/Raw Sprites/Corredor2/Sprite-0014.png" id="20_bydd6"]
 [ext_resource type="Texture2D" uid="uid://brvv6ulpm51qb" path="res://Assets/Raw Sprites/Corredor2/janela_loop2.2png.png" id="23_1rft7"]
 [ext_resource type="Texture2D" uid="uid://bbpw7usflvqhh" path="res://Assets/Raw Sprites/Corredor2/buracodopedro.png" id="24_nwp3n"]
+[ext_resource type="Texture2D" uid="uid://0svy67gk6rss" path="res://Assets/Raw Sprites/Corredor2/Sprite-0009.png" id="27_yi7yd"]
+[ext_resource type="Texture2D" uid="uid://boxlxh6824b15" path="res://Assets/Raw Sprites/Corredor2/Sprite-0011.png" id="28_h3ihx"]
+[ext_resource type="Texture2D" uid="uid://bbvfmq08otfw3" path="res://Assets/Raw Sprites/Corredor2/Sprite-0012.png" id="29_5dum8"]
+[ext_resource type="Texture2D" uid="uid://nncf6avfo4wa" path="res://Assets/Raw Sprites/Corredor2/Sprite-0018.png" id="30_r30xm"]
+[ext_resource type="Texture2D" uid="uid://b1d8vfvokf44w" path="res://Assets/Raw Sprites/Corredor2/Sprite-0024.png" id="33_5io21"]
+[ext_resource type="Texture2D" uid="uid://b5iwdji7loga7" path="res://Assets/Raw Sprites/Corredor2/Sprite-0010.png" id="34_biei8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oik5o"]
 size = Vector2(14.129, 9.499966)
@@ -187,14 +198,53 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gs0hv"]
+size = Vector2(46, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xup3o"]
+size = Vector2(51, 111)
+
+[sub_resource type="Resource" id="Resource_5e70j"]
+script = ExtResource("12_s71s0")
+speaker = "Lucy"
+lines = Array[String](["Não é uma boa ideia voltar agora..."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi7yd"]
+size = Vector2(50, 109.46875)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ho3ly"]
 size = Vector2(73, 63)
+
+[sub_resource type="Resource" id="Resource_hl5l2"]
+script = ExtResource("12_s71s0")
+speaker = "Lucy"
+lines = Array[String](["Um dia bonito lá fora", "...", "...", "Bonito pra quem?..."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4dhk"]
+size = Vector2(88, 126.734375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwp3n"]
 size = Vector2(26, 38)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hl5l2"]
-load_path = "res://.godot/imported/Sprite-0045.png-1b2fc6164331f3ffdf6ce6394a821ed2.ctex"
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c6ul5"]
+load_path = "res://.godot/imported/Sprite-0021.png-0a799e536ab003e7ecf37be5be49b78c.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7nc"]
+size = Vector2(46, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1q6ek"]
+size = Vector2(51, 111)
+
+[sub_resource type="Resource" id="Resource_ihbjy"]
+script = ExtResource("12_s71s0")
+speaker = "Lucy"
+lines = Array[String](["Não é uma boa ideia voltar agora..."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_us1ea"]
+size = Vector2(50, 109.46875)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e4dhk"]
 load_path = "res://.godot/imported/7.png-cfddb743414ed6f349088aba1df898d0.ctex"
@@ -217,23 +267,29 @@ load_path = "res://.godot/imported/Sprite-0005.png-d4fd18ac32b93933f40c9fe5fcab8
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6ul5"]
 size = Vector2(26, 38)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bydd6"]
-load_path = "res://.godot/imported/Sprite-0045.png-1b2fc6164331f3ffdf6ce6394a821ed2.ctex"
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yqvhx"]
+load_path = "res://.godot/imported/Sprite-0021.png-0a799e536ab003e7ecf37be5be49b78c.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1ior"]
+size = Vector2(46, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olsr8"]
+size = Vector2(51, 111)
+
+[sub_resource type="Resource" id="Resource_m4f54"]
+script = ExtResource("12_s71s0")
+speaker = "Lucy"
+lines = Array[String](["Não é uma boa ideia voltar agora..."])
+metadata/_custom_type_script = "uid://cy34ykfuwqx4f"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2ma6"]
+size = Vector2(50, 109.46875)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xup3o"]
 load_path = "res://.godot/imported/7.png-cfddb743414ed6f349088aba1df898d0.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rft7"]
 size = Vector2(73, 63)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5e70j"]
-load_path = "res://.godot/imported/Sprite-0016.png-70777e06f389b99ebf9f63b073cea5ac.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yi7yd"]
-load_path = "res://.godot/imported/Sprite-0015.png-68291819c38a63e86ac334e9a24cc470.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h3ihx"]
-load_path = "res://.godot/imported/Sprite-0014.png-b9caf7c9f0be1b08d0c5700a4bf8cc43.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5dum8"]
 load_path = "res://.godot/imported/Sprite-0010.png-50a94f15801c8239ab4cf7dda92489ab.ctex"
@@ -250,8 +306,40 @@ size = Vector2(25, 40)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_biei8"]
 load_path = "res://.godot/imported/Sprite-0004.png-b6d140f0f89659388f68563d26928aca.ctex"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ebwkk"]
+load_path = "res://.godot/imported/Sprite-0015.png-68291819c38a63e86ac334e9a24cc470.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tu7nc"]
+load_path = "res://.godot/imported/Sprite-0016.png-70777e06f389b99ebf9f63b073cea5ac.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1q6ek"]
+load_path = "res://.godot/imported/Sprite-0014.png-b9caf7c9f0be1b08d0c5700a4bf8cc43.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ihbjy"]
+load_path = "res://.godot/imported/Sprite-0009.png-872fa9fb234fc05916708562dcd316d5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_us1ea"]
+load_path = "res://.godot/imported/Sprite-0011.png-cec09273bdbfbd17b66160869908c774.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a1ior"]
+load_path = "res://.godot/imported/Sprite-0012.png-f5f9f2af150dc266fa0d301d15a38e3c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_olsr8"]
+load_path = "res://.godot/imported/Sprite-0014.png-b9caf7c9f0be1b08d0c5700a4bf8cc43.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m4f54"]
+load_path = "res://.godot/imported/Sprite-0015.png-68291819c38a63e86ac334e9a24cc470.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m2ma6"]
+load_path = "res://.godot/imported/Sprite-0018.png-7d299bc083b04dab29209140a9a2d111.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2uvb"]
+size = Vector2(46, 108)
+
 [node name="loop" type="Node2D" unique_id=852670433]
 texture_filter = 1
+script = ExtResource("1_e4dhk")
+next_scene_path = "uid://b08gdpqk6amoo"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=65387689]
 texture_filter = 3
@@ -263,7 +351,7 @@ tile_set = ExtResource("1_a6pml")
 [node name="Player" type="CharacterBody2D" parent="Player" unique_id=1816349778]
 physics_interpolation_mode = 1
 z_index = 2
-position = Vector2(142, 148)
+position = Vector2(92, 103)
 scale = Vector2(2.2, 2.2)
 collision_mask = 3
 floor_constant_speed = true
@@ -302,7 +390,7 @@ idle_fallback_frame = null
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=306103104 node_paths=PackedStringArray("player")]
 physics_interpolation_mode = 1
-position = Vector2(174, 247)
+position = Vector2(124, 202)
 zoom = Vector2(3.7, 3.7)
 process_callback = 0
 limit_left = 0
@@ -317,8 +405,36 @@ player = NodePath("../Player")
 
 [node name="Sprite0045" type="Sprite2D" parent="Iteration1" unique_id=554648288]
 texture_filter = 1
-position = Vector2(90, 82)
-texture = ExtResource("8_ctyfa")
+position = Vector2(90, 81)
+texture = ExtResource("8_hl5l2")
+
+[node name="pathway" parent="Iteration1/Sprite0045" unique_id=1064925599 instance=ExtResource("9_hl5l2")]
+position = Vector2(121, 353)
+collision_layer = 5
+script = ExtResource("10_e4dhk")
+nome = "null"
+
+[node name="CollisionShape2D" parent="Iteration1/Sprite0045/pathway" index="0" unique_id=1027692109]
+position = Vector2(-120, -344)
+shape = SubResource("RectangleShape2D_gs0hv")
+
+[node name="Area2D" type="Area2D" parent="Iteration1/Sprite0045" unique_id=94909530]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Iteration1/Sprite0045/Area2D" unique_id=712561579]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_xup3o")
+
+[node name="DialogueInteractable" type="Node2D" parent="Iteration1/Sprite0045" unique_id=499681441 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(-4, 8)
+script = ExtResource("11_u2uvb")
+dialogue_data = SubResource("Resource_5e70j")
+interaction_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Iteration1/Sprite0045/DialogueInteractable" unique_id=987160967]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Iteration1/Sprite0045/DialogueInteractable/Area2D" unique_id=321201691]
+position = Vector2(4, -0.734375)
+shape = SubResource("RectangleShape2D_yi7yd")
 
 [node name="Sprite Estante" type="Sprite2D" parent="Iteration1" unique_id=873300428]
 position = Vector2(221, 109)
@@ -352,6 +468,18 @@ texture = ExtResource("13_b4ixx")
 position = Vector2(365, 67)
 texture = ExtResource("14_7iw50")
 
+[node name="DialogueInteractable" type="Node2D" parent="Iteration1/Sprite0009" unique_id=170663875 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(-4, 8)
+script = ExtResource("11_u2uvb")
+dialogue_data = SubResource("Resource_hl5l2")
+interaction_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Iteration1/Sprite0009/DialogueInteractable" unique_id=1027824774]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Iteration1/Sprite0009/DialogueInteractable/Area2D" unique_id=263138165]
+position = Vector2(4, 17.632813)
+shape = SubResource("RectangleShape2D_e4dhk")
+
 [node name="Sprite0008" type="Sprite2D" parent="Iteration1" unique_id=1881155854]
 position = Vector2(541, 150)
 texture = ExtResource("15_j8g4p")
@@ -373,10 +501,38 @@ texture = ExtResource("17_ho3ly")
 [node name="Iteration2" type="Node2D" parent="." unique_id=912120347]
 visible = false
 
-[node name="Sprite0045" type="Sprite2D" parent="Iteration2" unique_id=1147854364]
+[node name="Sprite0045" type="Sprite2D" parent="Iteration2" unique_id=625502483]
 texture_filter = 1
-position = Vector2(90, 82)
-texture = SubResource("CompressedTexture2D_hl5l2")
+position = Vector2(90, 81)
+texture = SubResource("CompressedTexture2D_c6ul5")
+
+[node name="pathway" parent="Iteration2/Sprite0045" unique_id=743577560 instance=ExtResource("9_hl5l2")]
+position = Vector2(121, 353)
+collision_layer = 5
+script = ExtResource("10_e4dhk")
+nome = "null"
+
+[node name="CollisionShape2D" parent="Iteration2/Sprite0045/pathway" index="0" unique_id=1027692109]
+position = Vector2(-120, -344)
+shape = SubResource("RectangleShape2D_tu7nc")
+
+[node name="Area2D" type="Area2D" parent="Iteration2/Sprite0045" unique_id=280163633]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Iteration2/Sprite0045/Area2D" unique_id=1824300863]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_1q6ek")
+
+[node name="DialogueInteractable" type="Node2D" parent="Iteration2/Sprite0045" unique_id=922214902 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(-4, 8)
+script = ExtResource("11_u2uvb")
+dialogue_data = SubResource("Resource_ihbjy")
+interaction_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Iteration2/Sprite0045/DialogueInteractable" unique_id=633482867]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Iteration2/Sprite0045/DialogueInteractable/Area2D" unique_id=1117620236]
+position = Vector2(4, -0.734375)
+shape = SubResource("RectangleShape2D_us1ea")
 
 [node name="Sprite Estante" type="Sprite2D" parent="Iteration2" unique_id=62119745]
 position = Vector2(221, 109)
@@ -388,20 +544,55 @@ texture = SubResource("CompressedTexture2D_e4dhk")
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_bydd6")
 
-[node name="Sprite0004" type="Sprite2D" parent="Iteration2" unique_id=861752268]
-position = Vector2(234, 59.000004)
-scale = Vector2(0.7, 0.764)
-texture = ExtResource("18_1rft7")
-
-[node name="Sprite0005" type="Sprite2D" parent="Iteration2" unique_id=1981113318]
+[node name="Quadros" type="Sprite2D" parent="Iteration2" unique_id=1981113318]
 position = Vector2(203, 54)
 scale = Vector2(0.8, 0.765)
 texture = ExtResource("19_nwp3n")
 
-[node name="Sprite0006" type="Sprite2D" parent="Iteration2" unique_id=919131894]
-position = Vector2(227, 36)
-scale = Vector2(0.5, 0.5)
+[node name="Sprite0004" type="Sprite2D" parent="Iteration2/Quadros" unique_id=861752268]
+position = Vector2(38.75, 6.5359573)
+scale = Vector2(0.875, 0.9986928)
+texture = ExtResource("18_1rft7")
+
+[node name="Sprite0006" type="Sprite2D" parent="Iteration2/Quadros" unique_id=919131894]
+position = Vector2(32.5, -33.98693)
+scale = Vector2(0.625, 0.6535948)
 texture = ExtResource("20_bydd6")
+
+[node name="Sprite0011" type="Sprite2D" parent="Iteration2/Quadros" unique_id=1925903172]
+position = Vector2(357.5, 14.379089)
+scale = Vector2(1.25, 1.3071896)
+texture = ExtResource("17_1ighd")
+
+[node name="Sprite0012" type="Sprite2D" parent="Iteration2/Quadros" unique_id=668942276]
+position = Vector2(78.75, 5.22876)
+scale = Vector2(0.86538464, 0.8943929)
+texture = ExtResource("27_yi7yd")
+
+[node name="Sprite0013" type="Sprite2D" parent="Iteration2/Quadros" unique_id=962872762]
+position = Vector2(68.75, -31.372547)
+scale = Vector2(0.9375, 1.0457517)
+texture = ExtResource("28_h3ihx")
+
+[node name="Sprite0014" type="Sprite2D" parent="Iteration2/Quadros" unique_id=399200737]
+position = Vector2(113.75, 27.450981)
+scale = Vector2(1.25, 1.3071896)
+texture = ExtResource("29_5dum8")
+
+[node name="Sprite0015" type="Sprite2D" parent="Iteration2/Quadros" unique_id=520540148]
+position = Vector2(286.25, -22.222214)
+scale = Vector2(0.9615385, 0.95068336)
+texture = ExtResource("20_bydd6")
+
+[node name="Sprite0016" type="Sprite2D" parent="Iteration2/Quadros" unique_id=689314604]
+position = Vector2(303.75, 23.529427)
+scale = Vector2(0.7236842, 0.7672634)
+texture = ExtResource("19_nwp3n")
+
+[node name="Sprite0018" type="Sprite2D" parent="Iteration2/Quadros" unique_id=1956764372]
+position = Vector2(-56.25, 19.60785)
+scale = Vector2(0.30645162, 0.3235618)
+texture = ExtResource("30_r30xm")
 
 [node name="Sprite0010" type="Sprite2D" parent="Iteration2" unique_id=1082259609]
 position = Vector2(539, 83)
@@ -426,17 +617,41 @@ texture = SubResource("CompressedTexture2D_p31j0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Iteration2/Sprite0007/StaticBody2D" unique_id=2044787441]
 shape = SubResource("RectangleShape2D_c6ul5")
 
-[node name="Sprite0011" type="Sprite2D" parent="Iteration2" unique_id=1925903172]
-position = Vector2(489, 65)
-texture = ExtResource("17_1ighd")
-
 [node name="Iteration3" type="Node2D" parent="." unique_id=1510490570]
 visible = false
 
-[node name="Sprite0045" type="Sprite2D" parent="Iteration3" unique_id=1857963945]
+[node name="Sprite0045" type="Sprite2D" parent="Iteration3" unique_id=1875478910]
 texture_filter = 1
-position = Vector2(90, 82)
-texture = SubResource("CompressedTexture2D_bydd6")
+position = Vector2(90, 81)
+texture = SubResource("CompressedTexture2D_yqvhx")
+
+[node name="pathway" parent="Iteration3/Sprite0045" unique_id=75818858 instance=ExtResource("9_hl5l2")]
+position = Vector2(121, 353)
+collision_layer = 5
+script = ExtResource("10_e4dhk")
+nome = "null"
+
+[node name="CollisionShape2D" parent="Iteration3/Sprite0045/pathway" index="0" unique_id=1027692109]
+position = Vector2(-120, -344)
+shape = SubResource("RectangleShape2D_a1ior")
+
+[node name="Area2D" type="Area2D" parent="Iteration3/Sprite0045" unique_id=323355273]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Iteration3/Sprite0045/Area2D" unique_id=1391454473]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_olsr8")
+
+[node name="DialogueInteractable" type="Node2D" parent="Iteration3/Sprite0045" unique_id=1793752837 node_paths=PackedStringArray("interaction_area")]
+position = Vector2(-4, 8)
+script = ExtResource("11_u2uvb")
+dialogue_data = SubResource("Resource_m4f54")
+interaction_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Iteration3/Sprite0045/DialogueInteractable" unique_id=203533068]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Iteration3/Sprite0045/DialogueInteractable/Area2D" unique_id=295283727]
+position = Vector2(4, -0.734375)
+shape = SubResource("RectangleShape2D_m2ma6")
 
 [node name="Sprite Estante" type="Sprite2D" parent="Iteration3" unique_id=270361684]
 position = Vector2(221, 109)
@@ -447,21 +662,6 @@ texture = SubResource("CompressedTexture2D_xup3o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Iteration3/Sprite Estante/StaticBody2D" unique_id=1950172243]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_1rft7")
-
-[node name="Sprite0004" type="Sprite2D" parent="Iteration3" unique_id=1330037137]
-position = Vector2(234, 59.000004)
-scale = Vector2(0.7, 0.764)
-texture = SubResource("CompressedTexture2D_5e70j")
-
-[node name="Sprite0005" type="Sprite2D" parent="Iteration3" unique_id=250023650]
-position = Vector2(203, 54)
-scale = Vector2(0.8, 0.765)
-texture = SubResource("CompressedTexture2D_yi7yd")
-
-[node name="Sprite0006" type="Sprite2D" parent="Iteration3" unique_id=2045976768]
-position = Vector2(227, 36)
-scale = Vector2(0.5, 0.5)
-texture = SubResource("CompressedTexture2D_h3ihx")
 
 [node name="Sprite0010" type="Sprite2D" parent="Iteration3" unique_id=687120843]
 position = Vector2(539, 83)
@@ -492,5 +692,91 @@ position = Vector2(489, 65)
 texture = SubResource("CompressedTexture2D_biei8")
 
 [node name="Buracodopedro" type="Sprite2D" parent="Iteration3" unique_id=1861695262]
-position = Vector2(298, 160)
+position = Vector2(363, 159)
 texture = ExtResource("24_nwp3n")
+
+[node name="Quadros" type="Sprite2D" parent="Iteration3" unique_id=1800002901]
+position = Vector2(203, 54)
+scale = Vector2(0.8, 0.765)
+texture = SubResource("CompressedTexture2D_ebwkk")
+
+[node name="Sprite0004" type="Sprite2D" parent="Iteration3/Quadros" unique_id=560116450]
+position = Vector2(38.75, 6.5359573)
+scale = Vector2(0.875, 0.9986928)
+texture = SubResource("CompressedTexture2D_tu7nc")
+
+[node name="Sprite0006" type="Sprite2D" parent="Iteration3/Quadros" unique_id=957028137]
+position = Vector2(32.5, -33.98693)
+scale = Vector2(0.625, 0.6535948)
+texture = SubResource("CompressedTexture2D_1q6ek")
+
+[node name="Sprite0012" type="Sprite2D" parent="Iteration3/Quadros" unique_id=447922376]
+position = Vector2(78.75, 5.22876)
+scale = Vector2(0.86538464, 0.8943929)
+texture = SubResource("CompressedTexture2D_ihbjy")
+
+[node name="Sprite0013" type="Sprite2D" parent="Iteration3/Quadros" unique_id=1769204834]
+position = Vector2(68.75, -31.372547)
+scale = Vector2(0.9375, 1.0457517)
+texture = SubResource("CompressedTexture2D_us1ea")
+
+[node name="Sprite0014" type="Sprite2D" parent="Iteration3/Quadros" unique_id=393772060]
+position = Vector2(113.75, 27.450981)
+scale = Vector2(1.25, 1.3071896)
+texture = SubResource("CompressedTexture2D_a1ior")
+
+[node name="Sprite0015" type="Sprite2D" parent="Iteration3/Quadros" unique_id=128599379]
+position = Vector2(286.25, -22.222214)
+scale = Vector2(0.9615385, 0.95068336)
+texture = SubResource("CompressedTexture2D_olsr8")
+
+[node name="Sprite0016" type="Sprite2D" parent="Iteration3/Quadros" unique_id=1093637577]
+position = Vector2(303.75, 23.529427)
+scale = Vector2(0.7236842, 0.7672634)
+texture = SubResource("CompressedTexture2D_m4f54")
+
+[node name="Sprite0018" type="Sprite2D" parent="Iteration3/Quadros" unique_id=269201039]
+position = Vector2(-56.25, 19.60785)
+scale = Vector2(0.30645162, 0.3235618)
+texture = SubResource("CompressedTexture2D_m2ma6")
+
+[node name="Sprite0024" type="Sprite2D" parent="Iteration3/Quadros" unique_id=2068697777]
+position = Vector2(118.75, -27.450977)
+texture = ExtResource("33_5io21")
+
+[node name="Sprite0025" type="Sprite2D" parent="Iteration3/Quadros" unique_id=1931818318]
+position = Vector2(-209.28192, 1.30719)
+scale = Vector2(1.0638298, 1.0893246)
+texture = ExtResource("33_5io21")
+
+[node name="Sprite0026" type="Sprite2D" parent="Iteration3/Quadros" unique_id=627664873]
+position = Vector2(333.75, -31.372547)
+scale = Vector2(0.87765956, 0.9077705)
+texture = ExtResource("33_5io21")
+
+[node name="Sprite0010" type="Sprite2D" parent="Iteration3/Quadros" unique_id=2124504993]
+position = Vector2(-56.25, -20.915031)
+scale = Vector2(0.8333334, 0.91987413)
+texture = ExtResource("34_biei8")
+
+[node name="Transicao" type="Node" parent="." unique_id=2116970531]
+
+[node name="pathway" parent="Transicao" unique_id=1585387501 instance=ExtResource("9_hl5l2")]
+position = Vector2(317, 183)
+collision_layer = 5
+script = ExtResource("10_e4dhk")
+nome = "Final"
+
+[node name="CollisionShape2D" parent="Transicao/pathway" index="0" unique_id=1027692109]
+position = Vector2(222, -88)
+shape = SubResource("RectangleShape2D_u2uvb")
+
+[connection signal="body_entered" from="Iteration1/Sprite0045/pathway" to="Iteration1/Sprite0045/pathway" method="_on_body_entered"]
+[connection signal="body_entered" from="Iteration2/Sprite0045/pathway" to="Iteration2/Sprite0045/pathway" method="_on_body_entered"]
+[connection signal="body_entered" from="Iteration3/Sprite0045/pathway" to="Iteration3/Sprite0045/pathway" method="_on_body_entered"]
+[connection signal="body_entered" from="Transicao/pathway" to="Transicao/pathway" method="_on_body_entered"]
+
+[editable path="Iteration1/Sprite0045/pathway"]
+[editable path="Iteration2/Sprite0045/pathway"]
+[editable path="Iteration3/Sprite0045/pathway"]
+[editable path="Transicao/pathway"]
