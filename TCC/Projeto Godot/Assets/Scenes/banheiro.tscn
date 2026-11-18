@@ -240,17 +240,20 @@ size = Vector2(46, 108)
 [node name="Banheiro" type="TileMapLayer" parent="." unique_id=927139091]
 texture_filter = 1
 position = Vector2(495, 277)
-tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAD+/wAAAAACAAIAAAD+/wEAAAAAAAIAAAD+/wIAAAAAAAMAAAD+/wMAAAAAAAQAAAD+/wQAAAAAAAUAAAD/////AAABAAAAAAD//wAAAAABAAEAAAD//wEAAAABAAIAAAD//wIAAAABAAMAAAD//wMAAAABAAQAAAD//wQAAAABAAUAAAAAAP//AAACAAAAAAAAAAAAAAACAAEAAAAAAAEAAAACAAIAAAAAAAIAAAACAAMAAAAAAAMAAAACAAQAAAAAAAQAAAACAAUAAAABAP//AAADAAAAAAABAAAAAAADAAEAAAABAAEAAAADAAIAAAABAAIAAAADAAMAAAABAAMAAAADAAQAAAABAAQAAAADAAUAAAACAP//AAAEAAAAAAACAAAAAAAEAAEAAAACAAEAAAAEAAIAAAACAAIAAAAEAAMAAAACAAMAAAAEAAQAAAACAAQAAAAEAAUAAAADAP//AAACAAEAAAADAAAAAAACAAIAAAADAAEAAAACAAEAAAADAAIAAAACAAIAAAADAAMAAAACAAEAAAADAAQAAAACAAIAAAD9/wMAAAACAAEAAAD9/wQAAAACAAIAAAD9////AAACAAEAAAD9/wAAAAACAAIAAAD9/wEAAAACAAEAAAD9/wIAAAACAAIAAAD9/wUAAAACAAIAAAD+/wUAAAACAAIAAAD//wUAAAACAAIAAAAAAAUAAAACAAIAAAACAAUAAAACAAIAAAADAAUAAAACAAIAAAABAAUAAAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAD+////AAABAAAAAAD+/wAAAAABAAEAAAD+/wEAAAABAAIAAAD+/wIAAAABAAMAAAD+/wMAAAAAAAQAAAD+/wQAAAAAAAUAAAD/////AAABAAAAAAD//wAAAAABAAEAAAD//wEAAAABAAIAAAD//wIAAAABAAMAAAD//wMAAAABAAQAAAD//wQAAAABAAUAAAAAAP//AAACAAAAAAAAAAAAAAACAAEAAAAAAAEAAAACAAIAAAAAAAIAAAACAAMAAAAAAAMAAAACAAQAAAAAAAQAAAACAAUAAAABAP//AAADAAAAAAABAAAAAAADAAEAAAABAAEAAAADAAIAAAABAAIAAAADAAMAAAABAAMAAAADAAQAAAABAAQAAAADAAUAAAACAP//AAADAAAAAAACAAAAAAADAAEAAAACAAEAAAADAAIAAAACAAIAAAADAAMAAAACAAMAAAAEAAQAAAACAAQAAAAEAAUAAAD8////AAAAAAAAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAIAAAD8/wIAAAAAAAMAAAD9////AAABAAAAAAD9/wAAAAABAAEAAAD9/wEAAAABAAIAAAD9/wIAAAABAAMAAAADAP//AAADAAAAAAADAAAAAAADAAEAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAAEAP//AAAEAAAAAAAEAAAAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAIAAAAEAAMAAAD8/wMAAAAAAAQAAAD8/wQAAAAAAAUAAAD9/wMAAAAAAAQAAAD9/wQAAAAAAAUAAAADAAMAAAAAAAQAAAADAAQAAAAAAAUAAAAEAAMAAAAAAAQAAAAEAAQAAAAAAAUAAAD7////AAADAAIAAAD7/wAAAAADAAIAAAD7/wEAAAADAAIAAAD7/wIAAAADAAIAAAD7/wMAAAADAAIAAAD7/wQAAAADAAIAAAD7/wUAAAADAAIAAAD8/wUAAAADAAIAAAD9/wUAAAADAAIAAAD+/wUAAAADAAIAAAD//wUAAAADAAIAAAAAAAUAAAADAAIAAAABAAUAAAADAAIAAAACAAUAAAADAAIAAAADAAUAAAADAAIAAAAEAAUAAAADAAIAAAAFAAUAAAADAAIAAAAFAAQAAAADAAIAAAAFAAMAAAADAAIAAAAFAAIAAAADAAIAAAAFAAEAAAADAAIAAAAFAAAAAAADAAIAAAAFAP//AAADAAIAAAA=")
 tile_set = ExtResource("1_5oiyg")
 
 [node name="Sprite0010" type="Sprite2D" parent="Banheiro" unique_id=1501388879]
-position = Vector2(74, 141)
+z_index = 4
+position = Vector2(-104.999985, 137)
+scale = Vector2(1.0976739, 1.2)
 texture = ExtResource("2_kq3tk")
+flip_h = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Banheiro/Sprite0010" unique_id=1513949338]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Sprite0010/StaticBody2D" unique_id=1175871075]
-position = Vector2(0.25, 0.75)
+position = Vector2(0, -3.8146973e-06)
 shape = SubResource("RectangleShape2D_wmblj")
 
 [node name="DialogueInteractable" type="Node2D" parent="Banheiro/Sprite0010" unique_id=399194821 node_paths=PackedStringArray("interaction_area")]
@@ -261,11 +264,11 @@ interaction_area = NodePath("Area2D")
 [node name="Area2D" type="Area2D" parent="Banheiro/Sprite0010/DialogueInteractable" unique_id=1493285741]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Banheiro/Sprite0010/DialogueInteractable/Area2D" unique_id=1192058868]
-position = Vector2(-8, 4)
+position = Vector2(10.021202, 2.5000114)
 shape = SubResource("RectangleShape2D_iguee")
 
 [node name="Sprite0014" type="Sprite2D" parent="Banheiro" unique_id=71247597]
-position = Vector2(-53, 148)
+position = Vector2(-119, 103)
 texture = ExtResource("3_da1gd")
 
 [node name="Sprite0015" type="Sprite2D" parent="Banheiro" unique_id=534108828]
@@ -273,7 +276,7 @@ position = Vector2(-32, 50)
 texture = ExtResource("4_cnsim")
 
 [node name="Sprite0012" type="Sprite2D" parent="Banheiro" unique_id=948917293]
-position = Vector2(59, 90)
+position = Vector2(97, 90)
 texture = ExtResource("5_n5yek")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Banheiro/Sprite0012" unique_id=1898782027]
@@ -323,7 +326,7 @@ position = Vector2(3.25, -2.9375)
 shape = SubResource("RectangleShape2D_rpegq")
 
 [node name="Sprite0016" type="Sprite2D" parent="Banheiro" unique_id=1140102881]
-position = Vector2(82, 84)
+position = Vector2(128, 88)
 texture = ExtResource("8_rpegq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Banheiro/Sprite0016" unique_id=946618822]
@@ -350,7 +353,7 @@ position = Vector2(19, 44)
 texture = ExtResource("9_nmxm2")
 
 [node name="PapelHigienico" type="Sprite2D" parent="Banheiro" unique_id=677721443]
-position = Vector2(59.000004, 68.57613)
+position = Vector2(111, 72.00002)
 scale = Vector2(0.8750015, 0.8417888)
 texture = ExtResource("10_8rw7g")
 
@@ -401,10 +404,10 @@ physics_interpolation_mode = 1
 position = Vector2(463, 350)
 zoom = Vector2(5, 5)
 process_callback = 0
-limit_left = 431
+limit_left = 367
 limit_top = 245
-limit_right = 591
-limit_bottom = 435
+limit_right = 654
+limit_bottom = 436
 position_smoothing_enabled = true
 script = ExtResource("16_iptxj")
 player = NodePath("../Player")

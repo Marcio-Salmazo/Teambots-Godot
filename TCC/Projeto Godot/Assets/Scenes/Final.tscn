@@ -91,6 +91,18 @@ size = Vector2(308, 288)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ripfr"]
 size = Vector2(600, 560)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8aq7"]
+size = Vector2(33.5, 96.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgpuy"]
+size = Vector2(75.75, 66.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ybd5"]
+size = Vector2(74.75, 97.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d0et"]
+size = Vector2(74.75, 135.25)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1c6yc"]
 animations = [{
 "frames": [{
@@ -386,10 +398,22 @@ position = Vector2(110, 44)
 texture = ExtResource("25_k66e8")
 centered = false
 
+[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprite000" unique_id=1411309005]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprite000/StaticBody2D" unique_id=23300951]
+position = Vector2(18.25, 48.75)
+shape = SubResource("RectangleShape2D_f8aq7")
+
 [node name="Sprite7" type="Sprite2D" parent="CorredorArte" unique_id=1144674653]
 position = Vector2(167, 75)
 texture = ExtResource("26_d3e57")
 centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprite7" unique_id=56702859]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprite7/StaticBody2D" unique_id=159802014]
+position = Vector2(39.125, 33.875)
+shape = SubResource("RectangleShape2D_mgpuy")
 
 [node name="Sprite0005" type="Sprite2D" parent="CorredorArte" unique_id=1342528301]
 position = Vector2(177, 38)
@@ -456,6 +480,18 @@ centered = false
 position = Vector2(789, 48)
 texture = ExtResource("35_b20dk")
 centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprite0013" unique_id=1154585498]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprite0013/StaticBody2D" unique_id=2140286995]
+position = Vector2(38.625, 48.375)
+shape = SubResource("RectangleShape2D_2ybd5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprite0013/StaticBody2D/CollisionShape2D" unique_id=1698058370]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprite0013/StaticBody2D/CollisionShape2D/StaticBody2D" unique_id=1202367834]
+position = Vector2(704.75, -26)
+shape = SubResource("RectangleShape2D_4d0et")
 
 [node name="Sprite0014" type="Sprite2D" parent="CorredorArte" unique_id=975812989]
 position = Vector2(959, 42)
