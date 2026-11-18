@@ -282,7 +282,7 @@ script = ExtResource("1_h23i0")
 [node name="Monstro1" type="AnimatedSprite2D" parent="." unique_id=1581827692]
 z_index = 1
 texture_filter = 1
-position = Vector2(895, 254)
+position = Vector2(888.99994, 254.00002)
 scale = Vector2(0.6351351, 0.7845529)
 sprite_frames = SubResource("SpriteFrames_57mis")
 animation = &"stare"
