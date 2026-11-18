@@ -17,9 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 		_player_na_area = true
 		if sprite_alvo:
 			sprite_alvo.z_index = 0
-
-
-
+			
 func _on_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		_player_na_area = false
@@ -27,14 +25,16 @@ func _on_body_exited(body: Node2D) -> void:
 			sprite_alvo.z_index = 3
 
 func _unhandled_input(event: InputEvent) -> void:
-	if _player_na_area and event.is_action_pressed("interagir"):
+	if not _player_na_area or Fade.transitioning:
+		return
+	if event.is_action_pressed("interagir"):
 		print("[escada] ", owner.name, " -> ", nome)
 		if nome == "Room" || nome == "Main House" :
 			AudioManager.play_sfx(DOOR_OPEN_SFX)
 		else:
 			AudioManager.play_sfx(DOOR_LOCK_SFX)
 		
-		change_level.call_deferred()
+		change_level()
 
 func change_level() -> void:
 	if nome.is_empty():
@@ -42,5 +42,9 @@ func change_level() -> void:
 		return
 	if nome == "null":
 		return
+	var caminho := "res://Assets/Scenes/" + nome + ".tscn"
+	if not ResourceLoader.exists(caminho):
+		push_error("pathway '%s' em '%s': cena '%s' não existe" % [name, owner.name, caminho])
+		return
 	Global.from_world = owner.name
-	get_tree().change_scene_to_file("res://Assets/Scenes/" + nome + ".tscn")
+	Fade.change_scene(caminho)

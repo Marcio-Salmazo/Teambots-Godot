@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://draqydpwlolqa"]
+
+[ext_resource type="Script" uid="uid://dfkdel5d4gjdb" path="res://Assets/Scripts/brilho.gd" id="1_tm7xq"]
+
+[node name="Brilho" type="CanvasLayer" unique_id=650742949]
+layer = 100
+script = ExtResource("1_tm7xq")
+
+[node name="Escuro" type="ColorRect" parent="." unique_id=1824843596]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

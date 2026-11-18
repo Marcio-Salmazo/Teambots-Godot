@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var dialogue_text: RichTextLabel = $DialogueRoot/CenterContainer/DialogueText
 @onready var continue_hint: Label = $DialogueRoot/ContinueHint
 
+const Jumpscare = preload("res://Assets/Fantasma/tensao_fantasma.mp3")
 
 # CONFIGURAÇÕES DO TYPEWRITER
 @export_group("Typewriter")
@@ -182,18 +183,12 @@ func advance_dialogue() -> void:
 		ending_dialogue = true
 		dialogue_active = false
 		dialogue_root.hide()
-		
-		# Faz o código pausar aqui e esperar a função inteira do jumpscare terminar
 		await trigger_jumpscare()
-		
-		# Se precisar de um tempo extra ALÉM do jumpscare (ex: 1.5 segundos de tela preta), 
-		# você pode adicionar um timer manual assim:
+		AudioManager.play_sfx(Jumpscare)
 		await get_tree().create_timer(1.5).timeout
 		
 		change_level()
-		
 		return
-
 	dialogue_index += 1
 	show_current_line()
 

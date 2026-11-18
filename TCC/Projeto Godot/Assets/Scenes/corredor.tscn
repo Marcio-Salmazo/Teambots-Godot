@@ -1,8 +1,11 @@
 [gd_scene format=4 uid="uid://csgty3osfp3a"]
 
+[ext_resource type="Script" uid="uid://dassyr4kiipok" path="res://Assets/Scenes/sprite_0015.gd" id="14_eosuo"]
+[ext_resource type="Script" uid="uid://c007utn440r71" path="res://Assets/Scenes/sprite_0014.gd" id="14_qmov7"]
 [ext_resource type="TileSet" uid="uid://bw0jib64oaf20" path="res://Assets/Raw Sprites/House Tiles/Corredor.tres" id="15_45qh7"]
 [ext_resource type="Texture2D" uid="uid://diih06plwrrsj" path="res://Assets/Raw Sprites/Corredor/Sprite-0005.png" id="16_44a6y"]
 [ext_resource type="Texture2D" uid="uid://b1ibsgbhcmaln" path="res://Assets/Raw Sprites/Corredor/Sprite-0009.png" id="16_53q5d"]
+[ext_resource type="Script" uid="uid://b0hnpmobbrg4" path="res://Assets/Scenes/escada.gd" id="16_204ke"]
 [ext_resource type="Texture2D" uid="uid://bmo8sxio477h1" path="res://Assets/Raw Sprites/Corredor/Sprite-0006.png" id="17_4n25s"]
 [ext_resource type="Texture2D" uid="uid://nofdyardx30a" path="res://Assets/Raw Sprites/Corredor/Sprite-0007.png" id="18_1lo3c"]
 [ext_resource type="Texture2D" uid="uid://c48ige3wtghuk" path="res://Assets/Raw Sprites/Corredor/Sprite-0003.png" id="18_204ke"]
@@ -22,6 +25,15 @@
 [ext_resource type="Script" uid="uid://d3ersle61m31l" path="res://Assets/Scripts/levels.gd" id="52_levels"]
 [ext_resource type="PackedScene" uid="uid://c1vd456q8jd3n" path="res://Assets/Scenes/pathway.tscn" id="53_pathway"]
 [ext_resource type="Script" uid="uid://bkg1meulxw03h" path="res://Assets/Scenes/pathway.gd" id="54_pathwaygd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmov7"]
+size = Vector2(46, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ah7ue"]
+size = Vector2(51, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eosuo"]
+size = Vector2(73, 136.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1roc"]
 size = Vector2(14.129, 9.499966)
@@ -186,9 +198,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_voltaporta"]
-size = Vector2(60, 118)
-
 [node name="Corredor" type="Node2D" unique_id=1788938321]
 script = ExtResource("52_levels")
 
@@ -282,14 +291,58 @@ texture = ExtResource("19_eosuo")
 [node name="Sprite0014" type="Sprite2D" parent="Corredor" unique_id=1041537538]
 position = Vector2(538, 593)
 texture = ExtResource("20_qmov7")
+script = ExtResource("14_qmov7")
+
+[node name="pathway" parent="Corredor/Sprite0014" unique_id=1064925599 instance=ExtResource("53_pathway")]
+position = Vector2(121, 353)
+collision_layer = 5
+script = ExtResource("54_pathwaygd")
+nome = "null"
+
+[node name="CollisionShape2D" parent="Corredor/Sprite0014/pathway" index="0" unique_id=1027692109]
+position = Vector2(-120, -344)
+shape = SubResource("RectangleShape2D_qmov7")
+
+[node name="Area2D" type="Area2D" parent="Corredor/Sprite0014" unique_id=2143777495]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corredor/Sprite0014/Area2D" unique_id=372377786]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_ah7ue")
 
 [node name="Sprite0015" type="Sprite2D" parent="Corredor" unique_id=226705958]
 position = Vector2(359, 593)
 texture = ExtResource("20_qmov7")
+script = ExtResource("14_eosuo")
+
+[node name="pathway" parent="Corredor/Sprite0015" unique_id=795967189 instance=ExtResource("53_pathway")]
+position = Vector2(121, 353)
+collision_layer = 5
+script = ExtResource("54_pathwaygd")
+nome = "null"
+
+[node name="CollisionShape2D" parent="Corredor/Sprite0015/pathway" index="0" unique_id=1027692109]
+position = Vector2(-120, -344)
+shape = SubResource("RectangleShape2D_qmov7")
+
+[node name="Area2D" type="Area2D" parent="Corredor/Sprite0015" unique_id=1188423283]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corredor/Sprite0015/Area2D" unique_id=1812133231]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_ah7ue")
 
 [node name="Sprite0011" type="Sprite2D" parent="Corredor" unique_id=1524823243]
 position = Vector2(282, 579)
 texture = ExtResource("24_m44e3")
+
+[node name="corredor" parent="Corredor" unique_id=1322512619 instance=ExtResource("53_pathway")]
+position = Vector2(868, 641)
+collision_layer = 5
+script = ExtResource("16_204ke")
+nome = "Main House"
+
+[node name="CollisionShape2D" parent="Corredor/corredor" index="0" unique_id=1027692109]
+position = Vector2(-420.5, -53.25)
+shape = SubResource("RectangleShape2D_eosuo")
 
 [node name="Player" type="Node" parent="." unique_id=979423441]
 
@@ -351,16 +404,10 @@ position = Vector2(332, 257)
 
 [node name="Transicao" type="Node" parent="." unique_id=1788938323]
 
-[node name="pathway" parent="Transicao" unique_id=1788938324 instance=ExtResource("53_pathway")]
-position = Vector2(320, 250)
-collision_layer = 5
-script = ExtResource("54_pathwaygd")
-nome = "Main House"
+[connection signal="body_entered" from="Corredor/Sprite0014/pathway" to="Corredor/Sprite0014/pathway" method="_on_body_entered"]
+[connection signal="body_entered" from="Corredor/Sprite0015/pathway" to="Corredor/Sprite0015/pathway" method="_on_body_entered"]
+[connection signal="body_entered" from="Corredor/corredor" to="Corredor/corredor" method="_on_body_entered"]
 
-[node name="CollisionShape2D" parent="Transicao/pathway" index="0" unique_id=1027692109]
-position = Vector2(6, -15)
-shape = SubResource("RectangleShape2D_voltaporta")
-
-[connection signal="body_entered" from="Transicao/pathway" to="Transicao/pathway" method="_on_body_entered"]
-
-[editable path="Transicao/pathway"]
+[editable path="Corredor/Sprite0014/pathway"]
+[editable path="Corredor/Sprite0015/pathway"]
+[editable path="Corredor/corredor"]

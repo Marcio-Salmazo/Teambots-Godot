@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dlfpjxl74cbtm"]
+
+[ext_resource type="Script" uid="uid://c3o8of42014t4" path="res://Assets/Scripts/menu_principal.gd" id="1_qa2y2"]
+[ext_resource type="Texture2D" uid="uid://ck2nndrrj3s27" path="res://Assets/Raw Sprites/FundoPrincipalMyShadow.jpeg" id="1_xc8du"]
+[ext_resource type="FontFile" uid="uid://c8x6375qfte82" path="res://Assets/Raw Sprites/Grim_CreeperFonteTerror.ttf" id="2_xc8du"]
+
+[node name="MenuPrincipal" type="Control" unique_id=470997052]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qa2y2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1374380920]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xc8du")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=319882532]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 283.0
+offset_right = 448.0
+offset_bottom = 618.0
+
+[node name="Iniciar" type="Button" parent="VBoxContainer" unique_id=1813299035]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xc8du")
+theme_override_font_sizes/font_size = 55
+text = "INICIAR"
+flat = true
+
+[node name="opcoes" type="Button" parent="VBoxContainer" unique_id=1212028808]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xc8du")
+theme_override_font_sizes/font_size = 55
+text = "OPÇÕES"
+flat = true
+
+[node name="Creditos" type="Button" parent="VBoxContainer" unique_id=1166830182]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xc8du")
+theme_override_font_sizes/font_size = 55
+text = "CRÉDITOS"
+flat = true
+
+[node name="SairDoJogo" type="Button" parent="VBoxContainer" unique_id=318505893]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xc8du")
+theme_override_font_sizes/font_size = 55
+text = "SAIR"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/opcoes" to="." method="_on_opcoes_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/SairDoJogo" to="." method="_on_sair_do_jogo_pressed"]

@@ -6,7 +6,7 @@ var max_sfx_players: int = 12
 
 func _ready() -> void:
 	music_player = AudioStreamPlayer.new()
-	music_player.bus = "Music"
+	music_player.bus = "Musica"
 	add_child(music_player)
 	
 	for i in max_sfx_players:

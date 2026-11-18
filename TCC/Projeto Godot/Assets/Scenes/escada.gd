@@ -83,8 +83,13 @@ func _input(event: InputEvent) -> void:
 
 func change_level() -> void:
 	if nome.is_empty():
-		push_error("escada '%s' em '%s': 'nome' vazio no Inspector" % [name, _cena()])
-		_usada = false
+		push_error("pathway '%s' em '%s': 'nome' vazio no Inspector" % [name, owner.name])
 		return
-	Global.from_world = _cena()
-	get_tree().change_scene_to_file("res://Assets/Scenes/" + nome + ".tscn")
+	if nome == "null":
+		return
+	var caminho := "res://Assets/Scenes/" + nome + ".tscn"
+	if not ResourceLoader.exists(caminho):
+		push_error("pathway '%s' em '%s': cena '%s' não existe" % [name, owner.name, caminho])
+		return
+	Global.from_world = owner.name
+	Fade.change_scene(caminho)

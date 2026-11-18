@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://c5y5ttvxbdvjd"]
+
+[ext_resource type="FontFile" uid="uid://c8x6375qfte82" path="res://Assets/Raw Sprites/Grim_CreeperFonteTerror.ttf" id="1_5vcb0"]
+[ext_resource type="Script" uid="uid://cyf4bla16p02h" path="res://Assets/Scripts/creditos.gd" id="1_ct8y5"]
+[ext_resource type="Texture2D" uid="uid://wsc0dmhcxnl0" path="res://Assets/Raw Sprites/FundoCreditos.jpeg" id="2_0ep0f"]
+[ext_resource type="FontFile" uid="uid://w0dfwnqw01f8" path="res://Assets/Raw Sprites/The Inquisition.ttf" id="3_a3en7"]
+
+[node name="TelaCreditos" type="Control" unique_id=828249760]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ct8y5")
+
+[node name="Fundinho" type="ColorRect" parent="." unique_id=247905253]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="FundoCreditos" type="TextureRect" parent="." unique_id=915195107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0ep0f")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1967892205]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 27.0
+offset_right = 716.0
+offset_bottom = 116.0
+theme_override_fonts/font = ExtResource("1_5vcb0")
+theme_override_font_sizes/font_size = 70
+text = "CREDITOS"
+horizontal_alignment = 1
+
+[node name="Esquerda" type="VBoxContainer" parent="." unique_id=729432540]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 132.0
+offset_right = 578.0
+offset_bottom = 573.24994
+scale = Vector2(0.9, 0.9)
+size_flags_horizontal = 3
+
+[node name="ProgramacaoSubtitulo" type="Label" parent="Esquerda" unique_id=1292111740]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3647059, 0.09803922, 0.09411765, 1)
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 45
+text = "PROGRAMACAO"
+horizontal_alignment = 1
+
+[node name="Davi" type="Label" parent="Esquerda" unique_id=538798796]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Davi Nascimento Dias"
+horizontal_alignment = 1
+
+[node name="Dhabia" type="Label" parent="Esquerda" unique_id=781569795]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Dhabia Ramos "
+horizontal_alignment = 1
+
+[node name="Ghabriel" type="Label" parent="Esquerda" unique_id=2019565980]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Ghabriel Teixeira De moura
+
+"
+horizontal_alignment = 1
+
+[node name="AudioMixagemSubtitulo" type="Label" parent="Esquerda" unique_id=327802764]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3647059, 0.09803922, 0.09411765, 1)
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 45
+text = "Coordenador"
+horizontal_alignment = 1
+
+[node name="Marcio" type="Label" parent="Esquerda" unique_id=1098015319]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Marcio"
+horizontal_alignment = 1
+
+[node name="Frederico" type="Label" parent="Esquerda" unique_id=1946059393]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Frederico Nunes Borges 
+"
+horizontal_alignment = 1
+
+[node name="Direita" type="VBoxContainer" parent="." unique_id=1649917543]
+layout_mode = 0
+offset_left = 582.00006
+offset_top = 131.0
+offset_right = 1055.0
+offset_bottom = 600.0
+scale = Vector2(0.9, 0.9)
+size_flags_horizontal = 3
+
+[node name="DesignSubtitulo" type="Label" parent="Direita" unique_id=784414199]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3647059, 0.09803922, 0.09411765, 1)
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 45
+text = "DESIGN"
+horizontal_alignment = 1
+
+[node name="Nataly" type="Label" parent="Direita" unique_id=1457784787]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Nataly Fernanda Rocha"
+horizontal_alignment = 1
+
+[node name="Jean" type="Label" parent="Direita" unique_id=1109706203]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Jean Higor de Lima Barbosa "
+horizontal_alignment = 1
+
+[node name="Pedro" type="Label" parent="Direita" unique_id=33539488]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Pedro Henrique Terra Veloso"
+horizontal_alignment = 1
+
+[node name="Pedro3" type="Label" parent="Direita" unique_id=30610867]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Gabriel Azeredo Stefani Amancio 
+"
+horizontal_alignment = 1
+
+[node name="DesignSubtitulo2" type="Label" parent="Direita" unique_id=2011233577]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3647059, 0.09803922, 0.09411765, 1)
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 45
+text = "Roteiro"
+horizontal_alignment = 1
+
+[node name="Pedro2" type="Label" parent="Direita" unique_id=347129594]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Pedro Henrique Terra Veloso"
+horizontal_alignment = 1
+
+[node name="Ghabriel2" type="Label" parent="Direita" unique_id=1361850548]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Ghabriel Teixeira de Moura"
+horizontal_alignment = 1
+
+[node name="Leonora" type="Label" parent="Direita" unique_id=1576799179]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Leonora Debs Diniz "
+horizontal_alignment = 1
+
+[node name="GabryelMax" type="Label" parent="Direita" unique_id=301729642]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_a3en7")
+theme_override_font_sizes/font_size = 30
+text = "Gabryel Max Borges Pinto"
+horizontal_alignment = 1
+
+[node name="Voltar" type="Button" parent="." unique_id=1045727647]
+layout_mode = 0
+offset_left = 515.0
+offset_top = 587.0
+offset_right = 669.0
+offset_bottom = 659.0
+theme_override_fonts/font = ExtResource("1_5vcb0")
+theme_override_font_sizes/font_size = 50
+text = "VOLTAR"
+flat = true
+
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
