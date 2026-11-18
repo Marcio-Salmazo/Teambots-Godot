@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Projeto_TCC"
-run/main_scene="uid://bpf6n5rwauqrc"
+run/main_scene="uid://dlfpjxl74cbtm"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 DialogueManager="*uid://burfvtveym111"
 Global="*uid://bwg4du8k7e1gn"
 AudioManager="*uid://cnr6kayyhm5rv"
+Brilho="*uid://draqydpwlolqa"
+MusicaMenu="*uid://ctxv2lkv10v10"
 
 [display]
 

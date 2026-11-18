@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ctxv2lkv10v10"]
+
+[ext_resource type="AudioStream" uid="uid://3qay6uiti2qd" path="res://assets/sh_titlescreen1.wav" id="1_iome4"]
+
+[node name="Musica" type="AudioStreamPlayer" unique_id=398883966]
+stream = ExtResource("1_iome4")
+autoplay = true
+bus = &"Musica"
