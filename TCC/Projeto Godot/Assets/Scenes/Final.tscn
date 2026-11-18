@@ -1,15 +1,35 @@
 [gd_scene format=4 uid="uid://b08gdpqk6amoo"]
 
 [ext_resource type="Script" uid="uid://d3ersle61m31l" path="res://Assets/Scripts/levels.gd" id="1_h23i0"]
-[ext_resource type="Texture2D" uid="uid://6lemcmrg05q3" path="res://Assets/Fantasma/ghost_sheet.png" id="2_1qim8"]
+[ext_resource type="Texture2D" uid="uid://dn7vh7hsmrj8x" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos1.png" id="2_pyb7j"]
+[ext_resource type="Texture2D" uid="uid://b73no5ogxad3j" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos2.png" id="3_8qisd"]
 [ext_resource type="Script" uid="uid://pf0bhmpr7hya" path="res://Assets/Fantasma/fantasma.gd" id="3_38j23"]
 [ext_resource type="Script" uid="uid://bw13pxi8bveid" path="res://Assets/Fantasma/area_fantasma.gd" id="4_f44p1"]
+[ext_resource type="Texture2D" uid="uid://biwnmrj366jtv" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos3.png" id="4_u0cm8"]
+[ext_resource type="Texture2D" uid="uid://bi8cfng7lg7m6" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos4.png" id="5_hexsg"]
 [ext_resource type="AudioStream" uid="uid://dtaemtvtu8pei" path="res://Assets/Fantasma/tensao_fantasma.mp3" id="5_yf4x6"]
+[ext_resource type="Texture2D" uid="uid://cagswga0rxquk" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos5.png" id="6_4ry58"]
 [ext_resource type="TileSet" uid="uid://bj1sw8x5ycbpe" path="res://Assets/Raw Sprites/House Tiles/CorredorFinal.tres" id="6_mgpuy"]
+[ext_resource type="Texture2D" uid="uid://k76jpmx0xhcc" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos6.png" id="7_ekph5"]
+[ext_resource type="Texture2D" uid="uid://idx03mc3k2b6" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos7.png" id="8_17d33"]
+[ext_resource type="Texture2D" uid="uid://dmh7envyoxt8n" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos8.png" id="9_5f5ra"]
 [ext_resource type="Texture2D" uid="uid://efifjhbg5akt" path="res://Assets/Raw Sprites/Corredor/SpriteCinzaDoChao.jpeg" id="9_cugen"]
+[ext_resource type="Texture2D" uid="uid://gonu7g2kii3d" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos9.png" id="10_ykeiw"]
+[ext_resource type="Texture2D" uid="uid://c0fk4638v2j5h" path="res://Assets/Raw Sprites/Monstro olhos/Bixo abrindo os olhos10.png" id="11_kfswl"]
+[ext_resource type="Texture2D" uid="uid://b1p3ll6q74dwf" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado1.png" id="12_k66e8"]
+[ext_resource type="Texture2D" uid="uid://cbpoqxwo7r5n6" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado2.png" id="13_d3e57"]
+[ext_resource type="Texture2D" uid="uid://cw6s2jxcffjgx" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado3.png" id="14_aax63"]
+[ext_resource type="Texture2D" uid="uid://c0yw5qmykewso" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado4.png" id="15_ng8ob"]
+[ext_resource type="Texture2D" uid="uid://ut7k7fhka8j0" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado5.png" id="16_5siw3"]
+[ext_resource type="Texture2D" uid="uid://s3q0p7f0ofsy" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado6.png" id="17_cy7qg"]
+[ext_resource type="Texture2D" uid="uid://vwewg7oary2g" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado7.png" id="18_acr4q"]
+[ext_resource type="Texture2D" uid="uid://1p668dotyv1" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado8.png" id="19_fq6d1"]
 [ext_resource type="Texture2D" uid="uid://dsea3obkiga2l" path="res://Assets/Raw Sprites/Corredor2/Sprite-0008.png" id="20_ekph5"]
+[ext_resource type="Texture2D" uid="uid://dedevrt8vf2dv" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado9.png" id="20_yab5r"]
 [ext_resource type="Texture2D" uid="uid://h0elf52371yd" path="res://Assets/Raw Sprites/Corredor2/Sprite-8.png" id="21_17d33"]
+[ext_resource type="Texture2D" uid="uid://evuhxkn180rq" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado10.png" id="21_32imw"]
 [ext_resource type="Texture2D" uid="uid://cv5th3obncu08" path="res://Assets/Raw Sprites/Corredor2/Sprite-0017.png" id="22_5f5ra"]
+[ext_resource type="Texture2D" uid="uid://ctpge3pxjc0ja" path="res://Assets/Raw Sprites/Montro roxo parado/Monstro Roxo parado11.png" id="22_b20dk"]
 [ext_resource type="Texture2D" uid="uid://cky1bon0iut6l" path="res://Assets/Raw Sprites/Corredor2/Sprite-0026.png" id="23_ykeiw"]
 [ext_resource type="Texture2D" uid="uid://dif87wl5fjxlf" path="res://Assets/Raw Sprites/Corredor2/Sprite-0003.png" id="24_kfswl"]
 [ext_resource type="Texture2D" uid="uid://c814m4t61k8r1" path="res://Assets/Raw Sprites/Corredor2/Sprite-000.png" id="25_k66e8"]
@@ -24,22 +44,115 @@
 [ext_resource type="Texture2D" uid="uid://b5iwdji7loga7" path="res://Assets/Raw Sprites/Corredor2/Sprite-0010.png" id="34_32imw"]
 [ext_resource type="Texture2D" uid="uid://bay5vsdu5cdlg" path="res://Assets/Raw Sprites/Corredor2/Sprite-0013.png" id="35_b20dk"]
 [ext_resource type="Texture2D" uid="uid://dqjmwoqf11yo6" path="res://Assets/Raw Sprites/Corredor2/Sprite-0014.png" id="36_7eyvd"]
+[ext_resource type="Texture2D" uid="uid://c5b64tmocol3i" path="res://Assets/Raw Sprites/Characters/Sombra Andando/Sombra andando1.png" id="36_yw5im"]
 [ext_resource type="Texture2D" uid="uid://oebojjmx1loi" path="res://Assets/Raw Sprites/Corredor2/Sprite-0016.png" id="37_bkwma"]
+[ext_resource type="Texture2D" uid="uid://cdioss7yeq3w4" path="res://Assets/Raw Sprites/Characters/Sombra Andando/Sombra andando2.png" id="37_qpw7q"]
 [ext_resource type="Texture2D" uid="uid://bu0oawf66fuh8" path="res://Assets/Raw Sprites/Corredor2/Sprite-0015.png" id="38_3jfpy"]
+[ext_resource type="Texture2D" uid="uid://dag5761o3ykwx" path="res://Assets/Raw Sprites/Characters/Sombra Andando/Sombra andando3.png" id="38_gg6e4"]
+[ext_resource type="Texture2D" uid="uid://csrs13xu22ord" path="res://Assets/Raw Sprites/Characters/Sombra Parada/Sombra parada1.png" id="39_crv14"]
 [ext_resource type="Texture2D" uid="uid://nncf6avfo4wa" path="res://Assets/Raw Sprites/Corredor2/Sprite-0018.png" id="39_ke0jw"]
+[ext_resource type="Texture2D" uid="uid://d2blpqywr76m" path="res://Assets/Raw Sprites/Characters/Sombra Parada/Sombra parada2.png" id="40_f4u5w"]
 [ext_resource type="Texture2D" uid="uid://81uopdb7746r" path="res://Assets/Raw Sprites/Corredor2/Sprite-0019.png" id="40_y6cub"]
+[ext_resource type="Texture2D" uid="uid://cotm02p5e3vam" path="res://Assets/Raw Sprites/Characters/Sombra Parada/Sombra parada3.png" id="41_4powq"]
 [ext_resource type="Texture2D" uid="uid://cn3m7pptmy70l" path="res://Assets/Raw Sprites/Corredor2/Sprite-0020.png" id="41_46cpw"]
+[ext_resource type="Texture2D" uid="uid://4subggj8jnnk" path="res://Assets/Raw Sprites/Characters/Sombra Parada/Sombra parada4.png" id="42_h23i0"]
 [ext_resource type="Texture2D" uid="uid://p36w7g46dqoh" path="res://Assets/Raw Sprites/Corredor2/Sprite-0021.png" id="42_uho4y"]
+[ext_resource type="Texture2D" uid="uid://bhv6n7dbdkpwh" path="res://Assets/Raw Sprites/Characters/Sombra Parada/Sombra parada5.png" id="43_1qim8"]
 [ext_resource type="Texture2D" uid="uid://dlkepkk0pn3bs" path="res://Assets/Raw Sprites/Corredor2/Sprite-0023.png" id="43_ccnt1"]
 [ext_resource type="Texture2D" uid="uid://c4se7thnj5ki6" path="res://Assets/Raw Sprites/Corredor2/Sprite-0025.png" id="44_2ms74"]
+[ext_resource type="Texture2D" uid="uid://dmbtqlwx3icxb" path="res://Assets/Raw Sprites/Characters/Sombra Parada/Sombra parada6.png" id="44_38j23"]
+[ext_resource type="Texture2D" uid="uid://dybftym4rdjwb" path="res://Assets/Raw Sprites/Characters/Sombra Parada/Sombra parada7.png" id="45_f44p1"]
 [ext_resource type="Texture2D" uid="uid://bdalqn4aicdho" path="res://Assets/Raw Sprites/Corredor2/Sprite-0022.png" id="45_lrpa3"]
 [ext_resource type="Texture2D" uid="uid://b1d8vfvokf44w" path="res://Assets/Raw Sprites/Corredor2/Sprite-0024.png" id="46_q1p54"]
 [ext_resource type="Script" uid="uid://bstte0e12dttf" path="res://Assets/Scripts/PlayerController.gd" id="47_xad1g"]
-[ext_resource type="Texture2D" uid="uid://bsksqa6sorv8o" path="res://Assets/Raw Sprites/Characters/player/Lucy_Andando.png" id="48_iplfk"]
-[ext_resource type="Texture2D" uid="uid://bhmi6pg1ykjlg" path="res://Assets/Raw Sprites/Characters/player/Lucy_Parado.png" id="49_76wby"]
 [ext_resource type="Script" uid="uid://b7r1g4wxnjch4" path="res://Assets/Scripts/StateMachine.gd" id="50_0v0b2"]
 [ext_resource type="Script" uid="uid://qxrt8gwgkc74" path="res://Assets/Scripts/AnimationsController.gd" id="51_3673f"]
 [ext_resource type="Script" uid="uid://bfgnro646q0uc" path="res://Assets/Scripts/Camera2D.gd" id="52_yw5yd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57mis"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pyb7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8qisd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u0cm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hexsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4ry58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ekph5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_17d33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5f5ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ykeiw")
+}, {
+"duration": 20.0,
+"texture": ExtResource("11_kfswl")
+}],
+"loop": 1,
+"name": &"stare",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7eyvd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_k66e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d3e57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_aax63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ng8ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5siw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_cy7qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_acr4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fq6d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yab5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_32imw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_b20dk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_32imw")
+}],
+"loop": 1,
+"name": &"stare",
+"speed": 8.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yfwre"]
+load_path = "res://.godot/imported/ghost_sheet.png-7f04108c3d11dd8cb41494626b2a1910.ctex"
 
 [sub_resource type="Animation" id="Animation_ghreset"]
 length = 0.001
@@ -100,9 +213,6 @@ size = Vector2(75.75, 66.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ybd5"]
 size = Vector2(74.75, 97.25)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d0et"]
-size = Vector2(74.75, 135.25)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_1c6yc"]
 animations = [{
 "frames": [{
@@ -117,181 +227,84 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 4.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1roc"]
 size = Vector2(14.129, 9.499966)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hhx8"]
-atlas = ExtResource("48_iplfk")
-region = Rect2(0, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pwygm"]
-atlas = ExtResource("48_iplfk")
-region = Rect2(70, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qbvt2"]
-atlas = ExtResource("48_iplfk")
-region = Rect2(140, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pt1vb"]
-atlas = ExtResource("48_iplfk")
-region = Rect2(210, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sqr4b"]
-atlas = ExtResource("48_iplfk")
-region = Rect2(280, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vcnxq"]
-atlas = ExtResource("48_iplfk")
-region = Rect2(350, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7p0os"]
-atlas = ExtResource("48_iplfk")
-region = Rect2(420, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wfa8e"]
-atlas = ExtResource("48_iplfk")
-region = Rect2(490, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qanb0"]
-atlas = ExtResource("48_iplfk")
-region = Rect2(560, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qg135"]
-atlas = ExtResource("48_iplfk")
-region = Rect2(630, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jqoow"]
-atlas = ExtResource("49_76wby")
-region = Rect2(0, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bgqkl"]
-atlas = ExtResource("49_76wby")
-region = Rect2(70, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_whrs2"]
-atlas = ExtResource("49_76wby")
-region = Rect2(140, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bl85x"]
-atlas = ExtResource("49_76wby")
-region = Rect2(210, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1rxbo"]
-atlas = ExtResource("49_76wby")
-region = Rect2(280, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4o0qc"]
-atlas = ExtResource("49_76wby")
-region = Rect2(350, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kshq4"]
-atlas = ExtResource("49_76wby")
-region = Rect2(420, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_th8he"]
-atlas = ExtResource("49_76wby")
-region = Rect2(490, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7kqlg"]
-atlas = ExtResource("49_76wby")
-region = Rect2(560, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ociog"]
-atlas = ExtResource("49_76wby")
-region = Rect2(630, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqgu6"]
-atlas = ExtResource("49_76wby")
-region = Rect2(700, 0, 70, 70)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0egc"]
 animations = [{
 "frames": [{
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_7hhx8")
+"duration": 1.0,
+"texture": ExtResource("36_yw5im")
 }, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_pwygm")
+"duration": 1.0,
+"texture": ExtResource("37_qpw7q")
 }, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_qbvt2")
-}, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_pt1vb")
-}, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_sqr4b")
-}, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_vcnxq")
-}, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_7p0os")
-}, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_wfa8e")
-}, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_qanb0")
-}, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_qg135")
+"duration": 1.0,
+"texture": ExtResource("38_gg6e4")
 }],
 "loop": 1,
 "name": &"andando",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_jqoow")
+"duration": 1.0,
+"texture": ExtResource("39_crv14")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_bgqkl")
+"duration": 1.0,
+"texture": ExtResource("40_f4u5w")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_whrs2")
+"duration": 1.0,
+"texture": ExtResource("41_4powq")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_bl85x")
+"duration": 1.0,
+"texture": ExtResource("42_h23i0")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_1rxbo")
+"duration": 1.0,
+"texture": ExtResource("43_1qim8")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_4o0qc")
+"duration": 1.0,
+"texture": ExtResource("44_38j23")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_kshq4")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_th8he")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_7kqlg")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_ociog")
-}, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_mqgu6")
+"duration": 1.0,
+"texture": ExtResource("45_f44p1")
 }],
 "loop": 1,
 "name": &"parado",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="Corredor" type="Node2D" unique_id=1788938321]
 script = ExtResource("1_h23i0")
+
+[node name="Monstro1" type="AnimatedSprite2D" parent="." unique_id=1581827692]
+z_index = 1
+texture_filter = 1
+position = Vector2(895, 254)
+scale = Vector2(0.6351351, 0.7845529)
+sprite_frames = SubResource("SpriteFrames_57mis")
+animation = &"stare"
+autoplay = "stare"
+frame_progress = 0.36518905
+
+[node name="Monstro2" type="AnimatedSprite2D" parent="." unique_id=2120286521]
+z_index = 1
+texture_filter = 1
+position = Vector2(1584.1593, 270)
+scale = Vector2(0.8683631, 0.6155232)
+sprite_frames = SubResource("SpriteFrames_7eyvd")
+animation = &"stare"
+autoplay = "stare"
+frame_progress = 0.8953262
 
 [node name="Ghost" type="Sprite2D" parent="." unique_id=699752200 node_paths=PackedStringArray("alvo")]
 z_index = 3
 texture_filter = 1
 position = Vector2(1452, -141)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_1qim8")
+texture = SubResource("CompressedTexture2D_yfwre")
 hframes = 4
 script = ExtResource("3_38j23")
 alvo = NodePath("../Player/Player")
@@ -364,73 +377,75 @@ position = Vector2(377, 764)
 [node name="CorredorArte" type="TileMapLayer" parent="." unique_id=1967949145]
 texture_filter = 1
 position = Vector2(1, 167)
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAMAAAAAAAQAAAAAAAQAAAAAAAUAAAAAAAUAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAIAAAABAAMAAAABAAMAAAABAAQAAAABAAQAAAABAAUAAAABAAUAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAACAAIAAAACAAIAAAACAAMAAAACAAMAAAACAAQAAAACAAQAAAACAAUAAAACAAUAAAADAAAAAAADAAAAAAADAAEAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAADAAMAAAADAAQAAAADAAQAAAADAAUAAAADAAUAAAAEAAAAAAAEAAAAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAIAAAAEAAMAAAAEAAMAAAAEAAQAAAAEAAQAAAAEAAUAAAAEAAUAAAAFAAAAAAAFAAAAAAAFAAEAAAAFAAEAAAAFAAIAAAAFAAIAAAAFAAMAAAAFAAMAAAAFAAQAAAAFAAQAAAAFAAUAAAAFAAUAAAAGAAAAAAAGAAAAAAAGAAEAAAAGAAEAAAAGAAIAAAAGAAIAAAAGAAMAAAAGAAMAAAAGAAQAAAAGAAQAAAAGAAUAAAAGAAUAAAAHAAAAAAAHAAAAAAAHAAEAAAAHAAEAAAAHAAIAAAAHAAIAAAAHAAMAAAAHAAMAAAAHAAQAAAAHAAQAAAAHAAUAAAAHAAUAAAAIAAAAAAAIAAAAAAAIAAEAAAAIAAEAAAAIAAIAAAAIAAIAAAAIAAMAAAAIAAMAAAAIAAQAAAAIAAQAAAAIAAUAAAAIAAUAAAAJAAAAAAAJAAAAAAAJAAEAAAAJAAEAAAAJAAIAAAAJAAIAAAAJAAMAAAAJAAMAAAAJAAQAAAAJAAQAAAAJAAUAAAAJAAUAAAAKAAAAAAAKAAAAAAAKAAEAAAAKAAEAAAAKAAIAAAAKAAIAAAAKAAMAAAAKAAMAAAAKAAQAAAAKAAQAAAAKAAUAAAAKAAUAAAALAAAAAAALAAAAAAALAAEAAAALAAEAAAALAAIAAAALAAIAAAALAAMAAAALAAMAAAALAAQAAAALAAQAAAALAAUAAAALAAUAAAAMAAAAAAAMAAAAAAAMAAEAAAAMAAEAAAAMAAIAAAAMAAIAAAAMAAMAAAAMAAMAAAAMAAQAAAAMAAQAAAAMAAUAAAAMAAUAAAANAAAAAAANAAAAAAANAAEAAAANAAEAAAANAAIAAAANAAIAAAANAAMAAAANAAMAAAANAAQAAAANAAQAAAANAAUAAAANAAUAAAAOAAAAAAAOAAAAAAAOAAEAAAAOAAEAAAAOAAIAAAAOAAIAAAAOAAMAAAAOAAMAAAAOAAQAAAAOAAQAAAAOAAUAAAAOAAUAAAAPAAAAAAAPAAAAAAAPAAEAAAAPAAEAAAAPAAIAAAAPAAIAAAAPAAMAAAAPAAMAAAAPAAQAAAAPAAQAAAAPAAUAAAAPAAUAAAAQAAAAAAAQAAAAAAAQAAEAAAAQAAEAAAAQAAIAAAAQAAIAAAAQAAMAAAAQAAMAAAAQAAQAAAAQAAQAAAAQAAUAAAAQAAUAAAARAAAAAAARAAAAAAARAAEAAAARAAEAAAARAAIAAAARAAIAAAARAAMAAAARAAMAAAARAAQAAAARAAQAAAARAAUAAAARAAUAAAASAAAAAAASAAAAAAASAAEAAAASAAEAAAASAAIAAAASAAIAAAASAAMAAAASAAMAAAASAAQAAAASAAQAAAASAAUAAAASAAUAAAATAAAAAAATAAAAAAATAAEAAAATAAEAAAATAAIAAAATAAIAAAATAAMAAAATAAMAAAATAAQAAAATAAQAAAATAAUAAAATAAUAAAAUAAAAAAAUAAAAAAAUAAEAAAAUAAEAAAAUAAIAAAAUAAIAAAAUAAMAAAAUAAMAAAAUAAQAAAAUAAQAAAAUAAUAAAAUAAUAAAAVAAAAAAAVAAAAAAAVAAEAAAAVAAEAAAAVAAIAAAAVAAIAAAAVAAMAAAAVAAMAAAAVAAQAAAAVAAQAAAAVAAUAAAAVAAUAAAAWAAAAAAAWAAAAAAAWAAEAAAAWAAEAAAAWAAIAAAAWAAIAAAAWAAMAAAAWAAMAAAAWAAQAAAAWAAQAAAAWAAUAAAAWAAUAAAAXAAAAAAAXAAAAAAAXAAEAAAAXAAEAAAAXAAIAAAAXAAIAAAAXAAMAAAAXAAMAAAAXAAQAAAAXAAQAAAAXAAUAAAAXAAUAAAAYAAAAAAAYAAAAAAAYAAEAAAAYAAEAAAAYAAIAAAAYAAIAAAAYAAMAAAAYAAMAAAAYAAQAAAAYAAQAAAAYAAUAAAAYAAUAAAAZAAAAAAAZAAAAAAAZAAEAAAAZAAEAAAAZAAIAAAAZAAIAAAAZAAMAAAAZAAMAAAAZAAQAAAAZAAQAAAAZAAUAAAAZAAUAAAAaAAAAAAAaAAAAAAAaAAEAAAAaAAEAAAAaAAIAAAAaAAIAAAAaAAMAAAAaAAMAAAAaAAQAAAAaAAQAAAAaAAUAAAAaAAUAAAAbAAAAAAAbAAAAAAAbAAEAAAAbAAEAAAAbAAIAAAAbAAIAAAAbAAMAAAAbAAMAAAAbAAQAAAAbAAQAAAAbAAUAAAAbAAUAAAAcAAAAAAAcAAAAAAAcAAEAAAAcAAEAAAAcAAIAAAAcAAIAAAAcAAMAAAAcAAMAAAAcAAQAAAAcAAQAAAAcAAUAAAAcAAUAAAAdAAAAAAAdAAAAAAAdAAEAAAAdAAEAAAAdAAIAAAAdAAIAAAAdAAMAAAAdAAMAAAAdAAQAAAAdAAQAAAAdAAUAAAAdAAUAAAAeAAAAAAAeAAAAAAAeAAEAAAAeAAEAAAAeAAIAAAAeAAIAAAAeAAMAAAAeAAMAAAAeAAQAAAAeAAQAAAAeAAUAAAAeAAUAAAAfAAAAAAAfAAAAAAAfAAEAAAAfAAEAAAAfAAIAAAAfAAIAAAAfAAMAAAAfAAMAAAAfAAQAAAAfAAQAAAAfAAUAAAAfAAUAAAAgAAAAAAAgAAAAAAAgAAEAAAAgAAEAAAAgAAIAAAAgAAIAAAAgAAMAAAAgAAMAAAAgAAQAAAAgAAQAAAAgAAUAAAAgAAUAAAAhAAAAAAAhAAAAAAAhAAIAAAAhAAIAAAAhAAMAAAAhAAMAAAAhAAQAAAAhAAQAAAAhAAUAAAAhAAUAAAAiAAAAAAAiAAAAAAAiAAEAAAAiAAEAAAAiAAIAAAAiAAIAAAAiAAMAAAAiAAMAAAAiAAQAAAAiAAQAAAAiAAUAAAAiAAUAAAAjAAAAAAAjAAAAAAAjAAEAAAAjAAEAAAAjAAIAAAAjAAIAAAAjAAMAAAAjAAMAAAAjAAQAAAAjAAQAAAAjAAUAAAAjAAUAAAAkAAAAAAAkAAAAAAAkAAEAAAAkAAEAAAAkAAIAAAAkAAIAAAAkAAMAAAAkAAMAAAAkAAQAAAAkAAQAAAAkAAUAAAAkAAUAAAAlAAAAAAAlAAAAAAAlAAEAAAAlAAEAAAAlAAIAAAAlAAIAAAAlAAMAAAAlAAMAAAAlAAQAAAAlAAQAAAAlAAUAAAAlAAUAAAAmAAAAAAAmAAAAAAAmAAEAAAAmAAEAAAAmAAIAAAAmAAIAAAAmAAMAAAAmAAMAAAAmAAQAAAAmAAQAAAAmAAUAAAAmAAUAAAAnAAAAAAAnAAAAAAAnAAEAAAAnAAEAAAAnAAIAAAAnAAIAAAAnAAMAAAAnAAMAAAAnAAQAAAAnAAQAAAAnAAUAAAAnAAUAAAAoAAAAAAAoAAAAAAAoAAEAAAAoAAEAAAAoAAIAAAAoAAIAAAAoAAMAAAAoAAMAAAAoAAQAAAAoAAQAAAAoAAUAAAAoAAUAAAApAAAAAAApAAAAAAApAAEAAAApAAEAAAApAAIAAAApAAIAAAApAAMAAAApAAMAAAApAAQAAAApAAQAAAApAAUAAAApAAUAAAAqAAAAAAAqAAAAAAAqAAEAAAAqAAEAAAAqAAIAAAAqAAIAAAAqAAMAAAAqAAMAAAAqAAQAAAAqAAQAAAAqAAUAAAAqAAUAAAArAAAAAAArAAAAAAArAAEAAAArAAEAAAArAAIAAAArAAIAAAArAAMAAAArAAMAAAArAAQAAAArAAQAAAArAAUAAAArAAUAAAAsAAAAAAAsAAAAAAAsAAEAAAAsAAEAAAAsAAIAAAAsAAIAAAAsAAMAAAAsAAMAAAAsAAQAAAAsAAQAAAAsAAUAAAAsAAUAAAAtAAAAAAAtAAAAAAAtAAEAAAAtAAEAAAAtAAIAAAAtAAIAAAAtAAMAAAAtAAMAAAAtAAQAAAAtAAQAAAAtAAUAAAAtAAUAAAAuAAAAAAAuAAAAAAAuAAEAAAAuAAEAAAAuAAIAAAAuAAIAAAAuAAMAAAAuAAMAAAAuAAQAAAAuAAQAAAAuAAUAAAAuAAUAAAAvAAAAAAAvAAAAAAAvAAEAAAAvAAEAAAAvAAIAAAAvAAIAAAAvAAMAAAAvAAMAAAAvAAQAAAAvAAQAAAAvAAUAAAAvAAUAAAAwAAAAAAAwAAAAAAAwAAEAAAAwAAEAAAAwAAIAAAAwAAIAAAAwAAMAAAAwAAMAAAAwAAQAAAAwAAQAAAAwAAUAAAAwAAUAAAAxAAAAAAAxAAAAAAAxAAEAAAAxAAEAAAAxAAIAAAAxAAIAAAAxAAMAAAAxAAMAAAAxAAQAAAAxAAQAAAAxAAUAAAAxAAUAAAAyAAAAAAAyAAAAAAAyAAEAAAAyAAEAAAAyAAIAAAAyAAIAAAAyAAMAAAAyAAMAAAAyAAQAAAAyAAQAAAAyAAUAAAAyAAUAAAAzAAAAAAAzAAAAAAAzAAEAAAAzAAEAAAAzAAIAAAAzAAIAAAAzAAMAAAAzAAMAAAAzAAQAAAAzAAQAAAAzAAUAAAAzAAUAAAA0AAAAAAA0AAAAAAA0AAEAAAA0AAEAAAA0AAIAAAA0AAIAAAA0AAMAAAA0AAMAAAA0AAQAAAA0AAQAAAA0AAUAAAA0AAUAAAA1AAAAAAA1AAAAAAA1AAEAAAA1AAEAAAA1AAIAAAA1AAIAAAA1AAMAAAA1AAMAAAA1AAQAAAA1AAQAAAA1AAUAAAA1AAUAAAA2AAAAAAA2AAAAAAA2AAEAAAA2AAEAAAA2AAIAAAA2AAIAAAA2AAMAAAA2AAMAAAA2AAQAAAA2AAQAAAA2AAUAAAA2AAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAMAAAAAAAQAAAAAAAQAAAAAAAUAAAAAAAUAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAIAAAABAAMAAAABAAMAAAABAAQAAAABAAQAAAABAAUAAAABAAUAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAACAAIAAAACAAIAAAACAAMAAAACAAMAAAACAAQAAAACAAQAAAACAAUAAAACAAUAAAADAAAAAAADAAAAAAADAAEAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAADAAMAAAADAAQAAAADAAQAAAADAAUAAAADAAUAAAAEAAAAAAAEAAAAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAIAAAAEAAMAAAAEAAMAAAAEAAQAAAAEAAQAAAAEAAUAAAAEAAUAAAAFAAAAAAAFAAAAAAAFAAEAAAAFAAEAAAAFAAIAAAAFAAIAAAAFAAMAAAAFAAMAAAAFAAQAAAAFAAQAAAAFAAUAAAAFAAUAAAAGAAAAAAAGAAAAAAAGAAEAAAAGAAEAAAAGAAIAAAAGAAIAAAAGAAMAAAAGAAMAAAAGAAQAAAAGAAQAAAAGAAUAAAAGAAUAAAAHAAAAAAAHAAAAAAAHAAEAAAAHAAEAAAAHAAIAAAAHAAIAAAAHAAMAAAAHAAMAAAAHAAQAAAAHAAQAAAAHAAUAAAAHAAUAAAAIAAAAAAAIAAAAAAAIAAEAAAAIAAEAAAAIAAIAAAAIAAIAAAAIAAMAAAAIAAMAAAAIAAQAAAAIAAQAAAAIAAUAAAAIAAUAAAAJAAAAAAAJAAAAAAAJAAEAAAAJAAEAAAAJAAIAAAAJAAIAAAAJAAMAAAAJAAMAAAAJAAQAAAAJAAQAAAAJAAUAAAAJAAUAAAAKAAAAAAAKAAAAAAAKAAEAAAAKAAEAAAAKAAIAAAAKAAIAAAAKAAMAAAAKAAMAAAAKAAQAAAAKAAQAAAAKAAUAAAAKAAUAAAALAAAAAAALAAAAAAALAAEAAAALAAEAAAALAAIAAAALAAIAAAALAAMAAAALAAMAAAALAAQAAAALAAQAAAALAAUAAAALAAUAAAAMAAAAAAAMAAAAAAAMAAEAAAAMAAEAAAAMAAIAAAAMAAIAAAAMAAMAAAAMAAMAAAAMAAQAAAAMAAQAAAAMAAUAAAAMAAUAAAANAAAAAAANAAAAAAANAAEAAAANAAEAAAANAAIAAAANAAIAAAANAAMAAAANAAMAAAANAAQAAAANAAQAAAANAAUAAAANAAUAAAAOAAAAAAAOAAAAAAAOAAEAAAAOAAEAAAAOAAIAAAAOAAIAAAAOAAMAAAAOAAMAAAAOAAQAAAAOAAQAAAAOAAUAAAAOAAUAAAAPAAAAAAAPAAAAAAAPAAEAAAAPAAEAAAAPAAIAAAAPAAIAAAAPAAMAAAAPAAMAAAAPAAQAAAAPAAQAAAAPAAUAAAAPAAUAAAAQAAAAAAAQAAAAAAAQAAEAAAAQAAEAAAAQAAIAAAAQAAIAAAAQAAMAAAAQAAMAAAAQAAQAAAAQAAQAAAAQAAUAAAAQAAUAAAARAAAAAAARAAAAAAARAAEAAAARAAEAAAARAAIAAAARAAIAAAARAAMAAAARAAMAAAARAAQAAAARAAQAAAARAAUAAAARAAUAAAASAAAAAAASAAAAAAASAAEAAAASAAEAAAASAAIAAAASAAIAAAASAAMAAAASAAMAAAASAAQAAAASAAQAAAASAAUAAAASAAUAAAATAAAAAAATAAAAAAATAAEAAAATAAEAAAATAAIAAAATAAIAAAATAAMAAAATAAMAAAATAAQAAAATAAQAAAATAAUAAAATAAUAAAAUAAAAAAAUAAAAAAAUAAEAAAAUAAEAAAAUAAIAAAAUAAIAAAAUAAMAAAAUAAMAAAAUAAQAAAAUAAQAAAAUAAUAAAAUAAUAAAAVAAAAAAAVAAAAAAAVAAEAAAAVAAEAAAAVAAIAAAAVAAIAAAAVAAMAAAAVAAMAAAAVAAQAAAAVAAQAAAAVAAUAAAAVAAUAAAAWAAAAAAAWAAAAAAAWAAEAAAAWAAEAAAAWAAIAAAAWAAIAAAAWAAMAAAAWAAMAAAAWAAQAAAAWAAQAAAAWAAUAAAAWAAUAAAAXAAAAAAAXAAAAAAAXAAEAAAAXAAEAAAAXAAIAAAAXAAIAAAAXAAMAAAAXAAMAAAAXAAQAAAAXAAQAAAAXAAUAAAAXAAUAAAAYAAAAAAAYAAAAAAAYAAEAAAAYAAEAAAAYAAIAAAAYAAIAAAAYAAMAAAAYAAMAAAAYAAQAAAAYAAQAAAAYAAUAAAAYAAUAAAAZAAAAAAAZAAAAAAAZAAEAAAAZAAEAAAAZAAIAAAAZAAIAAAAZAAMAAAAZAAMAAAAZAAQAAAAZAAQAAAAZAAUAAAAZAAUAAAAaAAAAAAAaAAAAAAAaAAEAAAAaAAEAAAAaAAIAAAAaAAIAAAAaAAMAAAAaAAMAAAAaAAQAAAAaAAQAAAAaAAUAAAAaAAUAAAAbAAAAAAAbAAAAAAAbAAEAAAAbAAEAAAAbAAIAAAAbAAIAAAAbAAMAAAAbAAMAAAAbAAQAAAAbAAQAAAAbAAUAAAAbAAUAAAAcAAAAAAAcAAAAAAAcAAEAAAAcAAEAAAAcAAIAAAAcAAIAAAAcAAMAAAAcAAMAAAAcAAQAAAAcAAQAAAAcAAUAAAAcAAUAAAAdAAAAAAAdAAAAAAAdAAEAAAAdAAEAAAAdAAIAAAAdAAIAAAAdAAMAAAAdAAMAAAAdAAQAAAAdAAQAAAAdAAUAAAAdAAUAAAAeAAAAAAAeAAAAAAAeAAEAAAAeAAEAAAAeAAIAAAAeAAIAAAAeAAMAAAAeAAMAAAAeAAQAAAAeAAQAAAAeAAUAAAAeAAUAAAAfAAAAAAAfAAAAAAAfAAEAAAAfAAEAAAAfAAIAAAAfAAIAAAAfAAMAAAAfAAMAAAAfAAQAAAAfAAQAAAAfAAUAAAAfAAUAAAAgAAAAAAAgAAAAAAAgAAEAAAAgAAEAAAAgAAIAAAAgAAIAAAAgAAMAAAAgAAMAAAAgAAQAAAAgAAQAAAAgAAUAAAAgAAUAAAAhAAAAAAAhAAAAAAAhAAIAAAAhAAIAAAAhAAMAAAAhAAMAAAAhAAQAAAAhAAQAAAAhAAUAAAAhAAUAAAAiAAAAAAAiAAAAAAAiAAEAAAAiAAEAAAAiAAIAAAAiAAIAAAAiAAMAAAAiAAMAAAAiAAQAAAAiAAQAAAAiAAUAAAAiAAUAAAAjAAAAAAAjAAAAAAAjAAEAAAAjAAEAAAAjAAIAAAAjAAIAAAAjAAMAAAAjAAMAAAAjAAQAAAAjAAQAAAAjAAUAAAAjAAUAAAAkAAAAAAAkAAAAAAAkAAEAAAAkAAEAAAAkAAIAAAAkAAIAAAAkAAMAAAAkAAMAAAAkAAQAAAAkAAQAAAAkAAUAAAAkAAUAAAAlAAAAAAAlAAAAAAAlAAEAAAAlAAEAAAAlAAIAAAAlAAIAAAAlAAMAAAAlAAMAAAAlAAQAAAAlAAQAAAAlAAUAAAAlAAUAAAAmAAAAAAAmAAAAAAAmAAEAAAAmAAEAAAAmAAIAAAAmAAIAAAAmAAMAAAAmAAMAAAAmAAQAAAAmAAQAAAAmAAUAAAAmAAUAAAAnAAAAAAAnAAAAAAAnAAEAAAAnAAEAAAAnAAIAAAAnAAIAAAAnAAMAAAAnAAMAAAAnAAQAAAAnAAQAAAAnAAUAAAAnAAUAAAAoAAAAAAAoAAAAAAAoAAEAAAAoAAEAAAAoAAIAAAAoAAIAAAAoAAMAAAAoAAMAAAAoAAQAAAAoAAQAAAAoAAUAAAAoAAUAAAApAAAAAAApAAAAAAApAAEAAAApAAEAAAApAAIAAAApAAIAAAApAAMAAAApAAMAAAApAAQAAAApAAQAAAApAAUAAAApAAUAAAAqAAAAAAAqAAAAAAAqAAEAAAAqAAEAAAAqAAIAAAAqAAIAAAAqAAMAAAAqAAMAAAAqAAQAAAAqAAQAAAAqAAUAAAAqAAUAAAArAAAAAAArAAAAAAArAAEAAAArAAEAAAArAAIAAAArAAIAAAArAAMAAAArAAMAAAArAAQAAAArAAQAAAArAAUAAAArAAUAAAAsAAAAAAAsAAAAAAAsAAEAAAAsAAEAAAAsAAIAAAAsAAIAAAAsAAMAAAAsAAMAAAAsAAQAAAAsAAQAAAAsAAUAAAAsAAUAAAAtAAAAAAAtAAAAAAAtAAEAAAAtAAEAAAAtAAIAAAAtAAIAAAAtAAMAAAAtAAMAAAAtAAQAAAAtAAQAAAAtAAUAAAAtAAUAAAAuAAAAAAAuAAAAAAAuAAEAAAAuAAEAAAAuAAIAAAAuAAIAAAAuAAMAAAAuAAMAAAAuAAQAAAAuAAQAAAAuAAUAAAAuAAUAAAAvAAAAAAAvAAAAAAAvAAEAAAAvAAEAAAAvAAIAAAAvAAIAAAAvAAMAAAAvAAMAAAAvAAQAAAAvAAQAAAAvAAUAAAAvAAUAAAAwAAAAAAAwAAAAAAAwAAEAAAAwAAEAAAAwAAIAAAAwAAIAAAAwAAMAAAAwAAMAAAAwAAQAAAAwAAQAAAAwAAUAAAAwAAUAAAAxAAAAAAAxAAAAAAAxAAEAAAAxAAEAAAAxAAIAAAAxAAIAAAAxAAMAAAAxAAMAAAAxAAQAAAAxAAQAAAAxAAUAAAAxAAUAAAAyAAAAAAAyAAAAAAAyAAEAAAAyAAEAAAAyAAIAAAAyAAIAAAAyAAMAAAAyAAMAAAAyAAQAAAAyAAQAAAAyAAUAAAAyAAUAAAAzAAAAAAAzAAAAAAAzAAEAAAAzAAEAAAAzAAIAAAAzAAIAAAAzAAMAAAAzAAMAAAAzAAQAAAAzAAQAAAAzAAUAAAAzAAUAAAA0AAAAAAA0AAAAAAA0AAEAAAA0AAEAAAA0AAIAAAA0AAIAAAA0AAMAAAA0AAMAAAA0AAQAAAA0AAQAAAA0AAUAAAA0AAUAAAA1AAAAAAA1AAAAAAA1AAEAAAA1AAEAAAA1AAIAAAA1AAIAAAA1AAMAAAA1AAMAAAA1AAQAAAA1AAQAAAA1AAUAAAA1AAUAAAA2AAAAAAA2AAAAAAA2AAEAAAA2AAEAAAA2AAIAAAA2AAIAAAA2AAMAAAA2AAMAAAA2AAQAAAA2AAQAAAA2AAUAAAA2AAUAAAAhAAEAAAAhAAEAAAA=")
 tile_set = ExtResource("6_mgpuy")
 
-[node name="Sprite0008" type="Sprite2D" parent="CorredorArte" unique_id=586114152]
+[node name="Sprites" type="Node2D" parent="CorredorArte" unique_id=1141608594]
+
+[node name="Sprite0008" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=586114152]
 position = Vector2(261, 128)
 texture = ExtResource("20_ekph5")
 centered = false
 
-[node name="Sprite8" type="Sprite2D" parent="CorredorArte" unique_id=438059759]
+[node name="Sprite8" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=438059759]
 position = Vector2(598, 127)
 texture = ExtResource("21_17d33")
 centered = false
 
-[node name="Sprite0017" type="Sprite2D" parent="CorredorArte" unique_id=1801010593]
+[node name="Sprite0017" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1801010593]
 position = Vector2(947, 128)
 texture = ExtResource("22_5f5ra")
 centered = false
 
-[node name="Sprite0026" type="Sprite2D" parent="CorredorArte" unique_id=1407179209]
+[node name="Sprite0026" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1407179209]
 position = Vector2(1598, 128)
 texture = ExtResource("23_ykeiw")
 centered = false
 
-[node name="Sprite0003" type="Sprite2D" parent="CorredorArte" unique_id=980219372]
+[node name="Sprite0003" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=980219372]
 texture_filter = 1
 position = Vector2(22, 37)
 texture = ExtResource("24_kfswl")
 centered = false
 
-[node name="Sprite000" type="Sprite2D" parent="CorredorArte" unique_id=562797929]
+[node name="Sprite000" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=562797929]
 position = Vector2(110, 44)
 texture = ExtResource("25_k66e8")
 centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprite000" unique_id=1411309005]
+[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprites/Sprite000" unique_id=1411309005]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprite000/StaticBody2D" unique_id=23300951]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprites/Sprite000/StaticBody2D" unique_id=23300951]
 position = Vector2(18.25, 48.75)
 shape = SubResource("RectangleShape2D_f8aq7")
 
-[node name="Sprite7" type="Sprite2D" parent="CorredorArte" unique_id=1144674653]
+[node name="Sprite7" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1144674653]
 position = Vector2(167, 75)
 texture = ExtResource("26_d3e57")
 centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprite7" unique_id=56702859]
+[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprites/Sprite7" unique_id=56702859]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprite7/StaticBody2D" unique_id=159802014]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprites/Sprite7/StaticBody2D" unique_id=159802014]
 position = Vector2(39.125, 33.875)
 shape = SubResource("RectangleShape2D_mgpuy")
 
-[node name="Sprite0005" type="Sprite2D" parent="CorredorArte" unique_id=1342528301]
+[node name="Sprite0005" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1342528301]
 position = Vector2(177, 38)
 texture = ExtResource("27_aax63")
 centered = false
 
-[node name="Sprite0004" type="Sprite2D" parent="CorredorArte" unique_id=1010183506]
+[node name="Sprite0004" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1010183506]
 position = Vector2(205, 51)
 texture = ExtResource("28_ng8ob")
 centered = false
 
-[node name="Sprite0006" type="Sprite2D" parent="CorredorArte" unique_id=1108780971]
+[node name="Sprite0006" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1108780971]
 position = Vector2(211, 29)
 texture = ExtResource("29_5siw3")
 centered = false
 
-[node name="Sprite0007" type="Sprite2D" parent="CorredorArte" unique_id=1515440752]
+[node name="Sprite0007" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1515440752]
 position = Vector2(348, 26)
 texture = ExtResource("30_cy7qg")
 centered = false
@@ -456,90 +471,85 @@ metadata/_aseprite_wizard_interface_config_ = {
 "slice_section": true
 }
 
-[node name="Sprite0009" type="Sprite2D" parent="CorredorArte" unique_id=291730586]
+[node name="Sprite0009" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=291730586]
 position = Vector2(564, 51)
 texture = ExtResource("31_acr4q")
 centered = false
 
-[node name="Sprite0011" type="Sprite2D" parent="CorredorArte" unique_id=1724964553]
+[node name="Sprite0011" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1724964553]
 position = Vector2(618, 62)
 texture = ExtResource("32_fq6d1")
 centered = false
 
-[node name="Sprite0012" type="Sprite2D" parent="CorredorArte" unique_id=942685642]
+[node name="Sprite0012" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=942685642]
 position = Vector2(661, 45)
 texture = ExtResource("33_yab5r")
 centered = false
 
-[node name="Sprite0010" type="Sprite2D" parent="CorredorArte" unique_id=510336552]
+[node name="Sprite0010" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=510336552]
 position = Vector2(686, 67)
 texture = ExtResource("34_32imw")
 centered = false
 
-[node name="Sprite0013" type="Sprite2D" parent="CorredorArte" unique_id=311036644]
+[node name="Sprite0013" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=311036644]
 position = Vector2(789, 48)
 texture = ExtResource("35_b20dk")
 centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprite0013" unique_id=1154585498]
+[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprites/Sprite0013" unique_id=1154585498]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprite0013/StaticBody2D" unique_id=2140286995]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprites/Sprite0013/StaticBody2D" unique_id=2140286995]
 position = Vector2(38.625, 48.375)
 shape = SubResource("RectangleShape2D_2ybd5")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="CorredorArte/Sprite0013/StaticBody2D/CollisionShape2D" unique_id=1698058370]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CorredorArte/Sprite0013/StaticBody2D/CollisionShape2D/StaticBody2D" unique_id=1202367834]
-position = Vector2(704.75, -26)
-shape = SubResource("RectangleShape2D_4d0et")
-
-[node name="Sprite0014" type="Sprite2D" parent="CorredorArte" unique_id=975812989]
+[node name="Sprite0014" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=975812989]
 position = Vector2(959, 42)
 texture = ExtResource("36_7eyvd")
 centered = false
 
-[node name="Sprite0016" type="Sprite2D" parent="CorredorArte" unique_id=827968208]
+[node name="Sprite0016" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=827968208]
 position = Vector2(1030, 60)
 texture = ExtResource("37_bkwma")
 centered = false
 
-[node name="Sprite0015" type="Sprite2D" parent="CorredorArte" unique_id=1232145197]
+[node name="Sprite0015" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1232145197]
 position = Vector2(1097, 41)
 texture = ExtResource("38_3jfpy")
 centered = false
 
-[node name="Sprite0018" type="AnimatedSprite2D" parent="CorredorArte" unique_id=952474847]
+[node name="Sprite0018" type="AnimatedSprite2D" parent="CorredorArte/Sprites" unique_id=952474847]
 position = Vector2(1194, 27)
 sprite_frames = SubResource("SpriteFrames_1c6yc")
 autoplay = "default"
+frame_progress = 0.6424949
 centered = false
 
-[node name="Sprite0021" type="Sprite2D" parent="CorredorArte" unique_id=1135406237]
+[node name="Sprite0021" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1135406237]
 position = Vector2(1389, 43)
 texture = ExtResource("42_uho4y")
 centered = false
 
-[node name="Sprite0023" type="Sprite2D" parent="CorredorArte" unique_id=113986459]
+[node name="Sprite0023" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=113986459]
 position = Vector2(1426, 76)
 texture = ExtResource("43_ccnt1")
 centered = false
 
-[node name="Sprite0025" type="Sprite2D" parent="CorredorArte" unique_id=553929318]
+[node name="Sprite0025" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=553929318]
 position = Vector2(1475, 3)
 texture = ExtResource("44_2ms74")
 centered = false
 
-[node name="Sprite0022" type="Sprite2D" parent="CorredorArte" unique_id=172060934]
+[node name="Sprite0022" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=172060934]
 position = Vector2(1528, 56)
 texture = ExtResource("45_lrpa3")
 centered = false
 
-[node name="Sprite0024" type="Sprite2D" parent="CorredorArte" unique_id=1480634978]
+[node name="Sprite0024" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=1480634978]
 position = Vector2(1693, 50)
 texture = ExtResource("46_q1p54")
 centered = false
 
-[node name="FundoFalso" type="Sprite2D" parent="CorredorArte" unique_id=77012439]
+[node name="FundoFalso" type="Sprite2D" parent="CorredorArte/Sprites" unique_id=77012439]
 position = Vector2(230, 244)
 scale = Vector2(3.0421052, 1)
 texture = ExtResource("9_cugen")
@@ -574,6 +584,7 @@ position = Vector2(-6.935813e-06, 0)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_u0egc")
 animation = &"parado"
+frame_progress = 0.299524
 speed_scale = 3.0
 
 [node name="StateMachine" type="Node" parent="Player/Player" unique_id=1074471888]
